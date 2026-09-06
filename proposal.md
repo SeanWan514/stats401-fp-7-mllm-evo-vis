@@ -1,6 +1,6 @@
 # From Pixels to Intelligence
 
-## An Interactive History of Open-Weight Multimodal Large Language Models
+## STATS 401 Final Project: An Interactive History of Open-Weight Multimodal Large Language Models
 
 **Group 7:** Sean Wan, Yuxuan Huang, Shilin Ou
 
@@ -58,7 +58,7 @@ The following preliminary wireframe demonstrates that the five proposed views ha
 4. **Family slopegraphs:** one panel per family, connecting successive generations across a selected capability.
 5. **Model explorer:** user-selected models shown across scale, capability, architecture, and training attributes.
 
-The final sketches will additionally label all filters and linked interactions.
+Notice that this is only an initial layout aimed at briefly illustrating our ideas. The final sketches should look much more advanced and accurate, labeling all filters and linked interactions.
 
 ## 5. Group Roles and Responsibilities
 
