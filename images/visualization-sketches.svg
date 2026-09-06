@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <style>
+    .panel{fill:#fff;stroke:#1f2937;stroke-width:2}.title{font:700 18px Arial;fill:#111827}.label{font:13px Arial;fill:#374151}.axis{stroke:#6b7280;stroke-width:1.5}.grid{stroke:#d1d5db;stroke-width:1}.blue{fill:#3b82f6}.purple{fill:#8b5cf6}.green{fill:#10b981}.orange{fill:#f59e0b}.line{fill:none;stroke:#3b82f6;stroke-width:3}.dash{fill:none;stroke:#ef4444;stroke-width:2;stroke-dasharray:6 5}
+  </style>
+  <rect width="1200" height="780" fill="#f3f4f6"/>
+  <text x="600" y="32" text-anchor="middle" class="title">Initial Coordinated-Visualization Wireframes</text>
+
+  <g transform="translate(25,55)">
+    <rect class="panel" width="560" height="205" rx="8"/><text class="title" x="18" y="28">1. Release Timeline — event timeline</text>
+    <line class="axis" x1="105" y1="170" x2="535" y2="170"/><text class="label" x="505" y="193">Date</text>
+    <text class="label" x="18" y="75">Qwen-VL</text><text class="label" x="18" y="115">LLaVA</text><text class="label" x="18" y="155">InternVL</text>
+    <line class="grid" x1="105" y1="65" x2="535" y2="65"/><line class="grid" x1="105" y1="105" x2="535" y2="105"/><line class="grid" x1="105" y1="145" x2="535" y2="145"/>
+    <circle class="blue" cx="175" cy="65" r="7"/><circle class="blue" cx="330" cy="65" r="10"/><circle class="blue" cx="475" cy="65" r="13"/>
+    <rect class="purple" x="205" y="97" width="16" height="16"/><rect class="purple" x="390" y="94" width="22" height="22"/>
+    <path class="green" d="M280 136 l10 18 h-20z"/><path class="green" d="M445 132 l14 25 h-28z"/>
+  </g>
+
+  <g transform="translate(615,55)">
+    <rect class="panel" width="560" height="205" rx="8"/><text class="title" x="18" y="28">2. Model × Benchmark — heatmap</text>
+    <text class="label" x="180" y="53">MMMU</text><text class="label" x="260" y="53">MathVista</text><text class="label" x="355" y="53">OCRBench</text><text class="label" x="455" y="53">Hallusion</text>
+    <text class="label" x="25" y="82">Model A</text><text class="label" x="25" y="117">Model B</text><text class="label" x="25" y="152">Model C</text>
+    <g transform="translate(170,62)"><rect width="65" height="28" fill="#bfdbfe"/><rect x="75" width="75" height="28" fill="#60a5fa"/><rect x="160" width="80" height="28" fill="#2563eb"/><rect x="250" width="75" height="28" fill="#dbeafe"/>
+    <rect y="35" width="65" height="28" fill="#3b82f6"/><rect x="75" y="35" width="75" height="28" fill="#93c5fd"/><rect x="160" y="35" width="80" height="28" fill="#e5e7eb"/><path d="M330 35l-75 28M255 35l75 28" stroke="#6b7280"/><rect x="250" y="35" width="75" height="28" fill="none" stroke="#9ca3af"/>
+    <rect y="70" width="65" height="28" fill="#93c5fd"/><rect x="75" y="70" width="75" height="28" fill="#1d4ed8"/><rect x="160" y="70" width="80" height="28" fill="#60a5fa"/><rect x="250" y="70" width="75" height="28" fill="#2563eb"/></g>
+  </g>
+
+  <g transform="translate(25,285)">
+    <rect class="panel" width="365" height="455" rx="8"/><text class="title" x="18" y="28">3. Scale–Performance — scatterplot</text>
+    <line class="axis" x1="55" y1="385" x2="335" y2="385"/><line class="axis" x1="55" y1="385" x2="55" y2="65"/>
+    <text class="label" x="210" y="420">Log parameters / compute</text><text class="label" transform="translate(20,250) rotate(-90)">Benchmark score</text>
+    <circle class="blue" cx="95" cy="330" r="7"/><circle class="purple" cx="135" cy="285" r="7"/><circle class="green" cx="180" cy="300" r="7"/><circle class="blue" cx="220" cy="215" r="8"/><circle class="orange" cx="285" cy="125" r="9"/><circle class="purple" cx="305" cy="180" r="7"/>
+    <path class="dash" d="M95 330 L135 285 L220 215 L285 125"/><text class="label" x="205" y="95">Pareto frontier</text>
+  </g>
+
+  <g transform="translate(418,285)">
+    <rect class="panel" width="365" height="455" rx="8"/><text class="title" x="18" y="28">4. Family Evolution — slopegraphs</text>
+    <text class="label" x="28" y="66">Qwen-VL</text><line class="grid" x1="70" y1="185" x2="315" y2="185"/><path class="line" d="M80 170 L190 125 L300 75"/><circle class="blue" cx="80" cy="170" r="6"/><circle class="blue" cx="190" cy="125" r="6"/><circle class="blue" cx="300" cy="75" r="6"/>
+    <text class="label" x="28" y="235">InternVL</text><line class="grid" x1="70" y1="360" x2="315" y2="360"/><path d="M80 340 L190 280 L300 250" fill="none" stroke="#10b981" stroke-width="3"/><circle class="green" cx="80" cy="340" r="6"/><circle class="green" cx="190" cy="280" r="6"/><circle class="green" cx="300" cy="250" r="6"/>
+    <text class="label" x="65" y="405">Gen 1</text><text class="label" x="175" y="405">Gen 2</text><text class="label" x="285" y="405">Gen 3</text>
+  </g>
+
+  <g transform="translate(810,285)">
+    <rect class="panel" width="365" height="455" rx="8"/><text class="title" x="18" y="28">5. Model Explorer — parallel coordinates</text>
+    <g transform="translate(25,70)"><line class="axis" x1="30" y1="20" x2="30" y2="300"/><line class="axis" x1="100" y1="20" x2="100" y2="300"/><line class="axis" x1="170" y1="20" x2="170" y2="300"/><line class="axis" x1="240" y1="20" x2="240" y2="300"/><line class="axis" x1="310" y1="20" x2="310" y2="300"/>
+    <path d="M30 250 L100 210 L170 90 L240 140 L310 70" class="line"/><path d="M30 120 L100 80 L170 175 L240 95 L310 155" fill="none" stroke="#8b5cf6" stroke-width="3"/><path d="M30 200 L100 150 L170 230 L240 205 L310 115" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text class="label" x="5" y="325">Scale</text><text class="label" x="74" y="325">MMMU</text><text class="label" x="145" y="325">OCR</text><text class="label" x="213" y="325">Math</text><text class="label" x="278" y="325">Context</text></g>
+  </g>
+</svg>
