@@ -22,11 +22,11 @@ These questions are exploratory: associations are not causal, and no benchmark c
 
 ## 2. Datasets
 
-Benchmark results will primarily come from the [OpenVLM Leaderboard](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard), maintained using OpenCompass’s [VLMEvalKit](https://github.com/open-compass/VLMEvalKit). We will select up to five benchmarks with sufficient model overlap, provisionally including MMMU, MathVista, MMBench, OCRBench, and HallusionBench. We will compare only results using the same benchmark version and evaluation metric.
+Benchmark results (approximately 150–250 model–benchmark records) will be downloaded from the public [OpenVLM Leaderboard](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard), maintained with OpenCompass’s [VLMEvalKit](https://github.com/open-compass/VLMEvalKit). We will select up to five well-covered benchmarks, provisionally MMMU, MathVista, MMBench, OCRBench, and HallusionBench, and compare only identical versions and metrics.
 
-Model metadata will come from Hugging Face model cards and APIs, official repositories, and model papers. Key attributes include release date, organization, family, language-model backbone, vision encoder, parameter counts, input modalities, context length, license, benchmark scores, and reported training data or compute.
+The metadata table (approximately 30–50 models and 18–22 variables) will be queried through the [Hugging Face Hub API](https://huggingface.co/docs/huggingface_hub/en/package_reference/hf_api) and verified against official repositories and papers. Key attributes include release date, organization, family, language backbone, vision encoder, parameters, modalities, context length, license, and reported training data or compute.
 
-Our initial source audit identified candidate families including LLaVA, Qwen-VL, InternVL, MiniCPM-V, Idefics, Molmo, and PaliGemma. We expect 30–50 models, 18–22 metadata variables, and 150–250 model–benchmark records. Included models must have downloadable weights, a verifiable release date, identifiable scale, and results on at least two selected benchmarks. Minor derivatives and duplicate submissions will be excluded.
+Our initial audit identified LLaVA, Qwen-VL, InternVL, MiniCPM-V, Idefics, Molmo, and PaliGemma as candidate families. Models must have downloadable weights, a verifiable release date and scale, and results on at least two selected benchmarks. Minor derivatives and duplicate submissions will be excluded.
 
 Python and pandas will download, clean, reshape, and join the sources. A manually reviewed model-ID crosswalk will standardize names, dates, units, and benchmark versions. Missing values will remain explicit. A data dictionary and provenance table will record each field’s source, definition, and reliability.
 
@@ -58,7 +58,7 @@ The following preliminary wireframe demonstrates that the five proposed views ha
 4. **Family slopegraphs:** one panel per family, connecting successive generations across a selected capability.
 5. **Model explorer:** user-selected models shown across scale, capability, architecture, and training attributes.
 
-Notice that this is only an initial layout aimed at briefly illustrating our ideas. The final sketches should look much more advanced and accurate, labeling all filters and linked interactions.
+This initial layout communicates our design; later versions will label all filters and linked interactions.
 
 ## 5. Group Roles and Responsibilities
 
@@ -72,7 +72,7 @@ All members will review the data dictionary, test the interface, interpret resul
 
 ## 6. Interim Presentation Deliverables
 
-For the interim presentation, we will demonstrate a reproducible acquisition pipeline, reviewed model-ID crosswalk, documented dataset, benchmark-overlap and missingness analysis, five labeled wireframes, working D3.js timeline and frontier prototypes, and at least one linked filter. We will explain revisions motivated by exploratory analysis.
+For the interim presentation, we will demonstrate a reproducible acquisition pipeline, reviewed model-ID crosswalk, documented dataset, initial exploratory and missingness analyses, refined visualization questions and goals, five labeled wireframes, working D3.js timeline and frontier prototypes, and one linked filter. We will explain revisions motivated by the analysis.
 
 ## 7. Timeline and Milestones
 
