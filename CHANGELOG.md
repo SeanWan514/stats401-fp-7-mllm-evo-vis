@@ -1,5 +1,10 @@
 # Changelog
 
+## Interim submission polish — 2026-09-20
+
+- Reduced the opening headline scale on desktop and mobile for a cleaner first viewport.
+- Re-ran the complete Interim Check-In requirements audit and production rendering checks.
+
 ## Structured coral redesign — 2026-09-20
 
 - Reorganized the site into opening, introduction, dataset, visualizations, evaluation, and next-steps sections.
