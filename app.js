@@ -1,555 +1,151 @@
-const COLORS = ["#135b43", "#dc6d35", "#39759b", "#7c6196", "#b08a32", "#a44847", "#398b82", "#87918b"];
-const parseDate = d3.utcParse("%Y-%m-%d");
-const formatDate = d3.utcFormat("%b %d, %Y");
-const formatMonth = d3.utcFormat("%b %Y");
+const DATA_URL = "data/interim_models.json";
+const COLORS = { coral: "#be4f55", coralLight: "#ef7d78", blue: "#3b6d8c", teal: "#278a82", navy: "#25364d", gold: "#c58a29", muted: "#9d8b90", red: "#c33f4b" };
+
+const state = { data: null, models: [], metrics: [], metric: "mmmu", landscape: "overall", releaseYear: 2025, timer: null };
 const tooltip = d3.select("#tooltip");
-let state;
 
-function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, char => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", "'":"&#39;", '"':"&quot;"}[char]));
+function showTooltip(event, html) {
+  tooltip.html(html).attr("hidden", null);
+  const node = tooltip.node();
+  const x = Math.min(event.clientX + 14, window.innerWidth - node.offsetWidth - 12);
+  const y = Math.min(event.clientY + 14, window.innerHeight - node.offsetHeight - 12);
+  tooltip.style("left", `${Math.max(8, x)}px`).style("top", `${Math.max(8, y)}px`);
 }
-
-function hashJitter(value, magnitude = 6) {
-    let hash = 0;
-    for (const char of String(value)) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
-    return ((Math.abs(hash) % 1000) / 999 - 0.5) * magnitude * 2;
-}
-
-function chartFrame(selector, height, left = 74, minimumWidth = 320) {
-    const container = d3.select(selector);
-    container.selectAll("*").remove();
-    const width = Math.max(minimumWidth, container.node().clientWidth);
-    const margin = {top: 24, right: 28, bottom: 58, left};
-    const svg = container.append("svg").attr("viewBox", `0 0 ${width} ${height}`);
-    const plot = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-    return {svg, plot, width, height, margin, innerWidth: width - margin.left - margin.right, innerHeight: height - margin.top - margin.bottom};
-}
-
-function addAxes(frame, x, y, xLabel, yLabel, yTicks = 6) {
-    frame.plot.append("g").attr("class", "grid")
-        .call(d3.axisLeft(y).ticks(yTicks).tickSize(-frame.innerWidth).tickFormat(""));
-    frame.plot.append("g").attr("class", "axis")
-        .attr("transform", `translate(0,${frame.innerHeight})`)
-        .call(d3.axisBottom(x).ticks(Math.max(3, Math.min(7, frame.innerWidth / 120))).tickFormat(formatMonth));
-    frame.plot.append("g").attr("class", "axis").call(d3.axisLeft(y).ticks(yTicks));
-    frame.svg.append("text").attr("class", "axis-title").attr("data-axis", "x")
-        .attr("x", frame.margin.left + frame.innerWidth / 2).attr("y", frame.height - 14)
-        .attr("text-anchor", "middle").text(xLabel);
-    frame.svg.append("text").attr("class", "axis-title").attr("data-axis", "y")
-        .attr("transform", "rotate(-90)").attr("x", -(frame.margin.top + frame.innerHeight / 2)).attr("y", 18)
-        .attr("text-anchor", "middle").text(yLabel);
-}
-
-function dateDomain(models) {
-    const extent = d3.extent(models, d => d.date);
-    const pad = 1000 * 60 * 60 * 24 * 30;
-    return [new Date(+extent[0] - pad), new Date(+extent[1] + pad)];
-}
-
-function radiusScale(models) {
-    const known = models.filter(d => Number.isFinite(d.parameters_b));
-    const max = d3.max(known, d => d.parameters_b) || 1;
-    return d3.scaleSqrt().domain([0, max]).range([3.2, 10]);
-}
-
-function pointFill(d) {
-    return d.open_weight ? state.color(d.organization_group) : "#fffdf8";
-}
-
-function pointStroke(d) {
-    return state.color(d.organization_group);
-}
-
-function tooltipHtml(d, metric) {
-    const score = metric && d.scores[metric.id] != null ? `${d.scores[metric.id]} ${metric.unit}` : "Not available";
-    return `<strong>${escapeHtml(d.name)}</strong>
-        <span class="muted">${escapeHtml(formatDate(d.date))}</span><br>
-        Provider: ${escapeHtml(d.organization)}<br>
-        Parameters: ${escapeHtml(d.parameters_label)}<br>
-        Language: ${escapeHtml(d.language_model)}<br>
-        Vision: ${escapeHtml(d.vision_model)}<br>
-        ${metric ? `${escapeHtml(metric.label)}: ${escapeHtml(score)}<br>` : ""}
-        Weights: ${d.open_weight ? "Open" : "Closed or undisclosed"}`;
-}
-
-function showTooltip(event, d, metric) {
-    tooltip.html(tooltipHtml(d, metric)).attr("hidden", null);
-    moveTooltip(event);
-}
-
-function moveTooltip(event) {
-    const bounds = event.currentTarget?.getBoundingClientRect?.();
-    const pointerX = Number.isFinite(event.clientX) && event.clientX > 0 ? event.clientX : (bounds?.left ?? 8);
-    const pointerY = Number.isFinite(event.clientY) && event.clientY > 0 ? event.clientY : (bounds?.bottom ?? 8);
-    const x = Math.min(window.innerWidth - 465, pointerX + 18);
-    const y = Math.min(window.innerHeight - 355, pointerY + 18);
-    tooltip.style("left", `${Math.max(8, x)}px`).style("top", `${Math.max(8, y)}px`);
-}
-
 function hideTooltip() { tooltip.attr("hidden", true); }
-
-function bindMarks(selection, metric = null) {
-    selection
-        .attr("class", "mark")
-        .attr("tabindex", 0)
-        .attr("role", "button")
-        .attr("aria-label", d => `${d.name}, ${formatDate(d.date)}, ${d.organization}`)
-        .on("pointerenter focus", (event, d) => showTooltip(event, d, metric))
-        .on("pointermove", moveTooltip)
-        .on("pointerleave blur", hideTooltip)
-        .on("click keydown", (event, d) => {
-            if ((event.type === "click" || event.key === "Enter") && d.url) window.open(d.url, "_blank", "noopener");
-        });
+function fmt(value, digits = 1) { return value == null ? "Not reported" : d3.format(`,.${digits}f`)(value); }
+function metricById(id) { return state.metrics.find(d => d.id === id); }
+function score(model, id) { return model.scores?.[id]; }
+function chartSize(selector, fallback = 920) { return Math.max(320, Math.min(fallback, document.querySelector(selector)?.clientWidth || fallback)); }
+function clear(selector) { d3.select(selector).selectAll("*").remove(); }
+function addSvg(selector, width, height) { clear(selector); return d3.select(selector).append("svg").attr("viewBox", `0 0 ${width} ${height}`).attr("aria-hidden", "true"); }
+function modelTip(d) {
+  const metric = metricById(state.metric);
+  return `<strong>${d.name}</strong><br>${d.organization}<br>${d.release_date || "Date not reported"}<br>${metric.label}: ${fmt(score(d, state.metric))}<br>Parameters: ${d.parameters_label}`;
 }
 
-function markerSize(model) {
-    if (!Number.isFinite(model.parameters_b) || model.parameters_b <= 0) return 4.5;
-    return Math.max(4.5, Math.min(11.5, 4 + Math.sqrt(model.parameters_b) * .5));
+function populateSummary() {
+  const p = state.data.profile;
+  d3.select("#stat-models").text(d3.format(",")(p.model_records));
+  d3.select("#stat-open").text(d3.format(",")(p.open_weight_models));
+  d3.select("#stat-blocks").text(d3.format(",")(p.benchmark_blocks));
+  d3.select("#stat-values").text(d3.format(",")(p.numeric_measurements));
 }
 
-function categoryOrder(models, field) {
-    return d3.rollups(models, values => values.length, d => d[field])
-        .sort((a, b) => d3.descending(a[1], b[1]) || d3.ascending(a[0], b[0]))
-        .map(d => d[0]);
+function fillMetricSelect(id) {
+  d3.select(id).selectAll("option").data(state.metrics).join("option").attr("value", d => d.id).text(d => d.label);
 }
 
-function tensorTooltipHtml(model, metric, plane) {
-    const score = model.scores[metric.id] == null ? "Not available" : `${model.scores[metric.id]} ${metric.unit}`;
-    const channelRows = {
-        overall: [[metric.label, score]],
-        language: [["Language family", model.language_family], ["Language model", model.language_model]],
-        vision: [["Vision family", model.vision_family], ["Vision model", model.vision_model]]
-    };
-    const rows = [
-        ["Channel", plane.label],
-        ["Release", formatDate(model.date)],
-        ["Provider", model.organization],
-        ["Parameters", model.parameters_label],
-        ...channelRows[plane.id],
-        ["Weights", model.open_weight ? "Open-weight" : "Closed or undisclosed"]
-    ];
-    return `<strong>${escapeHtml(model.name)}</strong><table class="tooltip-table"><tbody>${rows.map(([label, value]) => `<tr><th>${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`).join("")}</tbody></table>`;
+function setupControls() {
+  fillMetricSelect("#heatmap-sort"); fillMetricSelect("#scatter-metric");
+  d3.select("#heatmap-sort").property("value", state.metric).on("change", e => drawHeatmap(e.target.value));
+  d3.select("#scatter-metric").property("value", state.metric).on("change", e => { state.metric = e.target.value; drawScatter(); drawLandscape(); });
+  d3.select("#scatter-open").on("change", drawScatter);
+  const options = state.models.filter(d => d.score_count >= 4).sort((a,b) => d3.ascending(a.name,b.name));
+  ["#radar-model-a", "#radar-model-b"].forEach(id => d3.select(id).selectAll("option").data(options).join("option").attr("value", d => d.id).text(d => d.name));
+  const find = name => options.find(d => d.name === name)?.id;
+  d3.select("#radar-model-a").property("value", find("Qwen2.5-VL-7B") || options[0]?.id);
+  d3.select("#radar-model-b").property("value", find("InternVL3-8B") || options[1]?.id);
+  d3.selectAll("#radar-model-a,#radar-model-b").on("change", drawRadar);
+  d3.select("#release-year").on("input", e => { stopRelease(); state.releaseYear = +e.target.value; d3.select("#release-year-output").text(state.releaseYear); drawRelease(); });
+  d3.select("#release-play").on("click", toggleRelease);
+  d3.selectAll(".landscape-button").on("click", function() { state.landscape = this.dataset.landscape; d3.selectAll(".landscape-button").classed("active", false); d3.select(this).classed("active", true); drawLandscape(); });
 }
 
-function bindTensorMarks(selection, metric, plane, isActive) {
-    selection
-        .attr("tabindex", isActive ? 0 : -1)
-        .attr("aria-hidden", isActive ? null : "true")
-        .attr("role", "button")
-        .attr("aria-label", model => `${plane.label} plane: ${model.name}, ${formatDate(model.date)}, ${model.organization}`)
-        .on("pointerenter focus", (event, model) => {
-            d3.select(event.currentTarget.closest(".tensor-plane")).classed("is-reading", true);
-            const mark = d3.select(event.currentTarget);
-            mark.raise().attr("transform", `${event.currentTarget.dataset.baseTransform} scale(${model.id === state.selectedId ? 1.8 : 1.35})`);
-            tooltip.html(tensorTooltipHtml(model, metric, plane)).attr("hidden", null);
-            moveTooltip(event);
-        })
-        .on("pointermove", moveTooltip)
-        .on("pointerleave", event => {
-            if (document.activeElement === event.currentTarget) return;
-            d3.select(event.currentTarget.closest(".tensor-plane")).classed("is-reading", false);
-            const model = event.currentTarget.__data__;
-            d3.select(event.currentTarget).attr("transform", `${event.currentTarget.dataset.baseTransform}${model.id === state.selectedId ? " scale(1.65)" : ""}`);
-            hideTooltip();
-        })
-        .on("blur", event => {
-            d3.select(event.currentTarget.closest(".tensor-plane")).classed("is-reading", false);
-            const model = event.currentTarget.__data__;
-            d3.select(event.currentTarget).attr("transform", `${event.currentTarget.dataset.baseTransform}${model.id === state.selectedId ? " scale(1.65)" : ""}`);
-            hideTooltip();
-        })
-        .on("click keydown", (event, model) => {
-            if (event.type === "click" || event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                selectModel(model.id);
-            }
-        });
+function toggleRelease() {
+  if (state.timer) { stopRelease(); return; }
+  if (state.releaseYear >= 2025) state.releaseYear = 2023;
+  d3.select("#release-play").text("Pause history");
+  d3.select("#release-year").property("value", state.releaseYear); d3.select("#release-year-output").text(state.releaseYear); drawRelease();
+  state.timer = setInterval(() => {
+    if (state.releaseYear >= 2025) { stopRelease(); return; }
+    state.releaseYear += 1; d3.select("#release-year").property("value", state.releaseYear); d3.select("#release-year-output").text(state.releaseYear); drawRelease();
+  }, 1150);
+}
+function stopRelease() { if (state.timer) clearInterval(state.timer); state.timer = null; d3.select("#release-play").text("Play history"); }
+
+function drawRelease() {
+  const width = chartSize("#release-chart"), height = 390, margin = {top:30,right:28,bottom:48,left:56};
+  const svg = addSvg("#release-chart", width, height);
+  const verified = state.models.filter(d => d.release_date && +d.release_date.slice(0,4) <= 2025);
+  const rows = d3.range(2023, 2026).map(year => ({ year, open: verified.filter(d => +d.release_date.slice(0,4) === year && d.open_weight).length, closed: verified.filter(d => +d.release_date.slice(0,4) === year && !d.open_weight).length }));
+  const active = rows.filter(d => d.year <= state.releaseYear);
+  const x = d3.scaleBand().domain(rows.map(d => d.year)).range([margin.left,width-margin.right]).padding(.34);
+  const y = d3.scaleLinear().domain([0,d3.max(rows,d => d.open+d.closed)]).nice().range([height-margin.bottom,margin.top]);
+  svg.append("g").attr("transform",`translate(0,${height-margin.bottom})`).call(d3.axisBottom(x).tickFormat(d3.format("d"))).call(g=>g.select(".domain").remove());
+  svg.append("g").attr("transform",`translate(${margin.left},0)`).call(d3.axisLeft(y).ticks(5)).call(g=>g.select(".domain").remove());
+  svg.append("g").attr("stroke","#eadbd8").selectAll("line").data(y.ticks(5)).join("line").attr("x1",margin.left).attr("x2",width-margin.right).attr("y1",y).attr("y2",y);
+  const groups = svg.selectAll(".year-bar").data(active,d=>d.year).join("g").attr("class","year-bar").attr("transform",d=>`translate(${x(d.year)},0)`);
+  groups.append("rect").attr("x",0).attr("width",x.bandwidth()).attr("y",y(0)).attr("height",0).attr("rx",7).attr("fill",COLORS.teal).transition().duration(650).attr("y",d=>y(d.open)).attr("height",d=>y(0)-y(d.open));
+  groups.append("rect").attr("x",0).attr("width",x.bandwidth()).attr("y",d=>y(d.open)).attr("height",0).attr("rx",7).attr("fill",COLORS.navy).attr("opacity",.88).transition().duration(650).attr("y",d=>y(d.open+d.closed)).attr("height",d=>y(d.open)-y(d.open+d.closed));
+  groups.append("text").attr("x",x.bandwidth()/2).attr("y",d=>y(d.open+d.closed)-10).attr("text-anchor","middle").attr("font-weight",700).text(d=>d.open+d.closed);
+  svg.append("text").attr("x",margin.left).attr("y",18).attr("font-weight",700).text("Models released in snapshot");
 }
 
-function updateChannelControls() {
-    d3.selectAll(".channel-button")
-        .attr("aria-pressed", function() { return this.dataset.plane === state.activePlane ? "true" : "false"; });
+function drawRadar() {
+  const a = state.models.find(d => d.id === d3.select("#radar-model-a").property("value"));
+  const b = state.models.find(d => d.id === d3.select("#radar-model-b").property("value"));
+  if (!a || !b) return;
+  const width = chartSize("#radar-chart",760), height = 500, cx=width/2, cy=height/2+8, radius=Math.min(width,height)*.34;
+  const svg = addSvg("#radar-chart",width,height); const angle = i => -Math.PI/2+i*2*Math.PI/state.metrics.length;
+  const extents = Object.fromEntries(state.metrics.map(m => [m.id,d3.extent(state.models,d=>score(d,m.id))]));
+  const normalized = (model,m) => { const v=score(model,m.id), [lo,hi]=extents[m.id]; return v==null?0:(v-lo)/(hi-lo||1); };
+  [ .25,.5,.75,1 ].forEach(level => { const points=state.metrics.map((m,i)=>[cx+Math.cos(angle(i))*radius*level,cy+Math.sin(angle(i))*radius*level]); svg.append("polygon").attr("points",points.map(p=>p.join(",")).join(" ")).attr("fill","none").attr("stroke","#eadbd8"); });
+  state.metrics.forEach((m,i)=>{ const x=cx+Math.cos(angle(i))*radius,y=cy+Math.sin(angle(i))*radius; svg.append("line").attr("x1",cx).attr("y1",cy).attr("x2",x).attr("y2",y).attr("stroke","#eadbd8"); const lx=cx+Math.cos(angle(i))*(radius+30),ly=cy+Math.sin(angle(i))*(radius+30); svg.append("text").attr("x",lx).attr("y",ly).attr("text-anchor",Math.abs(lx-cx)<10?"middle":lx>cx?"start":"end").attr("dominant-baseline","middle").text(m.label.replace(" overall","").replace(" validation","")); });
+  const line=d3.line().curve(d3.curveLinearClosed); [[a,COLORS.coral],[b,COLORS.blue]].forEach(([model,color])=>{ const pts=state.metrics.map((m,i)=>[cx+Math.cos(angle(i))*radius*normalized(model,m),cy+Math.sin(angle(i))*radius*normalized(model,m)]); svg.append("path").attr("d",line(pts)).attr("fill",color).attr("fill-opacity",.16).attr("stroke",color).attr("stroke-width",3); svg.append("g").selectAll("circle").data(pts.map((p,i)=>({p,m:state.metrics[i]}))).join("circle").attr("cx",d=>d.p[0]).attr("cy",d=>d.p[1]).attr("r",5).attr("fill",color).on("mousemove",(e,d)=>showTooltip(e,`<strong>${model.name}</strong><br>${d.m.label}: ${fmt(score(model,d.m.id))}`)).on("mouseleave",hideTooltip); });
+  svg.append("text").attr("x",18).attr("y",26).attr("fill",COLORS.coral).attr("font-weight",700).text(a.name);
+  svg.append("text").attr("x",18).attr("y",48).attr("fill",COLORS.blue).attr("font-weight",700).text(b.name);
 }
 
-function tensorPlaneTransform(plane, isActive) {
-    if (isActive) return "translate(90,110) scale(1.04)";
-    return `translate(${plane.offset.x},${plane.offset.y})`;
+function drawHeatmap(sortId = state.metric) {
+  const width=chartSize("#heatmap-chart"), rowH=27, labelW=Math.min(220,width*.28), top=70, right=15;
+  const candidates=state.models.filter(d=>d.score_count>=5).sort((a,b)=>(score(b,sortId)??-Infinity)-(score(a,sortId)??-Infinity)).slice(0,24);
+  const height=top+candidates.length*rowH+20, svg=addSvg("#heatmap-chart",width,height), cellW=(width-labelW-right)/state.metrics.length;
+  const extents=Object.fromEntries(state.metrics.map(m=>[m.id,d3.extent(state.models,d=>score(d,m.id))]));
+  state.metrics.forEach((m,i)=>svg.append("text").attr("transform",`translate(${labelW+i*cellW+cellW/2},${top-12}) rotate(-35)`).attr("text-anchor","start").text(m.id.toUpperCase()));
+  const rows=svg.selectAll(".heat-row").data(candidates).join("g").attr("class","heat-row").attr("transform",(d,i)=>`translate(0,${top+i*rowH})`).style("cursor","pointer").on("click",(e,d)=>{d3.select("#radar-model-a").property("value",d.id);drawRadar();document.querySelector("#radar-model-a").scrollIntoView({behavior:"smooth",block:"center"});});
+  rows.append("text").attr("x",labelW-8).attr("y",rowH*.67).attr("text-anchor","end").text(d=>d.name.length>27?`${d.name.slice(0,25)}…`:d.name);
+  rows.each(function(model){ const g=d3.select(this); state.metrics.forEach((m,i)=>{ const v=score(model,m.id),[lo,hi]=extents[m.id],t=v==null?null:(v-lo)/(hi-lo||1); g.append("rect").attr("x",labelW+i*cellW+1).attr("width",cellW-2).attr("height",rowH-2).attr("rx",3).attr("fill",t==null?"#f0e8e6":d3.interpolateRgb("#fff0ed","#c94f59")(t)).on("mousemove",e=>showTooltip(e,`<strong>${model.name}</strong><br>${m.label}: ${fmt(v)}`)).on("mouseleave",hideTooltip); if(v==null)g.append("text").attr("x",labelW+i*cellW+cellW/2).attr("y",rowH*.67).attr("text-anchor","middle").text("×"); }); });
 }
 
-function layoutTensorMarks(plane, x, innerWidth, innerHeight) {
-    const nodes = plane.models.map(model => ({
-        model,
-        radius: markerSize(model),
-        anchorX: x(model.date),
-        anchorY: plane.y(plane.yPosition(model)),
-        x: x(model.date),
-        y: plane.y(plane.yPosition(model))
-    }));
-    const categorical = plane.id !== "overall";
-    const simulation = d3.forceSimulation(nodes)
-        .force("x", d3.forceX(node => node.anchorX).strength(categorical ? .17 : .3))
-        .force("y", d3.forceY(node => node.anchorY).strength(categorical ? .92 : .42))
-        .force("collide", d3.forceCollide(node => node.radius + 3).strength(1).iterations(4))
-        .stop();
-
-    for (let tick = 0; tick < 180; tick += 1) simulation.tick();
-    nodes.forEach(node => {
-        const padding = node.radius + 2;
-        node.x = Math.max(padding, Math.min(innerWidth - padding, node.x));
-        node.y = Math.max(padding, Math.min(innerHeight - padding, node.y));
-    });
-    return new Map(nodes.map(node => [node.model.id, node]));
+function drawScatter() {
+  const openOnly=d3.select("#scatter-open").property("checked"), data=state.models.filter(d=>d.parameters_b>0&&score(d,state.metric)!=null&&(!openOnly||d.open_weight));
+  const width=chartSize("#scatter-chart"),height=430,m={top:28,right:25,bottom:58,left:68},svg=addSvg("#scatter-chart",width,height);
+  const x=d3.scaleLog().domain(d3.extent(data,d=>d.parameters_b)).nice().range([m.left,width-m.right]),y=d3.scaleLinear().domain(d3.extent(data,d=>score(d,state.metric))).nice().range([height-m.bottom,m.top]);
+  svg.append("g").attr("transform",`translate(0,${height-m.bottom})`).call(d3.axisBottom(x).ticks(6,"~g")); svg.append("g").attr("transform",`translate(${m.left},0)`).call(d3.axisLeft(y));
+  svg.append("text").attr("x",(m.left+width-m.right)/2).attr("y",height-12).attr("text-anchor","middle").text("Reported parameters (billions, log scale)"); svg.append("text").attr("transform",`translate(16,${height/2}) rotate(-90)`).attr("text-anchor","middle").text(metricById(state.metric).label);
+  svg.selectAll("circle").data(data).join("circle").attr("cx",d=>x(d.parameters_b)).attr("cy",d=>y(score(d,state.metric))).attr("r",5).attr("fill",d=>d.open_weight?COLORS.teal:"white").attr("stroke",d=>d.open_weight?"white":COLORS.navy).attr("stroke-width",1.8).attr("opacity",.78).on("mousemove",(e,d)=>showTooltip(e,modelTip(d))).on("mouseleave",hideTooltip);
+  const sorted=[...data].sort((a,b)=>a.parameters_b-b.parameters_b), frontier=[]; let best=-Infinity; sorted.forEach(d=>{const v=score(d,state.metric);if(v>best){frontier.push(d);best=v;}});
+  svg.append("path").datum(frontier).attr("d",d3.line().x(d=>x(d.parameters_b)).y(d=>y(score(d,state.metric)))).attr("fill","none").attr("stroke",COLORS.red).attr("stroke-width",2).attr("stroke-dasharray","6 5");
 }
 
-function applyActivePlaneState(animate = true) {
-    updateChannelControls();
-    const chart = d3.select("#tensor-chart").classed("has-active", Boolean(state.activePlane));
-    const groups = d3.select("#tensor-chart").selectAll(".tensor-plane")
-        .classed("is-active", plane => plane.id === state.activePlane)
-        .classed("is-inactive", plane => Boolean(state.activePlane) && plane.id !== state.activePlane)
-        .classed("is-stacked", () => !state.activePlane);
-
-    if (state.activePlane) {
-        groups.filter(plane => plane.id === state.activePlane).raise();
-        const chartNode = chart.node();
-        if (chartNode) chartNode.scrollTo({left: 0, behavior: animate ? "smooth" : "auto"});
-    }
-
-    groups.select(".plane-surface")
-        .attr("aria-label", plane => `${plane.label} channel, ${plane.id === state.activePlane ? "currently in front" : "select to bring to front"}`)
-        .attr("aria-pressed", plane => plane.id === state.activePlane ? "true" : "false");
-    groups.select(".plane-count")
-        .text(plane => plane.id === state.activePlane ? `${plane.models.length} models · in front` : `${plane.models.length} models`);
-    groups.selectAll(".tensor-mark")
-        .attr("tabindex", function() { return this.closest(".tensor-plane").dataset.plane === state.activePlane ? 0 : -1; })
-        .attr("aria-hidden", function() { return this.closest(".tensor-plane").dataset.plane === state.activePlane ? null : "true"; });
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (animate && !reducedMotion) {
-        groups.interrupt().transition().duration(560).ease(d3.easeCubicInOut)
-            .attr("transform", plane => tensorPlaneTransform(plane, plane.id === state.activePlane));
-    } else {
-        groups.attr("transform", plane => tensorPlaneTransform(plane, plane.id === state.activePlane));
-    }
+function drawLandscape() {
+  const data=state.models.filter(d=>d.release_date&&+d.release_date.slice(0,4)<=2025),width=chartSize("#landscape-chart"),height=470,m={top:25,right:25,bottom:58,left:150},svg=addSvg("#landscape-chart",width,height);
+  const dates=data.map(d=>new Date(d.release_date)),x=d3.scaleTime().domain(d3.extent(dates)).range([m.left,width-m.right]); let y,label;
+  if(state.landscape==="overall"){const vals=data.map(d=>score(d,state.metric)).filter(v=>v!=null);y=d3.scaleLinear().domain(d3.extent(vals)).nice().range([height-m.bottom,m.top]);label=metricById(state.metric).label;}
+  else {const key=state.landscape==="language"?"language_family":"vision_family";const counts=d3.rollups(data,v=>v.length,d=>d[key]).sort((a,b)=>b[1]-a[1]);const top=counts.slice(0,10).map(d=>d[0]);y=d3.scalePoint().domain(top).range([m.top,height-m.bottom]).padding(.5);label=state.landscape==="language"?"Language backbone family":"Vision encoder family";}
+  svg.append("g").attr("transform",`translate(0,${height-m.bottom})`).call(d3.axisBottom(x).ticks(5)); svg.append("g").attr("transform",`translate(${m.left},0)`).call(state.landscape==="overall"?d3.axisLeft(y):d3.axisLeft(y));
+  svg.append("text").attr("transform",`translate(18,${height/2}) rotate(-90)`).attr("text-anchor","middle").text(label);
+  const providers=[...new Set(data.map(d=>d.organization_group))],color=d3.scaleOrdinal(providers,d3.schemeTableau10);
+  const shown=data.filter(d=>state.landscape==="overall"?score(d,state.metric)!=null:y.domain().includes(d[state.landscape==="language"?"language_family":"vision_family"]));
+  svg.selectAll("circle").data(shown).join("circle").attr("cx",d=>x(new Date(d.release_date))).attr("cy",d=>state.landscape==="overall"?y(score(d,state.metric)):y(d[state.landscape==="language"?"language_family":"vision_family"])).attr("r",d=>d.parameters_b?Math.max(3,Math.min(10,Math.sqrt(d.parameters_b))):3.2).attr("fill",d=>color(d.organization_group)).attr("opacity",.65).attr("stroke","white").on("mousemove",(e,d)=>showTooltip(e,modelTip(d))).on("mouseleave",hideTooltip);
 }
 
-function activatePlane(id) {
-    if (!id) return;
-    if (id === state.activePlane) return;
-    state.activePlane = id;
-    applyActivePlaneState(true);
+function drawNetwork() {
+  const width=chartSize("#network-chart"),height=560,svg=addSvg("#network-chart",width,height),nodes=state.data.network.nodes.map(d=>({...d})),links=state.data.network.links.map(d=>({...d}));
+  const sim=d3.forceSimulation(nodes).force("link",d3.forceLink(links).id(d=>d.id).distance(115).strength(.45)).force("charge",d3.forceManyBody().strength(-250)).force("x",d3.forceX(d=>d.type==="provider"?width*.28:width*.72).strength(.18)).force("y",d3.forceY(height/2).strength(.08)).force("collide",d3.forceCollide(d=>Math.sqrt(d.count)*2.2+20));
+  const link=svg.append("g").selectAll("line").data(links).join("line").attr("stroke","#d8c5c2").attr("stroke-width",d=>Math.max(1,Math.sqrt(d.value||d.count||1)));
+  const node=svg.append("g").selectAll("g").data(nodes).join("g").style("cursor","default"); node.append("circle").attr("r",d=>Math.max(7,Math.min(21,Math.sqrt(d.count)*3))).attr("fill",d=>d.type==="provider"?COLORS.navy:COLORS.coral).attr("stroke","white").attr("stroke-width",2); node.append("text").attr("x",d=>d.type==="provider"?-13:13).attr("text-anchor",d=>d.type==="provider"?"end":"start").attr("dy",".35em").text(d=>d.label);
+  node.on("mouseenter",(e,d)=>{const neighbors=new Set([d.id]);links.forEach(l=>{const s=l.source.id||l.source,t=l.target.id||l.target;if(s===d.id)neighbors.add(t);if(t===d.id)neighbors.add(s);});node.attr("opacity",n=>neighbors.has(n.id)?1:.12);link.attr("opacity",l=>(l.source.id===d.id||l.target.id===d.id)?1:.08);showTooltip(e,`<strong>${d.label}</strong><br>${d.type}<br>${d.count} model records`);}).on("mouseleave",()=>{node.attr("opacity",1);link.attr("opacity",1);hideTooltip();});
+  sim.on("tick",()=>{nodes.forEach(d=>{d.x=Math.max(90,Math.min(width-90,d.x));d.y=Math.max(35,Math.min(height-35,d.y));});link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);node.attr("transform",d=>`translate(${d.x},${d.y})`);});
 }
 
-function renderTensorChart() {
-    const metricId = d3.select("#metric-select").property("value");
-    const metric = state.data.metrics.find(item => item.id === metricId);
-    const scoreModels = state.models.filter(model => model.scores[metricId] != null);
-    const languageCategories = categoryOrder(state.models, "language_family");
-    const visionCategories = categoryOrder(state.models, "vision_family");
-    const scoreExtent = d3.extent(scoreModels, model => model.scores[metricId]);
-    const scorePad = Math.max((scoreExtent[1] - scoreExtent[0]) * .07, 1);
-    const container = d3.select("#tensor-chart");
-    container.selectAll("*").remove();
+function drawAll() { drawRelease(); drawRadar(); drawHeatmap(); drawScatter(); drawLandscape(); drawNetwork(); }
 
-    const width = 2200;
-    const height = 930;
-    const planeWidth = 980;
-    const planeHeight = 700;
-    const margin = {top: 68, right: 30, bottom: 64, left: 100};
-    const innerWidth = planeWidth - margin.left - margin.right;
-    const innerHeight = planeHeight - margin.top - margin.bottom;
-    const x = d3.scaleUtc().domain(dateDomain(state.models)).range([0, innerWidth]);
-    const symbol = d3.symbol()
-        .type(model => model.open_weight ? d3.symbolCircle : d3.symbolDiamond)
-        .size(model => {
-            const radius = markerSize(model);
-            return Math.PI * radius * radius * .56;
-        });
-
-    const planes = [
-        {
-            id: "overall",
-            label: "Overall",
-            number: "01",
-            color: "#e88a42",
-            offset: {x: 300, y: 200},
-            models: scoreModels,
-            y: d3.scaleLinear().domain([scoreExtent[0] - scorePad, scoreExtent[1] + scorePad]).nice().range([innerHeight, 0]),
-            yAxis: scale => d3.axisLeft(scale).ticks(5),
-            yLabel: `${metric.label} (${metric.unit})`,
-            yPosition: model => model.scores[metricId]
-        },
-        {
-            id: "language",
-            label: "Language",
-            number: "02",
-            color: "#c95b95",
-            offset: {x: 600, y: 110},
-            models: state.models,
-            y: d3.scalePoint().domain(languageCategories).range([innerHeight, 0]).padding(.38),
-            yAxis: scale => d3.axisLeft(scale).tickSize(0),
-            yLabel: "Language family",
-            yPosition: model => model.language_family
-        },
-        {
-            id: "vision",
-            label: "Vision",
-            number: "03",
-            color: "#2b9fb4",
-            offset: {x: 900, y: 20},
-            models: state.models,
-            y: d3.scalePoint().domain(visionCategories).range([innerHeight, 0]).padding(.38),
-            yAxis: scale => d3.axisLeft(scale).tickSize(0),
-            yLabel: "Vision family",
-            yPosition: model => model.vision_family
-        }
-    ];
-
-    const svg = container.append("svg")
-        .attr("viewBox", `0 0 ${width} ${height}`)
-        .attr("preserveAspectRatio", "xMidYMid meet")
-        .attr("aria-label", "Stacked tensor visualization with Overall, Language, and Vision scatterplot planes");
-    const defs = svg.append("defs");
-
-    planes.forEach(plane => {
-        const isActive = plane.id === state.activePlane;
-        plane.layout = layoutTensorMarks(plane, x, innerWidth, innerHeight);
-        defs.append("clipPath").attr("id", `clip-${plane.id}`)
-            .append("rect").attr("width", innerWidth).attr("height", innerHeight);
-        const group = svg.append("g").datum(plane).attr("class", `tensor-plane plane-${plane.id}`)
-            .classed("is-active", isActive)
-            .classed("is-inactive", Boolean(state.activePlane) && !isActive)
-            .classed("is-stacked", !state.activePlane)
-            .attr("data-plane", plane.id)
-            .attr("transform", tensorPlaneTransform(plane, isActive));
-
-        group.append("polygon").attr("class", "plane-top")
-            .attr("points", `0,0 12,-10 ${planeWidth + 12},-10 ${planeWidth},0`)
-            .attr("fill", plane.color);
-        group.append("polygon").attr("class", "plane-side")
-            .attr("points", `${planeWidth},0 ${planeWidth + 12},-10 ${planeWidth + 12},${planeHeight - 10} ${planeWidth},${planeHeight}`)
-            .attr("fill", plane.color);
-        group.append("rect").attr("class", "plane-surface")
-            .attr("width", planeWidth).attr("height", planeHeight)
-            .attr("fill", "#ebe8df").attr("stroke", plane.color)
-            .attr("tabindex", 0).attr("role", "button")
-            .attr("aria-label", `${plane.label} channel, ${isActive ? "currently in front" : "select to bring to front"}`)
-            .attr("aria-pressed", isActive ? "true" : "false")
-            .on("click keydown", event => {
-                if (event.type === "click" || event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    activatePlane(plane.id);
-                }
-            });
-        group.append("rect").attr("class", "plane-accent")
-            .attr("width", 7).attr("height", planeHeight).attr("fill", plane.color);
-        group.append("text").attr("class", "plane-number").attr("x", 18).attr("y", 30).text(plane.number);
-        group.append("text").attr("class", "plane-label").attr("x", 50).attr("y", 30).text(plane.label);
-        group.append("text").attr("class", "plane-count").attr("x", planeWidth - 18).attr("y", 30)
-            .attr("text-anchor", "end").text(isActive ? `${plane.models.length} models · in front` : `${plane.models.length} models`);
-
-        const plot = group.append("g").attr("class", "plane-plot")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
-        plot.append("g").attr("class", "tensor-grid")
-            .call(d3.axisLeft(plane.y).tickSize(-innerWidth).tickFormat(""));
-        plot.append("g").attr("class", "tensor-axis")
-            .attr("transform", `translate(0,${innerHeight})`)
-            .call(d3.axisBottom(x).ticks(4).tickFormat(d3.utcFormat("%Y")));
-        plot.append("g").attr("class", "tensor-axis tensor-y-axis")
-            .call(plane.yAxis(plane.y).tickPadding(8));
-        plot.append("text").attr("class", "tensor-axis-title")
-            .attr("x", innerWidth / 2).attr("y", innerHeight + 39).attr("text-anchor", "middle").text("Release time");
-        plot.append("text").attr("class", "tensor-axis-title")
-            .attr("transform", "rotate(-90)").attr("x", -innerHeight / 2).attr("y", -112)
-            .attr("text-anchor", "middle").text(plane.yLabel);
-
-        const marks = plot.append("g").attr("class", "tensor-marks").attr("clip-path", `url(#clip-${plane.id})`)
-            .selectAll("path").data(plane.models, model => model.id).join("path")
-            .attr("class", model => `tensor-mark${model.id === state.selectedId ? " is-selected" : ""}`)
-            .attr("d", symbol)
-            .attr("transform", model => {
-                const position = plane.layout.get(model.id);
-                const base = `translate(${position.x},${position.y})`;
-                return `${base}${model.id === state.selectedId ? " scale(1.65)" : ""}`;
-            })
-            .attr("fill", model => model.open_weight ? state.color(model.organization_group) : "#fffdf8")
-            .attr("stroke", model => model.id === state.selectedId ? "#17231d" : state.color(model.organization_group))
-            .attr("stroke-width", model => model.id === state.selectedId ? 3.5 : 1.4)
-            .attr("opacity", model => state.selectedId && model.id !== state.selectedId ? .42 : .88)
-            .each(function() {
-                const transform = this.getAttribute("transform") || "";
-                this.dataset.baseTransform = transform.replace(/ scale\([^)]*\)$/, "");
-            });
-        marks.filter(model => model.id === state.selectedId).raise();
-        marks.append("title").text(model => `${model.name} · ${plane.label}`);
-        bindTensorMarks(marks, metric, plane, isActive);
-
-        const selectedModel = plane.models.find(model => model.id === state.selectedId);
-        if (selectedModel) {
-            const selectedPosition = plane.layout.get(selectedModel.id);
-            const selectedX = selectedPosition.x;
-            const selectedY = selectedPosition.y;
-            const labelOnLeft = selectedX > innerWidth - 120;
-            const callout = plot.append("g").attr("class", "tensor-selection-callout").attr("pointer-events", "none");
-            callout.append("circle").attr("class", "tensor-selection-halo")
-                .attr("cx", selectedX).attr("cy", selectedY).attr("r", markerSize(selectedModel) + 8);
-            callout.append("text").attr("class", "tensor-selection-label")
-                .attr("x", selectedX + (labelOnLeft ? -13 : 13))
-                .attr("y", Math.max(14, Math.min(innerHeight - 8, selectedY - 13)))
-                .attr("text-anchor", labelOnLeft ? "end" : "start")
-                .text(selectedModel.name);
-        }
-    });
-
-    applyActivePlaneState(false);
-
-    d3.select("#metric-coverage").text(`${scoreModels.length} of ${state.models.length} dated models have this score`);
-}
-
-function updateSelectedModel() {
-    const model = state.modelsById.get(state.selectedId);
-    const container = d3.select("#selected-model");
-    if (!model) {
-        container.html("<strong>No model selected.</strong><span>Choose a point or use the model dropdown to compare one model across all three planes.</span>");
-        return;
-    }
-    const metric = state.data.metrics.find(item => item.id === d3.select("#metric-select").property("value"));
-    const score = model.scores[metric.id] == null ? "not available" : `${model.scores[metric.id]} ${metric.unit}`;
-    container.html(`<strong>${escapeHtml(model.name)}</strong><span>${escapeHtml(model.organization)} · ${escapeHtml(formatDate(model.date))} · ${escapeHtml(model.parameters_label)} · ${escapeHtml(metric.label)}: ${escapeHtml(score)} · ${model.open_weight ? "Open-weight" : "Closed or undisclosed weights"}</span>`);
-}
-
-function selectModel(id) {
-    state.selectedId = id || null;
-    d3.select("#model-select").property("value", state.selectedId ?? "");
-    updateSelectedModel();
-    renderTensorChart();
-}
-
-function renderParameterChart() {
-    const models = state.models.filter(d => d.parameters_b != null && d.parameters_b > 0);
-    const frame = chartFrame("#parameter-chart", 430, 80);
-    const x = d3.scaleUtc().domain(dateDomain(models)).range([0, frame.innerWidth]);
-    const y = d3.scaleLog().domain(d3.extent(models, d => d.parameters_b)).nice().range([frame.innerHeight, 0]);
-    addAxes(frame, x, y, "Release date", "Reported parameters (billions, log scale)", 5);
-    const marks = frame.plot.append("g").selectAll("circle").data(models, d => d.id).join("circle")
-        .attr("cx", d => x(d.date) + hashJitter(d.id, 2.5)).attr("cy", d => y(d.parameters_b))
-        .attr("r", 5).attr("fill", pointFill).attr("stroke", pointStroke).attr("stroke-width", 1.5).attr("opacity", .72);
-    bindMarks(marks);
-    frame.plot.append("text").attr("class", "annotation").attr("x", frame.innerWidth).attr("y", 8).attr("text-anchor", "end")
-        .text(`${models.length} models with reported size`);
-}
-
-function renderNetwork() {
-    const frame = chartFrame("#network-chart", 570, 24, 760);
-    frame.svg.style("min-width", "760px");
-    const network = state.data.network;
-    const providerNodes = network.nodes.filter(d => d.type === "provider");
-    const familyNodes = network.nodes.filter(d => d.type === "family");
-    const nodes = network.nodes.map(d => ({...d}));
-    const byId = new Map(nodes.map(d => [d.id, d]));
-    const providerY = d3.scalePoint().domain(providerNodes.map(d => d.id)).range([40, frame.innerHeight - 20]).padding(.5);
-    const familyY = d3.scalePoint().domain(familyNodes.map(d => d.id)).range([20, frame.innerHeight]).padding(.4);
-    nodes.forEach(node => {
-        node.x = node.type === "provider" ? frame.innerWidth * .18 : frame.innerWidth * .73;
-        node.y = node.type === "provider" ? providerY(node.id) : familyY(node.id);
-    });
-    const width = d3.scaleLinear().domain([1, d3.max(network.links, d => d.count)]).range([1, 8]);
-    const links = frame.plot.append("g").selectAll("path").data(network.links).join("path")
-        .attr("class", "network-link")
-        .attr("stroke-width", d => width(d.count))
-        .attr("d", d => {
-            const s = byId.get(d.source), t = byId.get(d.target), mid = (s.x + t.x) / 2;
-            return `M${s.x},${s.y} C${mid},${s.y} ${mid},${t.y} ${t.x},${t.y}`;
-        });
-    const node = frame.plot.append("g").selectAll("g").data(nodes).join("g")
-        .attr("class", "network-node").attr("transform", d => `translate(${d.x},${d.y})`)
-        .attr("tabindex", 0).attr("role", "button").attr("aria-label", d => `${d.type}: ${d.label}, ${d.count} records`);
-    node.append("circle").attr("r", d => 5 + Math.sqrt(d.count)).attr("fill", d => d.type === "provider" ? "#135b43" : "#dc6d35");
-    node.append("text").attr("x", d => d.type === "provider" ? -12 : 12).attr("dy", ".35em")
-        .attr("text-anchor", d => d.type === "provider" ? "end" : "start").text(d => d.label);
-    const setActive = active => {
-        if (!active) { node.classed("is-muted", false).classed("is-active", false); links.classed("is-muted", false); return; }
-        const connected = new Set([active.id]);
-        network.links.forEach(link => {
-            if (link.source === active.id) connected.add(link.target);
-            if (link.target === active.id) connected.add(link.source);
-        });
-        node.classed("is-muted", d => !connected.has(d.id)).classed("is-active", d => d.id === active.id);
-        links.classed("is-muted", d => d.source !== active.id && d.target !== active.id);
-    };
-    node.on("pointerenter focus", (event, d) => {
-        setActive(d);
-        tooltip.html(`<strong>${escapeHtml(d.label)}</strong>${d.count} model records in this summarized network`).attr("hidden", null);
-        moveTooltip(event);
-    }).on("pointermove", moveTooltip).on("pointerleave blur", () => { setActive(null); hideTooltip(); });
-    frame.plot.append("text").attr("class", "axis-title").attr("x", frame.innerWidth * .18).attr("y", 8).attr("text-anchor", "middle").text("Provider");
-    frame.plot.append("text").attr("class", "axis-title").attr("x", frame.innerWidth * .73).attr("y", 8).attr("text-anchor", "middle").text("Model family");
-}
-
-function renderLegend() {
-    d3.select("#provider-legend").selectAll("span").data(state.data.organization_groups).join("span")
-        .attr("class", "legend-item")
-        .html(d => `<i class="swatch" style="background:${state.color(d)}"></i>${escapeHtml(d)}`);
-}
-
-function updateStats(profile) {
-    d3.select("#stat-models").text(d3.format(",")(profile.model_records));
-    d3.select("#stat-open").text(d3.format(",")(profile.open_weight_models));
-    d3.select("#stat-blocks").text(d3.format(",")(profile.benchmark_blocks));
-    d3.select("#stat-values").text(d3.format(",")(profile.numeric_measurements));
-    d3.select("#date-window").text(`${formatMonth(parseDate(profile.date_min))} to ${formatMonth(parseDate(profile.date_max))}`);
-}
-
-function renderAll() {
-    renderTensorChart();
-    renderParameterChart();
-    renderNetwork();
-}
-
-d3.json("data/interim_models.json").then(data => {
-    const models = data.models.filter(d => d.release_date).map(d => ({...d, date: parseDate(d.release_date)}));
-    state = {
-        data,
-        models,
-        modelsById: new Map(models.map(model => [model.id, model])),
-        selectedId: null,
-        activePlane: null,
-        color: d3.scaleOrdinal(data.organization_groups, COLORS)
-    };
-    const select = d3.select("#metric-select");
-    select.selectAll("option").data(data.metrics).join("option").attr("value", d => d.id).text(d => d.label);
-    select.property("value", "mmmu").on("change", () => {
-        updateSelectedModel();
-        renderTensorChart();
-    });
-    const modelSelect = d3.select("#model-select");
-    const sortedModels = [...models].sort((a, b) => d3.ascending(a.name, b.name));
-    modelSelect.selectAll("option.model-option").data(sortedModels, model => model.id).join("option")
-        .attr("class", "model-option")
-        .attr("value", model => model.id)
-        .text(model => `${model.name} — ${model.organization}`);
-    modelSelect.on("change", event => selectModel(event.target.value));
-    d3.select("#clear-selection").on("click", () => selectModel(null));
-    d3.selectAll(".channel-button").on("click", function() { activatePlane(this.dataset.plane); });
-    updateChannelControls();
-    updateStats(data.profile);
-    renderLegend();
-    renderAll();
-    let previousWidth = document.querySelector("#visualizations").clientWidth;
-    const redraw = new ResizeObserver(entries => {
-        const nextWidth = entries[0].contentRect.width;
-        if (Math.abs(nextWidth - previousWidth) < 2) return;
-        previousWidth = nextWidth;
-        window.clearTimeout(state.resizeTimer);
-        state.resizeTimer = window.setTimeout(() => {
-            renderTensorChart();
-            renderParameterChart();
-            renderNetwork();
-        }, 120);
-    });
-    redraw.observe(document.querySelector("#visualizations"));
+d3.json(DATA_URL).then(data => {
+  state.data=data; state.models=data.models; state.metrics=data.metrics;
+  populateSummary(); setupControls(); drawAll();
+  let resizeTimer; window.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(drawAll,220);});
 }).catch(error => {
-    console.error(error);
-    d3.select("#visualizations").insert("p", ":first-child").attr("class", "load-error")
-        .text("The processed dataset could not be loaded. Serve this folder through a local HTTP server and rebuild the data if needed.");
+  console.error(error);
+  d3.select("#visualizations").insert("p",":first-child").attr("class","source-note").text("The visualization data could not be loaded. Please serve this page through a web server and try again.");
 });

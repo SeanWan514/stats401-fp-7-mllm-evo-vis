@@ -1,8 +1,8 @@
 # From Pixels to Intelligence
 
-An interactive history of open-weight multimodal large language models (MLLMs), developed as Group 7's final visualization project for STATS 401: Data Acquisition and Visualization.
+An interactive guide to the evolution and practical selection of open-weight multimodal large language models (MLLMs), developed by Group 7 for STATS 401: Data Acquisition and Visualization.
 
-**Live prototype:** [https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)
+**Live site:** [https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)
 
 ## Group 7
 
@@ -12,9 +12,18 @@ An interactive history of open-weight multimodal large language models (MLLMs), 
 
 ## Project Overview
 
-This project examines how major multimodal language models have evolved in scale, architecture, provider, openness, and benchmark performance. The interim D3 page reframes the proposal as a model-choice aid and includes a linked three-plane tensor view, a parameter timeline, and a preliminary provider-to-family network.
+The site follows a six-part narrative: opening, introduction, dataset, visualizations, evaluation, and next steps. It explains MLLMs from first principles, documents the raw and processed data, and presents six coordinated D3 views:
 
-See the complete [project proposal](proposal.md), including research questions, datasets, visualization sketches, group responsibilities, interim deliverables, and the Week 2–7 timeline.
+1. animated model-release history;
+2. two-model radar comparison;
+3. sortable benchmark heatmap;
+4. parameter–performance scatterplot with a descriptive Pareto frontier;
+5. overall/language/vision model landscape;
+6. provider–family network.
+
+Each view includes a legend, an analytical purpose, and a planned interaction. The page distinguishes results supported by the current snapshot from future work.
+
+See the [project proposal](proposal.md), [requirements audit](docs/requirements-audit.md), and [change log](CHANGELOG.md).
 
 ## Repository Structure
 
@@ -23,45 +32,41 @@ See the complete [project proposal](proposal.md), including research questions, 
 ├── index.html
 ├── app.js
 ├── styles.css
-├── .github/workflows/deploy-pages.yml
 ├── proposal.md
+├── CHANGELOG.md
 ├── data/
 │   ├── OpenVLM.json
 │   ├── interim_models.json
 │   └── comments_example.jsonl
-├── scripts/
-│   ├── build_interim_data.py
-│   ├── discover_hf_models.py
-│   └── score_comments.py
-└── images/
-    └── visualization-sketches.svg
+├── docs/
+│   └── requirements-audit.md
+├── images/
+│   └── visualization-sketches.svg
+└── scripts/
+    ├── build_interim_data.py
+    ├── build_static_site.py
+    ├── discover_hf_models.py
+    └── score_comments.py
 ```
 
-## Reproduce the Interim Build
+## Reproduce the Site
 
 From the project directory:
 
-```powershell
-python scripts/build_interim_data.py
-python -m http.server 8000
+```bash
+python3 scripts/build_interim_data.py
+python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000/`. A web server is required because the page loads JSON with `d3.json`.
+Open `http://localhost:8000/`. A local server is required because the page loads JSON with `d3.json`.
 
-The raw OpenVLM file is not modified. `build_interim_data.py` extracts the fields used by the prototype, records missingness, and creates a compact processed file. The script reports 285 model records, 6,584 model–benchmark blocks, and 142,843 numeric measurements in the current snapshot.
+The raw OpenVLM file is not modified. The processing script creates a compact visualization file while preserving missing values and recording an anomalous post-snapshot release date. The current snapshot contains 285 model records, 6,584 model–benchmark blocks, and 142,843 numeric measurements.
 
-## Interim Check-In Coverage
+To create the deployable static bundle, run:
 
-- **Dataset:** the page describes the raw and processed data, cleaning steps, coverage, missingness, and one release-date audit flag.
-- **Working visualizations:** Overall, Language, and Vision begin in an offset 01 → 02 → 03 stack. Choosing a channel smoothly raises and expands that sheet above the others. A deterministic collision layout separates overlapping marks while preserving their time/metric anchors; hover/focus exposes an enlarged data table, and selecting a model adds a linked enlarged marker and labeled halo across all three channels. Parameter scale and provider lineage views use the same processed data.
-- **Interaction and animation plan:** every view has a planned interaction and a task-oriented purpose.
-- **Evaluation plan:** the page specifies participants, tasks, measures, feedback, design checks, and success criteria.
-
-## Data Extension Prototypes
-
-`discover_hf_models.py` queries the public Hugging Face API and writes a candidate review queue. It does not merge candidates automatically; release date, license, parameters, architecture, and benchmark comparability require manual verification.
-
-`score_comments.py` accepts a JSON Lines export containing `model`, `source`, `url`, `created_at`, and `text`. Its transparent lexicon is only an implementation placeholder. Before any sentiment result is used, the group should label a validation sample and report platform, language, duplication, and selection biases.
+```bash
+python3 scripts/build_static_site.py
+```
 
 ## Data Sources
 
@@ -70,6 +75,10 @@ The raw OpenVLM file is not modified. `build_interim_data.py` extracts the field
 - Hugging Face model cards and APIs
 - Official model repositories and papers
 
+## Responsible Extension Work
+
+`discover_hf_models.py` generates a candidate review queue from the public Hugging Face API; it does not automatically merge unverified records. `score_comments.py` is a transparent placeholder for future public-comment analysis. No social-media result will be reported until the group documents platform rules, collection criteria, de-identification, consent expectations, sampling bias, and validation quality.
+
 ## Status
 
-Interim check-in prototype implemented. The page includes the required dataset description, processing summary, working visualizations using project data, interaction and animation plans, and evaluation plan. Provider/architecture filtering, brushing, frontier analysis, and full lineage interactions remain planned work.
+The interim MVP is implemented and deployed. The remaining final-project work includes enlarging and validating the dataset, completing richer coordinated interactions, conducting the planned usability evaluation, and preparing the final report and poster.

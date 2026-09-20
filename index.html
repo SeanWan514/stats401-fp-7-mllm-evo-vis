@@ -1,209 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="STATS 401 interim visualization of open-weight multimodal language models.">
-    <title>From Pixels to Intelligence | Interim Check-In</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive, evidence-aware guide to the evolution and capabilities of multimodal large language models.">
+  <title>From Pixels to Intelligence | Open-weight MLLM Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script><script src="app.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
-        <a class="wordmark" href="#top" aria-label="From Pixels to Intelligence home">
-            <span class="wordmark-mark" aria-hidden="true"></span>
-            <span>From Pixels to Intelligence</span>
-        </a>
-        <nav aria-label="Page sections">
-            <a href="#data">Data</a>
-            <a href="#visualizations">Visualizations</a>
-            <a href="#plans">Plans</a>
-            <a href="#evaluation">Evaluation</a>
-        </nav>
-    </header>
+  <header class="site-header"><a class="wordmark" href="#opening" aria-label="From Pixels to Intelligence home"><span class="wordmark-mark" aria-hidden="true"></span><span>From Pixels to Intelligence</span></a><nav aria-label="Project sections"><a href="#introduction">Introduction</a><a href="#dataset">Dataset</a><a href="#visualizations">Visualizations</a><a href="#evaluation">Evaluation</a><a href="#next-steps">Next steps</a></nav></header>
+  <main>
+    <section class="hero" id="opening">
+      <div class="hero-copy-block"><p class="eyebrow">STATS 401 · Group 7 · Interim prototype</p><h1>Which multimodal model fits the task—not just the leaderboard?</h1><p class="hero-copy">A guided, interactive view of 285 multimodal models, six benchmark dimensions, model scale, architecture, openness, and lineage.</p><div class="hero-actions"><a class="button button-primary" href="#introduction">Start with the essentials</a><a class="button" href="#visualizations">Explore the data</a></div></div>
+      <div class="hero-signal" aria-label="Project summary"><span class="signal-kicker">The decision problem</span><strong>Many models.<br>Different strengths.<br>No universal winner.</strong><p>We connect release history, capability, size, architecture, and provider so model choice becomes a transparent comparison.</p></div>
+      <div class="summary-band" aria-label="Dataset summary"><div><strong id="stat-models">285</strong><span>model records</span></div><div><strong id="stat-open">220</strong><span>open-weight</span></div><div><strong id="stat-blocks">6,584</strong><span>benchmark blocks</span></div><div><strong id="stat-values">142,843</strong><span>numeric values</span></div></div>
+    </section>
 
-    <main id="top">
-        <section class="hero">
-            <p class="eyebrow">STATS 401 · Group 7 · Interim check-in</p>
-            <h1>Choosing a multimodal model should be an informed decision, not a leaderboard guess.</h1>
-            <p class="hero-copy">This prototype reframes our proposal as a decision aid. It connects capability, release time, model architecture, parameter scale, openness, and provider so students and technical users can identify plausible model choices and understand the tradeoffs behind them.</p>
-            <div class="hero-actions">
-                <a class="button button-primary" href="#visualizations">Explore the prototype</a>
-                <a class="button" href="proposal.md">Read the proposal</a>
-            </div>
-        </section>
+    <section class="section" id="introduction">
+      <div class="section-heading"><div><p class="eyebrow">01 · Introduction</p><h2>From language-only systems to models that can read the visual world</h2></div><p class="section-lede">This project starts with a practical question: how can a user compare models whose capabilities, scale, openness, and evaluation records differ?</p></div>
+      <div class="intro-grid">
+        <article class="explain-card"><span class="card-index">What</span><h3>What is an MLLM?</h3><p>A multimodal large language model combines a language model with components that process other forms of information—most commonly images. It can connect visual evidence with language to answer questions about charts, documents, diagrams, photographs, or other mixed text-and-image inputs.</p></article>
+        <article class="explain-card"><span class="card-index">Why</span><h3>Why model choice is difficult</h3><p>New MLLMs appear rapidly, and each release may emphasize a different advantage: reasoning, OCR, parameter efficiency, openness, or a particular benchmark. A single rank hides these tradeoffs, while incompatible metrics cannot be responsibly averaged without assumptions.</p></article>
+        <article class="explain-card"><span class="card-index">Focus</span><h3>What we investigate</h3><p>We compare release timing, benchmark profiles, parameter scale, language and vision backbones, provider relationships, and open-weight status. Our goal is not to name one “best” model, but to support task-aware shortlisting and evidence-based exploration.</p></article>
+        <article class="explain-card"><span class="card-index">How</span><h3>How visualization helps</h3><p>Coordinated views move from context to comparison: an animated history establishes growth, profiles expose capability differences, scale plots reveal tradeoffs, and architecture views explain who and what sit behind each release.</p></article>
+      </div>
+      <p class="citation-note">Background: <a href="https://arxiv.org/abs/2311.13165">Wu et al., <em>Multimodal Large Language Models: A Survey</em></a>; benchmark context: <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yue_MMMU_A_Massive_Multi-discipline_Multimodal_Understanding_and_Reasoning_Benchmark_for_CVPR_2024_paper.pdf">Yue et al., MMMU</a>.</p>
+    </section>
 
-        <section class="summary-band" aria-label="Dataset summary">
-            <div><strong id="stat-models">285</strong><span>model records</span></div>
-            <div><strong id="stat-open">220</strong><span>open-weight models</span></div>
-            <div><strong id="stat-blocks">6,584</strong><span>model–benchmark blocks</span></div>
-            <div><strong id="stat-values">142,843</strong><span>numeric measurements</span></div>
-        </section>
+    <section class="section dataset-section" id="dataset">
+      <div class="section-heading"><div><p class="eyebrow">02 · Dataset</p><h2>One raw benchmark snapshot, one documented analysis table</h2></div><p class="section-lede">We chose OpenVLM because it joins model metadata with broad multimodal evaluation results, allowing multiple questions to be studied from one traceable source.</p></div>
+      <div class="dataset-flow" aria-label="Data processing flow"><article><span>Raw source</span><strong>OpenVLM JSON</strong><p>285 model records, nested metadata, and 6,584 benchmark blocks.</p></article><i aria-hidden="true">→</i><article><span>Processing</span><strong>Python pipeline</strong><p>Parse dates and parameters, standardize labels, retain missingness, and select six metrics.</p></article><i aria-hidden="true">→</i><article><span>Visualization table</span><strong>Compact JSON</strong><p>One row per model with traceable attributes and six comparable score fields.</p></article></div>
+      <div class="dataset-details"><div class="prose"><h3>What the data contains</h3><p>The processed table records release date, provider, model family, open-weight flag, reported parameters, language backbone, vision encoder, and six benchmark scores: MMMU, MathVista, MMBench, MM-Vet, HallusionBench, and OCRBench.</p><p>These benchmarks cover complementary tasks, including multidisciplinary reasoning, mathematical visual reasoning, general visual question answering, hallucination-related evaluation, and optical character recognition. Scores remain separate because their scales and protocols differ.</p></div><div class="prose"><h3>Cleaning and safeguards</h3><ul class="method-list"><li>Dates and reported parameter counts are parsed into comparable fields.</li><li>Recurring provider and backbone labels are standardized.</li><li>Missing values remain visible; they are not guessed or imputed.</li><li>A release dated after the source snapshot is flagged and excluded from temporal claims.</li><li>“Open-weight” follows the source flag and does not imply open training data or code.</li></ul></div></div>
+      <p class="source-note">Source: <a href="https://huggingface.co/spaces/opencompass/open_vlm_leaderboard">OpenVLM Leaderboard</a>, maintained with <a href="https://github.com/open-compass/VLMEvalKit">VLMEvalKit</a>. Current local snapshot: September 17, 2025.</p>
+    </section>
 
-        <section class="section two-column" id="data">
-            <div>
-                <p class="eyebrow">Dataset and processing</p>
-                <h2>Actual OpenVLM data, reduced for transparent comparison</h2>
-            </div>
-            <div class="prose">
-                <p>The raw snapshot contains model metadata and nested benchmark results from the OpenVLM leaderboard. The interim build preserves the raw JSON, then extracts a compact model table with release date, provider, open-weight status, reported parameter count, language backbone, vision encoder, and six well-covered overall benchmark scores.</p>
-                <p>Cleaning standardizes dates, parses reported parameter counts into billions, repairs a small set of recurring organization labels, groups related language and vision backbones, and leaves absent values as <em>not reported</em>. Scores from different benchmarks are never averaged into a synthetic ranking because their scales and tasks differ.</p>
-                <ul class="method-list">
-                    <li><strong>Raw:</strong> 285 model records and 6,584 benchmark result blocks.</li>
-                    <li><strong>Processed:</strong> one row per model plus six comparable score fields used by the prototype.</li>
-                    <li><strong>Coverage:</strong> 229 parameter counts, 224 language backbones, and 219 vision encoders.</li>
-                    <li><strong>Release-date window:</strong> <span id="date-window">April 2023 to February 2026</span>.</li>
-                    <li><strong>Audit flag:</strong> the file timestamp is September 17, 2025, but one record is dated February 13, 2026; that record needs source verification before final analysis.</li>
-                </ul>
-                <p class="source-note">Source: <a href="https://huggingface.co/spaces/opencompass/open_vlm_leaderboard">OpenVLM Leaderboard</a>. “Open-weight” follows the dataset’s <code>OpenSource</code> flag; it does not guarantee an open license, training code, or training data.</p>
-            </div>
-        </section>
+    <section class="section" id="visualizations">
+      <div class="section-heading"><div><p class="eyebrow">03 · Visualization story</p><h2>Context → comparison → tradeoff → structure</h2></div><p class="section-lede">Six views answer different questions but share the same model records. Select a model in a comparison view to carry it into the radar profile.</p></div>
 
-        <section class="section" id="visualizations">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">Working visualizations</p>
-                    <h2>One three-channel tensor view, one linked model record</h2>
-                </div>
-                <p>Overall capability, language branch, and vision branch are drawn as three parallel 2D scatter planes. Their lower-left to upper-right offset represents the channel dimension only—not another measured variable. Color identifies providers, marker size represents reported parameters, and symbol distinguishes open-weight status.</p>
-            </div>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">01</span><div><h3>How quickly did the field expand?</h3><p>An animated release history accumulates models through the verified snapshot window.</p></div></div><div class="chart-toolbar"><button id="release-play" class="button control-button" type="button">Play history</button><label for="release-year">Through year <output id="release-year-output">2025</output></label><input id="release-year" type="range" min="2023" max="2025" step="1" value="2025"></div><div id="release-chart" class="chart" role="img" aria-label="Animated cumulative release history of multimodal models"></div><div class="figure-note"><div class="mini-legend"><span><i class="dot open"></i>Open-weight</span><span><i class="dot closed"></i>Closed or undisclosed</span></div><p><strong>Why:</strong> establish the pace and composition of releases before capability comparisons. This is a snapshot, not a complete census.</p></div></article>
 
-            <article class="visual-block tensor-block">
-                <div class="visual-intro">
-                    <span class="view-number">01–03</span>
-                    <div>
-                        <h3>Overall · Language · Vision</h3>
-                        <p>All planes share release time on x. Their y-axes show the selected benchmark, language family, and vision family. The diagonal stack progresses from lower-left to upper-right: Overall → Language → Vision.</p>
-                    </div>
-                </div>
-                <div class="channel-key" role="group" aria-label="Select the tensor channel to bring forward">
-                    <button class="channel-button overall" type="button" data-plane="overall" aria-pressed="false">Overall</button><i aria-hidden="true">→</i>
-                    <button class="channel-button language" type="button" data-plane="language" aria-pressed="false">Language</button><i aria-hidden="true">→</i>
-                    <button class="channel-button vision" type="button" data-plane="vision" aria-pressed="false">Vision</button>
-                </div>
-                <div id="tensor-chart" class="chart tensor-chart" role="group" aria-label="Three offset 2D scatterplot planes for overall score, language family, and vision family"></div>
-                <div class="controls" aria-label="Visualization controls">
-                    <label for="metric-select">Benchmark shown on the Overall plane</label>
-                    <select id="metric-select"></select>
-                    <label for="model-select">Browse or select a model</label>
-                    <select id="model-select">
-                        <option value="">No model selected</option>
-                    </select>
-                    <button id="clear-selection" class="button control-button" type="button">Clear selection</button>
-                    <span id="metric-coverage" class="coverage" aria-live="polite"></span>
-                </div>
-                <p class="browse-help">The default stack is 01 Overall → 02 Language → 03 Vision. Choose a channel to bring that full sheet to the front. Points are collision-spread to reveal overlapping models while their exact release dates and values remain available in the hover table; click a point to compare that model across every channel.</p>
-                <div id="selected-model" class="selected-model" aria-live="polite">
-                    <strong>No model selected.</strong>
-                    <span>Choose a point or use the model dropdown to compare one model across all three planes.</span>
-                </div>
-                <div id="provider-legend" class="legend" aria-label="Provider legend"></div>
-                <div class="mark-key" aria-label="Open-weight encoding legend">
-                    <span><i class="sample filled"></i>Circle = open-weight</span>
-                    <span><i class="sample hollow"></i>Open diamond = closed or undisclosed</span>
-                    <span><i class="sample sized"></i>Larger area = more parameters</span>
-                </div>
-            </article>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">02</span><div><h3>Where do two models differ?</h3><p>A normalized radar profile compares benchmark strengths without averaging incompatible score scales.</p></div></div><div class="chart-toolbar compare-controls"><label for="radar-model-a">Model A<select id="radar-model-a"></select></label><label for="radar-model-b">Model B<select id="radar-model-b"></select></label></div><div id="radar-chart" class="chart radar-chart" role="img" aria-label="Radar chart comparing two selected models across six benchmarks"></div><div class="figure-note"><div class="mini-legend"><span><i class="line-swatch a"></i>Model A</span><span><i class="line-swatch b"></i>Model B</span><span>Outer = higher within benchmark</span></div><p><strong>Why:</strong> reveal complementary strengths. Normalization is used only for shape comparison; hover for exact scores.</p></div></article>
 
-            <article class="visual-block">
-                <div class="visual-intro">
-                    <span class="view-number">04</span>
-                    <div>
-                        <h3>Parameter scale over release time</h3>
-                        <p>A logarithmic y-axis prevents the largest systems from compressing smaller models and supports direct inspection of the scale–recency tradeoff.</p>
-                    </div>
-                </div>
-                <div id="parameter-chart" class="chart" role="group" aria-label="Log-scale scatterplot of model parameters by release date"></div>
-            </article>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">03</span><div><h3>Which models are consistently strong?</h3><p>A sortable heatmap compares the top 24 covered models across all six benchmark dimensions.</p></div></div><div class="chart-toolbar"><label for="heatmap-sort">Sort rows by<select id="heatmap-sort"></select></label></div><div id="heatmap-chart" class="chart heatmap-chart" role="img" aria-label="Heatmap of model performance across six benchmarks"></div><div class="figure-note"><div class="gradient-legend"><span>Lower</span><i></i><span>Higher</span><span class="missing-key">× Missing</span></div><p><strong>Why:</strong> prevent one benchmark from dominating. Click a model row to send it to the radar comparison.</p></div></article>
 
-            <article class="visual-block network-block">
-                <div class="visual-intro">
-                    <span class="view-number">05</span>
-                    <div>
-                        <h3>Provider-to-family lineage map</h3>
-                        <p>This preliminary node-link view connects the seven largest providers in the dataset to the model families they release. Link width represents the number of models.</p>
-                    </div>
-                </div>
-                <div id="network-chart" class="chart chart-network" role="group" aria-label="Node-link graph connecting providers to model families"></div>
-            </article>
-        </section>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">04</span><div><h3>Does a larger model always score higher?</h3><p>A log-scale scatterplot relates reported parameters to a selected benchmark and identifies a descriptive Pareto frontier.</p></div></div><div class="chart-toolbar"><label for="scatter-metric">Benchmark<select id="scatter-metric"></select></label><label class="check-label"><input id="scatter-open" type="checkbox"> Open-weight only</label></div><div id="scatter-chart" class="chart" role="img" aria-label="Scatterplot of model parameters and benchmark score"></div><div class="figure-note"><div class="mini-legend"><span><i class="dot open"></i>Open-weight</span><span><i class="dot closed"></i>Closed or undisclosed</span><span><i class="frontier-key"></i>Observed frontier</span></div><p><strong>Why:</strong> support size-aware shortlisting. Frontier membership is descriptive, not causal or deployment efficiency.</p></div></article>
 
-        <section class="section plan-section" id="plans">
-            <div class="section-heading compact">
-                <div>
-                    <p class="eyebrow">Interaction and animation plan</p>
-                    <h2>Interactions will answer comparison tasks, not decorate the page</h2>
-                </div>
-            </div>
-            <div class="table-wrap">
-                <table>
-                    <thead><tr><th>View</th><th>Planned interaction or animation</th><th>Purpose</th></tr></thead>
-                    <tbody>
-                        <tr><td>Capability timeline</td><td>Metric switch, date brush, provider filter, linked model selection, animated mark repositioning.</td><td>Compare capability perspectives and identify models that remain strong under different tasks.</td></tr>
-                        <tr><td>Language backbone</td><td>Filter by backbone family; highlight every VLM sharing a selected backbone across views.</td><td>Trace reuse and show whether apparent model diversity depends on a few language foundations.</td></tr>
-                        <tr><td>Vision encoder</td><td>Filter/highlight encoder families; transition between family-level and exact-model rows.</td><td>Reveal visual-branch concentration while preserving details on demand.</td></tr>
-                        <tr><td>Parameter scale</td><td>Brush parameter range; toggle open-weight-only; show a metric-specific Pareto frontier.</td><td>Shortlist smaller models that remain competitive and inspect missing size reports.</td></tr>
-                        <tr><td>Lineage network</td><td>Select provider or family, highlight descendants, zoom/pan, and link selections to all charts.</td><td>Move from “who built it?” to the relevant releases and architecture choices.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">05</span><div><h3>What changed beneath the model name?</h3><p>A coordinated landscape preserves the Overall, Language, and Vision perspectives in a clean single-view switcher.</p></div></div><div class="segmented" role="group" aria-label="Choose model landscape channel"><button class="landscape-button active" type="button" data-landscape="overall">Overall score</button><button class="landscape-button" type="button" data-landscape="language">Language backbone</button><button class="landscape-button" type="button" data-landscape="vision">Vision encoder</button></div><div id="landscape-chart" class="chart" role="img" aria-label="Model release landscape by capability or architecture family"></div><div class="figure-note"><div class="mini-legend"><span>Color = provider</span><span>Size = parameters</span><span>Hover = details</span></div><p><strong>Why:</strong> connect performance to architecture reuse and timing without stacking three competing planes.</p></div></article>
 
-        <section class="section two-column" id="evaluation">
-            <div>
-                <p class="eyebrow">Evaluation plan</p>
-                <h2>Test whether the dashboard improves model-choice reasoning</h2>
-            </div>
-            <div class="prose">
-                <p>We will conduct task-based usability sessions with 6–10 students or technically interested users. Each participant will complete three scenarios: shortlist an open-weight model under a parameter budget, compare two architecture branches, and explain one provider–family lineage. We will record task completion, time, errors, filter paths, and whether the final answer cites evidence from more than one view.</p>
-                <p>Afterward, participants will rate clarity, confidence, perceived usefulness, and trust in the missing-data treatment on five-point scales, followed by two open questions about confusion and desired information. We will also run a checklist-based design review for legibility, color/shape redundancy, keyboard access, tooltip completeness, benchmark comparability, and mobile layout.</p>
-                <p><strong>Success criteria:</strong> at least 80% correct task completion, median confidence of 4/5 or higher, no systematic benchmark-scale confusion, and actionable qualitative feedback rather than only aesthetic preference.</p>
-            </div>
-        </section>
+      <article class="visual-card"><div class="visual-heading"><span class="view-number">06</span><div><h3>Who develops which model families?</h3><p>A provider-to-family network reveals concentration, reuse, and the organizations shaping major branches.</p></div></div><div id="network-chart" class="chart network-chart" role="img" aria-label="Network connecting model providers to model families"></div><div class="figure-note"><div class="mini-legend"><span><i class="node-key provider"></i>Provider</span><span><i class="node-key family"></i>Model family</span><span>Link width = count</span></div><p><strong>Why:</strong> supply structural context that a ranked table cannot. Hover a node to isolate its neighbors.</p></div></article>
 
-        <section class="section extension-section" id="extensions">
-            <div class="section-heading compact">
-                <div>
-                    <p class="eyebrow">Data extension plan</p>
-                    <h2>New-model discovery and public feedback</h2>
-                </div>
-            </div>
-            <div class="extension-grid">
-                <div>
-                    <h3>Model updates</h3>
-                    <p>A reproducible script queries the Hugging Face API for recently updated image-to-text models and writes a review queue. Candidates are not merged automatically: the team will verify release date, open-weight status, provider, parameters, architecture, and benchmark protocol first.</p>
-                </div>
-                <div>
-                    <h3>Comments and sentiment</h3>
-                    <p>Public or consented comments can add a reception layer, but sentiment is not evidence of model quality. The prototype scorer keeps source, URL, date, and model fields so platform bias, duplicate text, language coverage, and temporal drift can be audited. A manually labelled sample is required before interpretation.</p>
-                </div>
-                <div>
-                    <h3>Why this is enough data</h3>
-                    <p>The existing file already contains more than 140,000 numeric measurements. Comments should therefore answer a distinct question—how users discuss reliability, speed, or failure modes—not merely inflate the row count.</p>
-                </div>
-            </div>
-        </section>
+      <section class="interaction-plan" aria-labelledby="interaction-plan-title"><div><p class="eyebrow">Interaction and animation plan</p><h3 id="interaction-plan-title">Every interaction supports an analytical task</h3></div><div class="table-wrap"><table><thead><tr><th>View</th><th>Working now</th><th>Purpose / planned extension</th></tr></thead><tbody><tr><td>Release history</td><td>Play/pause and year scrubber</td><td>See accumulation; add provider/family filters.</td></tr><tr><td>Radar comparison</td><td>Two model selectors and hover detail</td><td>Compare profiles; add shareable pairs.</td></tr><tr><td>Benchmark heatmap</td><td>Sorting, hover, linked selection</td><td>Find consistent/specialized models; add coverage filter.</td></tr><tr><td>Scale–performance</td><td>Metric switch, openness filter, hover, frontier</td><td>Explore tradeoffs; add brushing/linking.</td></tr><tr><td>Model landscape</td><td>Variable switching and details on demand</td><td>Connect releases and backbones; add family filter.</td></tr><tr><td>Lineage network</td><td>Hover highlighting and details on demand</td><td>Trace structure; add zoom, pan, and linked selection.</td></tr></tbody></table></div></section>
+    </section>
 
-        <section class="section talking-points">
-            <p class="eyebrow">What we will add verbally</p>
-            <h2>Interpretation prompts for the in-class check-in</h2>
-            <ol>
-                <li>Identify one model whose benchmark score is unusually high for its reported size, while avoiding a causal “efficiency” claim.</li>
-                <li>Point out one language or vision backbone that appears across multiple providers and explain why linked highlighting would help.</li>
-                <li>Explain why missing parameter or architecture fields remain visible rather than being guessed.</li>
-                <li>Ask the teaching team whether the four coordinated temporal views count as distinct interim visualizations and whether the provider lineage map meets the final complex-idiom requirement.</li>
-            </ol>
-        </section>
-    </main>
+    <section class="section evaluation-section" id="evaluation"><div class="section-heading"><div><p class="eyebrow">04 · Evaluation</p><h2>What the current evidence suggests—and what we will test</h2></div><p class="section-lede">Interim observations are descriptive findings from this snapshot, not claims about the entire MLLM ecosystem.</p></div><div class="finding-grid"><article><strong>Rapid expansion</strong><p>The verified records rise from 22 releases in 2023 to 171 in 2024 and 91 through the 2025 snapshot, increasing the burden of model comparison.</p></article><article><strong>No single capability axis</strong><p>Different leaders emerge across reasoning, OCR, hallucination-related, and general visual benchmarks; a single aggregate would hide specialization.</p></article><article><strong>Scale is incomplete evidence</strong><p>Reported parameters are available for 229 of 285 models. Some sub-10B models remain competitive, while many high-scoring systems omit size.</p></article><article><strong>Architecture is concentrated</strong><p>InternVL, LLaVA, and Qwen-VL recur across releases, making backbone and lineage views important context for apparent diversity.</p></article></div><div class="evaluation-plan"><div><h3>What we will evaluate</h3><p>Whether users can identify a suitable model under capability, openness, and parameter constraints—and explain their choice using multiple views.</p></div><div><h3>How</h3><p>Task-based sessions with 6–10 students or technical users, five-point ratings, open questions, and a checklist review for legibility, accessibility, missingness, and comparability.</p></div><div><h3>What we will collect</h3><p>Completion, time, errors, interaction paths, evidence cited, confidence, usefulness, trust in missing-data treatment, and qualitative feedback.</p></div><div><h3>Success criteria</h3><p>At least 80% correct completion, median confidence ≥4/5, no systematic benchmark-scale confusion, and actionable design feedback.</p></div></div></section>
 
-    <footer>
-        <p>Group 7 · Sean Wan · Yuxuan Huang · Shilin Ou</p>
-        <p>STATS 401 Data Acquisition and Visualization</p>
-    </footer>
-    <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+    <section class="section next-section" id="next-steps"><div class="section-heading"><div><p class="eyebrow">05 · Next steps</p><h2>Strengthen the evidence, interaction, and distinct contribution</h2></div><span class="future-badge">Planned—not current results</span></div><div class="next-grid"><article><h3>Expand and audit acquisition</h3><p>Verify anomalous dates, refresh the snapshot, and manually curate missing release, license, architecture, and parameter fields from official sources.</p></article><article><h3>Add responsible user evidence</h3><p>Collect permissible public discussion from Reddit, X/Twitter, and model communities through approved APIs or policy-compliant manual review. Preserve provenance, remove duplicates, protect privacy, and validate text coding.</p></article><article><h3>Deepen analytical rigor</h3><p>Separate open-weight from fully open models, audit benchmark versions, quantify coverage bias, test frontier sensitivity, and avoid causal claims.</p></article><article><h3>Build a distinctive decision aid</h3><p>Develop linked task-based shortlisting, architecture lineage, profile comparison, and evidence-aware annotations—more than another leaderboard.</p></article><article><h3>Complete final interactions</h3><p>Add brushing/linking, provider and family filters, network zoom/pan, persistent selection, keyboard states, and responsive refinements.</p></article><article><h3>Evaluate and iterate</h3><p>Run the usability study, document findings, revise encodings based on evidence, and report limitations with final conclusions.</p></article></div><div class="limitations"><strong>Current limitations</strong><span>One leaderboard source</span><span>Uneven metadata</span><span>Protocol differences</span><span>Availability bias</span><span>No user-opinion data yet</span></div></section>
+  </main>
+  <footer><p>Group 7 · Sean Wan · Yuxuan Huang · Shilin Ou</p><p><a href="proposal.md">Project proposal</a> · <a href="https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis">Source and documentation</a></p></footer><div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 </body>
 </html>
