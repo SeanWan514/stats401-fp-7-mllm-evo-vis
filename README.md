@@ -2,6 +2,8 @@
 
 An interactive history of open-weight multimodal large language models (MLLMs), developed as Group 7's final visualization project for STATS 401: Data Acquisition and Visualization.
 
+**Live prototype:** [https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)
+
 ## Group 7
 
 - Sean Wan — Project Lead
@@ -21,6 +23,7 @@ See the complete [project proposal](proposal.md), including research questions, 
 ├── index.html
 ├── app.js
 ├── styles.css
+├── .github/workflows/deploy-pages.yml
 ├── proposal.md
 ├── data/
 │   ├── OpenVLM.json
