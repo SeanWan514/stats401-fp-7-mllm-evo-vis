@@ -14,7 +14,6 @@ This branch delivers Shilin Ou's data acquisition, cleaning and preparation work
 | Community feedback | 21,674 | Unique filtered source bodies/comments: 19,547 GitHub community objects and 2,127 HF objects with unknown author role. |
 | Task-labeled feedback | 1,965 | Rule suggestions across 8 task definitions; 19,709 records remain task-unclassified. |
 | Canonical-model-linked feedback | 1,507 | Contextual association to a selected exact model; not proof that the author tested that version. |
-| Human annotation worksheet | 250 real records | Blank human fields; zero records claimed human validated. Stored locally. |
 
 Repository accounting: 24,182 observations → 20,497 unique repositories → 18,255 retained; 3,685 repeated observations and 2,242 exclusions. Family inference gives precedence to the model name, then explicit base models, then architecture tags. Training-dataset names do not establish model family. GGUF/MLX format alone does not establish quantization; 154 conflicting cases remain unresolved.
 
