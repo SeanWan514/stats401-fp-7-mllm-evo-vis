@@ -1,6 +1,6 @@
 # Data handoff explorer: view contract
 
-This is an independent integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/final.html). It demonstrates that Shilin's prepared tables can support the five agreed views. It does not replace the original interim site, claim completion of the visualization teammate's assignment, or substitute for the group's user evaluation.
+The existing integration preview at `final.html` now includes the visualization revision focused on views 1, 4, and 5. It uses Shilin's prepared tables and retains the existing interactive task explorer and evolution map. The original interim remains at `index.html`. See the [current setup and design guide](visualization-guide.html) and [revision QA](../reports/visualization-qa.md). The implementation does not substitute for the group's user evaluation.
 
 ## Run and rebuild
 
@@ -21,11 +21,11 @@ The browser requests only [view_data.json](https://github.com/SeanWan514/stats40
 
 | View | What | Why | How and linked action |
 | --- | --- | --- | --- |
-| Ecosystem growth | Cumulative repositories created **within** selected months, or verified canonical releases in a separate mode | Distinguish ecosystem activity and derivatives from original model releases | D3 stacked area, stable family colors, family/type filters, exact totals, monthly brush; brushing updates the shared time window |
+| Ecosystem growth | Cumulative repositories created **within** selected months, or verified canonical releases in a separate mode | Distinguish ecosystem activity and derivatives from original model releases | D3 stepped stacked area, stable family colors, family/type filters, exact monthly table, partial-month hatching, monthly brush; brushing updates the shared time window |
 | User task explorer | Task phrases and a ranked list sized by distinct eligible feedback records | Make task demand visible without interpreting generic word frequency as suitability | D3 SVG phrase layout, deterministic placement, platform/time/family filtering; clicking a phrase selects the same task in the matrix and reveals definition, denominator, mapping rationale, and source excerpts |
 | Family evolution | Canonical models at their recorded release dates in family lanes | Inspect chronology and recorded relationships without inventing ancestry | D3 SVG nodes, curved links, sourced type filter, optional label expansion; click or keyboard-select a node to inspect metadata, relationships, sources, and comparison actions |
-| Two-model radar | Eight separate benchmark axes and a raw-score table | Expose complementary strengths and missing evidence without making an aggregate ranking | Two selectors, fixed scale normalization, explicit per-axis source protocol selection, source links; absent dimensions break adjacent line segments instead of becoming zero |
-| Task–model matrix | Separate benchmark coverage B, rule-inferred experience E, and exact-model eligible feedback C | Shortlist on evidence and reveal gaps, without equating volume with quality | Custom SVG, selected task highlighting, family/license/parameter/openness filters, coverage/experience/name/parameter sorting, 14-model pagination, cell drill-down, send-to-A/B controls |
+| Two-model radar | Eight separate benchmark axes and a raw-score table | Expose complementary strengths and missing evidence without making an aggregate ranking | Two selectors, fixed scale normalization, explicit per-axis protocol selection, source links, circle/solid versus square/dashed profiles, restore/swap, history/experience links; absent dimensions break adjacent line segments instead of becoming zero |
+| Task–model matrix | Separate benchmark coverage B, rule-inferred experience E, and exact-model eligible feedback C | Shortlist on evidence and reveal gaps, without equating volume with quality | Custom SVG, native task selection, family/license/parameter/openness filters, coverage/experience/name/parameter sorting, top-5/top-10/custom-k/all, 14-model pagination, cell drill-down, send-to-A/B controls and comparison tray |
 
 ## Shared identifiers and state
 

@@ -17,6 +17,16 @@ Data, processing code, and a five-view explorer for selecting open-weight image-
 
 ## Preview locally
 
+For the current visualization revision, see the [setup, design, and demonstration guide](docs/visualization-guide.html). It adds top-5/top-10/custom-k candidates, exact growth counts and partial-month labels, and explicit comparison-to-history/experience links. Views 2 and 3 retain the existing integrated implementations.
+
+A dependency-free Node preview is also available from this directory:
+
+```bash
+node scripts/serve_preview.js 8769
+```
+
+Open `http://127.0.0.1:8769/final.html`. This is the locally verified preview method on Windows; Python remains an alternative below. See [current visualization QA](reports/visualization-qa.md) for the revision's checks and evidence limitations.
+
 ```bash
 git clone --branch shilin --single-branch https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis.git mllm-final-project
 cd mllm-final-project

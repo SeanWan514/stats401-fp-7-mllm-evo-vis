@@ -14,12 +14,12 @@ PUBLIC_DATA = ["OpenVLM.json", "interim_models.json", "final/models.json",
                "final/tasks.json", "final/view_data.json"]
 PUBLIC_DOCS = ["requirements-audit.md", "final-view-contract.md", "data-pipeline.md",
                "model-methodology.md", "feedback-methodology.md", "implementation-plan.md",
-               "README.md", "quickstart.md", "data-dictionary.md"]
+               "README.md", "quickstart.md", "data-dictionary.md", "visualization-guide.html"]
 PUBLIC_REPORTS = ["delivery.md", "delivery-zh.md", "final_validation.json", "repository_counts.json",
                   "feedback_quality.json", "model_data_quality.json", "model_radar_coverage.json",
                   "model_validation.json", "feedback_raw_provenance.json", "reproducibility.json",
                   "public_data_manifest.json", "public_reconstruction.json", "README.md",
-                  "teammate_workflow_validation.json"]
+                  "teammate_workflow_validation.json", "visualization-qa.md"]
 
 def main() -> None:
     if DIST.exists():
