@@ -81,7 +81,7 @@ def main():
     total.update(redactions)
     count = sum(bool(line.strip()) for line in published.split(b'\n'))
     report = {
-        'snapshot_date': STAMP, 'branch': 'codex/final-data-pipeline',
+        'snapshot_date': STAMP, 'branch': 'shilin',
         'raw_cache_file_count': len(entries),
         'source_raw_bytes': sum((ROOT / e['path']).stat().st_size for e in entries),
         'feedback_records': count,

@@ -1,6 +1,6 @@
 # Data handoff explorer: view contract
 
-This is an independent integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/final.html). It demonstrates that Shilin's prepared tables can support the five agreed views. It does not replace the original interim site, claim completion of the visualization teammate's assignment, or substitute for the group's user evaluation.
+This is an independent integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/final.html). It demonstrates that Shilin's prepared tables can support the five agreed views. It does not replace the original interim site, claim completion of the visualization teammate's assignment, or substitute for the group's user evaluation.
 
 ## Run and rebuild
 
@@ -13,9 +13,9 @@ python3 -m http.server 8767 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8767/final.html`. Serve over HTTP; browsers commonly block JSON fetches from `file://`. D3 7.9.0 is pinned to the jsDelivr CDN. If D3 or the prepared JSON cannot load, the page displays an explicit error instead of example data.
 
-`build_final_views.py` reads [data/final/repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/repositories.jsonl), [models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/models.json), `benchmark_results.csv` (or `.csv.gz`), [model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/model_relationships.csv), `feedback.jsonl`, and [tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/tasks.json). The optional [reports/model_radar_coverage.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/model_radar_coverage.json) supplies the reviewed default pair and each axis's source protocol group. It writes [data/final/view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/view_data.json); missing source files are recorded in `missing_inputs` and the page displays a partial-handoff notice.
+`build_final_views.py` reads [data/final/repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/repositories.jsonl), [models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/models.json), `benchmark_results.csv` (or `.csv.gz`), [model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/model_relationships.csv), `feedback.jsonl`, and [tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/tasks.json). The optional [reports/model_radar_coverage.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/model_radar_coverage.json) supplies the reviewed default pair and each axis's source protocol group. It writes [data/final/view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/view_data.json); missing source files are recorded in `missing_inputs` and the page displays a partial-handoff notice.
 
-The browser requests only [view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/view_data.json), containing monthly ecosystem counts, canonical metadata, eight dimension specifications, qualified primary scores, sourced relationships, sparse feedback aggregates, and a limited excerpt lookup. It never downloads the complete feedback JSONL or the 140,000-plus-row benchmark table. The full source tables remain the authority.
+The browser requests only [view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/view_data.json), containing monthly ecosystem counts, canonical metadata, eight dimension specifications, qualified primary scores, sourced relationships, sparse feedback aggregates, and a limited excerpt lookup. It never downloads the complete feedback JSONL or the 140,000-plus-row benchmark table. The full source tables remain the authority.
 
 ## What / Why / How
 
@@ -80,18 +80,18 @@ node --check final.js
 
 The regression fixtures check deduplication, task denominators, family/model separation, unresolved repository attribution, rule-inferred experience bounds, conflicting score missingness, compressed CSV inputs, contact/token excerpt redaction, Unicode U+2028, missing input notices, and byte-identical rebuilds. These are software/data-contract checks; they do not measure label accuracy or replace usability-study results.
 
-Integration screenshots are saved in [docs/screenshots/](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/codex/final-data-pipeline/docs/screenshots). `final-radar-overview.jpg` shows the radar, metadata, and its evidence caveat. `final-mobile-tasks.jpg` records the narrow-screen check. The five final view screenshots and a whole-page snapshot record the final prepared data handoff.
+Integration screenshots are saved in [docs/screenshots/](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/shilin/docs/screenshots). `final-radar-overview.jpg` shows the radar, metadata, and its evidence caveat. `final-mobile-tasks.jpg` records the narrow-screen check. The five final view screenshots and a whole-page snapshot record the final prepared data handoff.
 
 ### Frozen screenshot snapshot
 
 The final screenshots use **18,255 repositories, 57 canonical models, 143,086 benchmark measurements, and 21,674 cleaned community feedback records**. Of these feedback records, 1,965 have a supported task label and 1,507 resolve to a canonical model. There are eight supported task definitions; the suggested 10–20 category target remains unmet.
 
-- [Ecosystem growth](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-growth.jpg)
-- [Task phrases and ranking](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-tasks.jpg)
-- [Family evolution, Qwen-VL filter](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-evolution.jpg)
-- [Two-model radar overview](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-radar-overview.jpg)
-- [Task–model matrix](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-matrix.jpg)
-- [Whole-page snapshot](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-full-page.jpg)
-- [Mobile task view](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-mobile-tasks.jpg)
+- [Ecosystem growth](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-growth.jpg)
+- [Task phrases and ranking](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-tasks.jpg)
+- [Family evolution, Qwen-VL filter](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-evolution.jpg)
+- [Two-model radar overview](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-radar-overview.jpg)
+- [Task–model matrix](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-matrix.jpg)
+- [Whole-page snapshot](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-full-page.jpg)
+- [Mobile task view](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/screenshots/final-mobile-tasks.jpg)
 
 The final frozen dataset was rechecked through task keyboard selection, model-matrix drill-down, send-to-radar, a no-shared-score model, an empty candidate filter, and the 390px responsive layout. The selected official-table pair displays all eight axes; the displayed comparison caveat remains in place. Browser error logs were empty.

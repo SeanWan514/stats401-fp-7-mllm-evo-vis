@@ -1,11 +1,11 @@
 # Complete public research data
 
-These archives belong to the shared group repository's `codex/final-data-pipeline` branch.
+These archives belong to the shared group repository's `shilin` branch.
 
-- [All 21,674 retained feedback records](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/feedback.jsonl.gz) (`feedback.jsonl.gz`).
-- [All 1,861 raw-cache files](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/archives/raw-cache-2026-10-17.tar.gz) (`raw-cache-2026-10-17.tar.gz`).
-- [Manifest, original/public SHA-256 values and credential-redaction counts](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/public_data_manifest.json).
-- [Restore helper](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/scripts/restore_public_data.py) and [pipeline instructions](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/data-pipeline.md).
+- [All 21,674 retained feedback records](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) (`feedback.jsonl.gz`).
+- [All 1,861 raw-cache files](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/raw-cache-2026-10-17.tar.gz) (`raw-cache-2026-10-17.tar.gz`).
+- [Manifest, original/public SHA-256 values and credential-redaction counts](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/public_data_manifest.json).
+- [Restore helper](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/restore_public_data.py) and [pipeline instructions](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-pipeline.md).
 
 From a fresh clone:
 

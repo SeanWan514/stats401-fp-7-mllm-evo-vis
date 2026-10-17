@@ -8,8 +8,8 @@
 - Verification Status：UNVERIFIED；此标记指整体验收尚未完成，不代表来源未读。实际结果以交付报告为准。
 - Version Label：final_data_plan_v2（含当天实施与推理任务口径）
 - 负责人：Shilin Ou / Owen；目标是完成数据部分并提供可运行的接入检查页。
-- 项目代码：[GitHub 分支](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/codex/final-data-pipeline)
-- 分支：codex/final-data-pipeline
+- 项目代码：[GitHub 分支](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/shilin)
+- 分支：shilin
 - 时间要求：用户要求今天完成。下面采用当天并行执行安排，最终课程截止时间尚未另行提供。
 
 ## 1. 项目要解决什么问题
@@ -115,12 +115,12 @@ GitHub 取 state=all 的 issues 正文和 issue comments，排除包含 pull_req
 
 | 文件 | 核心内容 |
 | --- | --- |
-| [原始缓存压缩包](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/archives/raw-cache-2026-10-17.tar.gz) | 完整采集缓存、模型卡与来源信息；公开副本对凭据样式字符串脱敏，详情见发布清单 |
+| [原始缓存压缩包](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/raw-cache-2026-10-17.tar.gz) | 完整采集缓存、模型卡与来源信息；公开副本对凭据样式字符串脱敏，详情见发布清单 |
 | data/final/repositories.jsonl | repo_id、publisher、family、task、创建/修改时间、license、参数证据、downloads/likes、衍生分类和 provenance |
 | data/final/models.json | canonical models、baseline registry、repo crosswalk、八维定义、发布日期证据 |
 | data/final/benchmark_results.csv | 带版本、split、setting、metric、unit、score 和来源的长表 |
 | data/final/model_relationships.csv | source/target model_id、关系类型、来源、证据 |
-| [完整反馈压缩包](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/feedback.jsonl.gz) | 独立反馈、文本、模型/家族归属、任务/aspect/情感、标注方法和验证状态 |
+| [完整反馈压缩包](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) | 独立反馈、文本、模型/家族归属、任务/aspect/情感、标注方法和验证状态 |
 | data/final/tasks.json | task_id、定义、纳入规则、benchmark 映射及映射理由 |
 | data/final/view_data.json | 从上述表生成的轻量前端聚合与受控证据摘录 |
 | reports/ | pilot、计数漏斗、覆盖、排除原因、质量检查、最终缺口 |
@@ -160,6 +160,6 @@ GitHub 取 state=all 的 issues 正文和 issue comments，排除包含 pull_req
 - [x] 结构检查通过：主键、跨表引用、来源、有限数值和页面计数核对成功；科研有效性仍受来源与未验证标签限制。
 - [x] 五视图接入实际数据，筛选、联动、来源与缺失状态已检查。
 - [x] 全链路离线重建的 8 个输出逐字节一致；README 给出复现命令。反馈首采缓存为归一化选字段，完整响应后补归档的范围见交付报告。
-- [x] [交付报告](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/delivery-zh.md) 已列出完成情况、数据限制与后续工作。仓库/反馈/视图 31 项回归检查通过。
+- [x] [交付报告](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery-zh.md) 已列出完成情况、数据限制与后续工作。仓库/反馈/视图 31 项回归检查通过。
 
 任一 10,000 目标不能达到时，立即报告实测保留量、差额、来源耗尽/权限/相关性原因，以及可用替代。替代可能包括更多相关官方源、独立公布的偏好数据或已有 benchmark 长表，但必须由小组向教师申请调整，不能自行宣布原目标已满足。
