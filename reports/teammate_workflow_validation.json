@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "missing_cache_guard_preserves_outputs": true,
+    "make_restore": true,
+    "make_rebuild": true,
+    "make_reproducibility": true,
+    "make_site": true
+  },
+  "counts": {
+    "canonical_models": 57,
+    "canonical_families": 10,
+    "task_definitions": 8,
+    "repositories": 18255,
+    "feedback": 21674,
+    "task_labeled_feedback": 1965,
+    "exact_canonical_feedback": 1507,
+    "benchmark_rows": 143086,
+    "relationship_rows": 15
+  },
+  "snapshot_date": "2026-10-17",
+  "tested_from": "Clean copy of tracked/public files plus current handoff documentation and commands; restored only published research archives.",
+  "requirements": "Python standard library and Make; no source API authentication or network recollection.",
+  "regression_checks_passed": 31,
+  "documentation_python_examples_passed": true
+}

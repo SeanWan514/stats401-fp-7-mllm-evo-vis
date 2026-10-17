@@ -98,7 +98,7 @@
         "mathvista",
         "mmvet"
       ],
-      "mapping_rationale": "Benchmarks differ in domain and protocol; never pool raw scores. Chinese 推理 is a candidate: capability/math/logic/visual contexts assign reasoning; speed/memory/deployment/error-only contexts are runtime. Ambiguous usage stays a candidate."
+      "mapping_rationale": "Benchmarks differ in domain and protocol; never pool raw scores. The Chinese reasoning/inference term is a candidate: capability/math/logic/visual contexts assign reasoning; speed/memory/deployment/error-only contexts are runtime. Ambiguous usage stays a candidate."
     },
     {
       "id": "image-captioning",

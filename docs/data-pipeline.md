@@ -2,6 +2,8 @@
 
 This branch implements Shilin Ou's data work and a five-view integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/final.html). The original interim page remains at [index.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/index.html). The revised user task is to shortlist open-weight image-and-text models, compare benchmark and reported-experience evidence, and expose tradeoffs and evidence gaps.
 
+For the shortest teammate workflow, use the [quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md). The [data dictionary](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-dictionary.md) explains field types and joins, and the [script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md) separates offline processing from online collection.
+
 ## Files and units
 
 | File | Unit / join key | Interpretation |
@@ -34,7 +36,8 @@ python3 scripts/process_feedback.py
 python3 scripts/build_final_views.py
 python3 scripts/validate_final_data.py
 python3 scripts/build_static_site.py
-python3 -m unittest discover -s tests -p 'test_*.py'
+python3 -m unittest discover -s tests -v
+python3 scripts/test_feedback_processing.py
 python3 scripts/verify_offline_rebuild.py
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
@@ -86,7 +89,7 @@ For benchmarks, raw values, versions, splits, units, source types and comparison
 
 ## Publication boundary
 
-The user authorized public release of complete feedback and raw caches in the group repository branch. They are distributed as [feedback gzip](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) and [raw-cache archive](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/raw-cache-2026-10-17.tar.gz) with [checksums and redaction metadata](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/public_data_manifest.json). Uncompressed local originals and credentials remain excluded from accidental staging. The static Pages builder still serves the lightweight prepared website; full archives are downloaded through GitHub links rather than loaded by the browser.
+Complete feedback and raw caches are published in the shared group branch. They are distributed as [feedback gzip](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) and [raw-cache archive](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/raw-cache-2026-10-17.tar.gz) with [checksums and redaction metadata](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/public_data_manifest.json). Uncompressed local originals and credentials remain excluded from accidental staging. The static Pages builder still serves the lightweight prepared website; full archives are downloaded through GitHub links rather than loaded by the browser.
 The preview contains limited, redacted source excerpts to support traceability; counts use the complete accepted corpus, while the excerpt set is not representative. Public reuse remains subject to source terms. A repository's software license does not automatically license every community comment. Document retrieval instructions and publish the least text needed for the evidence view.
 
 Detailed reports remain in [reports/](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/shilin/reports), with dedicated model and feedback methodology documents in [docs/](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/shilin/docs).

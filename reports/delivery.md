@@ -19,13 +19,15 @@ Repository accounting: 24,182 observations → 20,497 unique repositories → 18
 
 Feedback accounting: 45,047 observed objects → 37,738 unique source objects → 21,674 retained. PRs, known maintainers, bots, acknowledgements, unsupported topics, administrative material and other exclusions are reported separately. Quoted email tails are stripped before eligibility and labeling. Seventy-six explicit model-version conflicts are downgraded to family association.
 
-Chinese **推理** is a reasoning-task candidate. Capability, mathematical, logical and visual contexts support the task; speed, memory, deployment and error contexts are runtime aspects. There are 109 reasoning-labeled records, with 368 ambiguous Chinese mentions retained as candidates and 318 runtime-context records distinguished explicitly. These remain unvalidated machine labels.
+The Chinese reasoning/inference term is a reasoning-task candidate. Capability, mathematical, logical and visual contexts support the task; speed, memory, deployment and error contexts are runtime aspects. There are 109 reasoning-labeled records, with 368 ambiguous Chinese mentions retained as candidates and 318 runtime-context records distinguished explicitly. These remain unvalidated machine labels.
 
 ## Implemented views
 
 The preview includes repository growth / verified releases, task exploration, family evolution, an eight-dimension two-model radar, and a task–model evidence matrix. Filters, brushing, task selection, model selection, evidence links, sorting and missing-data states operate on shared identifiers. The radar uses fixed scales and explicit protocol groups; missing values are gaps. The default pair has eight dimensions in the same official source table, with undisclosed evaluation details identified. This is not an independently reproduced controlled comparison.
 
 ## How the team can use this data next
+
+For runnable teammate workflows, use the [quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md), [data dictionary](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-dictionary.md), and [script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md).
 
 ### Integrate the final website
 
