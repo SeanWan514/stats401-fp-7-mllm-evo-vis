@@ -7,7 +7,7 @@ import shutil
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 FILES = ["index.html", "app.js", "styles.css", "proposal.md", "README.md", "CONTRIBUTING.md", "CHANGELOG.md", ".nojekyll",
-         "final.html", "final.js", "final.css"]
+         "final.html", "final.js", "final.css", "task-evidence.js"]
 # An explicit allowlist prevents research caches and full community text from
 # being published by the existing deployment workflow.
 PUBLIC_DATA = ["OpenVLM.json", "interim_models.json", "final/models.json",

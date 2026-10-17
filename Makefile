@@ -4,7 +4,7 @@ PORT ?= 8765
 .PHONY: help serve restore require-cache rebuild validate test syntax reproducibility site
 
 help:
-	@printf '%s\n' 'serve            Preview final.html (PORT=8765)' 'test             Run all 31 Python regression checks' 'restore          Restore public archives in a fresh clone' 'rebuild          Rebuild final tables from complete caches' 'validate         Check full tables and browser counts' 'syntax           Check final.js with Node' 'reproducibility  Compare repeated builds after an initial rebuild' 'site             Build the allowlisted dist/ website'
+	@printf '%s\n' 'serve            Preview final.html (PORT=8765)' 'test             Run 31 Python and 6 task-view checks' 'restore          Restore public archives in a fresh clone' 'rebuild          Rebuild final tables from complete caches' 'validate         Check full tables and browser counts' 'syntax           Check explorer JavaScript with Node' 'reproducibility  Compare repeated builds after an initial rebuild' 'site             Build the allowlisted dist/ website'
 
 serve:
 	@printf 'Open http://127.0.0.1:%s/final.html\n' '$(PORT)'
@@ -29,9 +29,11 @@ validate:
 test:
 	$(PYTHON) -m unittest discover -s tests -v
 	$(PYTHON) scripts/test_feedback_processing.py
+	node --test tests/task-evidence.test.js
 
 syntax:
 	node --check final.js
+	node --check task-evidence.js
 
 reproducibility: require-cache
 	$(PYTHON) scripts/verify_offline_rebuild.py

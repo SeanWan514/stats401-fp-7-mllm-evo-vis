@@ -17,7 +17,7 @@ Data, processing code, and a five-view explorer for selecting open-weight image-
 
 ## Preview locally
 
-For the current visualization revision, see the [setup, design, and demonstration guide](docs/visualization-guide.html). It adds top-5/top-10/custom-k candidates, exact growth counts and partial-month labels, and explicit comparison-to-history/experience links. Views 2 and 3 retain the existing integrated implementations.
+For the current visualization revisions, see the [setup, design, and demonstration guide](docs/visualization-guide.html). They add top-5/top-10/custom-k candidates, exact growth counts and partial-month labels, and explicit comparison-to-history/experience links. View 2 now provides readable task phrases, exact ranked bars, record/experience switching, mapping-gap filters, and paged source excerpts. View 3 retains the existing integrated implementation.
 
 A dependency-free Node preview is also available from this directory:
 
@@ -77,7 +77,7 @@ Run from the repository root. `make` is optional; equivalent Python commands are
 | --- | --- | --- |
 | `make help` | Show available tasks | Make installed |
 | `make serve` | Preview `final.html` on port 8765 | Prepared files only |
-| `make test` | Run the 31 regression checks | Python 3.10+ |
+| `make test` | Run 31 Python and 6 task-view regression checks | Python 3.10+ and Node.js 20+ |
 | `make restore` | Verify and restore public archives | Fresh clone; refuses different local originals |
 | `make rebuild` | Regenerate final tables and validate them | Restored or existing complete raw caches |
 | `make validate` | Validate full tables and browser counts | Restored feedback / completed rebuild |
@@ -90,6 +90,7 @@ Override the interpreter or port when needed: `make test PYTHON=python` or `make
 
 ```text
 final.html / final.js / final.css    Final five-view explorer
+task-evidence.js                    Task counts, ranking and excerpt-sample helpers
 Makefile                            Optional task shortcuts
 config/                             Curated model and feedback-source manifests
 data/final/                         Prepared tables, gzip downloads and browser payload
