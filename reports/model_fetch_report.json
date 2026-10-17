@@ -1,0 +1,647 @@
+[
+  {
+    "key": "qwen-qwen-vl-chat",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen-VL-Chat",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen-vl-chat",
+    "url": "https://huggingface.co/Qwen/Qwen-VL-Chat/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-2b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2-VL-2B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-2b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-7b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2-VL-7B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-7b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-72b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2-VL-72B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-vl-72b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2-VL-72B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-3b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-VL-3B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-3b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-7b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-VL-7B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-7b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-32b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-VL-32B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-32b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-72b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen2.5-VL-72B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen2-5-vl-72b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-2b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-2B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-2b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-4b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-4B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-4b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-8b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-8B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-8b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-32b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-32B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-32b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-30b-a3b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-30b-a3b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-235b-a22b-instruct",
+    "url": "https://huggingface.co/api/models/Qwen/Qwen3-VL-235B-A22B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-qwen3-vl-235b-a22b-instruct",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-2b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2-2B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-2b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2-2B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-8b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2-8B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-8b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2-8B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-26b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2-26B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-26b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2-26B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-llama3-76b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2-Llama3-76B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-llama3-76b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2-Llama3-76B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-2b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2_5-2B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-2b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2_5-2B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-8b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2_5-8B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-8b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-38b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2_5-38B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-38b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2_5-38B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-78b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL2_5-78B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl2-5-78b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL2_5-78B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-2b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL3-2B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-2b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL3-2B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-8b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL3-8B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-8b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL3-8B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-38b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL3-38B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-38b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL3-38B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-78b",
+    "url": "https://huggingface.co/api/models/OpenGVLab/InternVL3-78B",
+    "status": "cached"
+  },
+  {
+    "key": "opengvlab-internvl3-78b",
+    "url": "https://huggingface.co/OpenGVLab/InternVL3-78B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "liuhaotian-llava-v1-5-7b",
+    "url": "https://huggingface.co/api/models/liuhaotian/llava-v1.5-7b",
+    "status": "cached"
+  },
+  {
+    "key": "liuhaotian-llava-v1-5-7b",
+    "url": "https://huggingface.co/liuhaotian/llava-v1.5-7b/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "liuhaotian-llava-v1-5-13b",
+    "url": "https://huggingface.co/api/models/liuhaotian/llava-v1.5-13b",
+    "status": "cached"
+  },
+  {
+    "key": "liuhaotian-llava-v1-5-13b",
+    "url": "https://huggingface.co/liuhaotian/llava-v1.5-13b/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "lmms-lab-llava-onevision-qwen2-7b-ov",
+    "url": "https://huggingface.co/api/models/lmms-lab/llava-onevision-qwen2-7b-ov",
+    "status": "cached"
+  },
+  {
+    "key": "lmms-lab-llava-onevision-qwen2-7b-ov",
+    "url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "lmms-lab-llava-onevision-qwen2-72b-ov",
+    "url": "https://huggingface.co/api/models/lmms-lab/llava-onevision-qwen2-72b-ov",
+    "status": "cached"
+  },
+  {
+    "key": "lmms-lab-llava-onevision-qwen2-72b-ov",
+    "url": "https://huggingface.co/lmms-lab/llava-onevision-qwen2-72b-ov/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-llama3-v-2-5",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-Llama3-V-2_5",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-llama3-v-2-5",
+    "url": "https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-2-6",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-V-2_6",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-2-6",
+    "url": "https://huggingface.co/openbmb/MiniCPM-V-2_6/raw/main/README.md",
+    "status": "error",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  {
+    "key": "openbmb-minicpm-o-2-6",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-o-2_6",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-o-2-6",
+    "url": "https://huggingface.co/openbmb/MiniCPM-o-2_6/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-5",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-V-4_5",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-5",
+    "url": "https://huggingface.co/openbmb/MiniCPM-V-4_5/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-7b-d-0924",
+    "url": "https://huggingface.co/api/models/allenai/Molmo-7B-D-0924",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-7b-d-0924",
+    "url": "https://huggingface.co/allenai/Molmo-7B-D-0924/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-7b-o-0924",
+    "url": "https://huggingface.co/api/models/allenai/Molmo-7B-O-0924",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-7b-o-0924",
+    "url": "https://huggingface.co/allenai/Molmo-7B-O-0924/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-72b-0924",
+    "url": "https://huggingface.co/api/models/allenai/Molmo-72B-0924",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo-72b-0924",
+    "url": "https://huggingface.co/allenai/Molmo-72B-0924/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmoe-1b-0924",
+    "url": "https://huggingface.co/api/models/allenai/MolmoE-1B-0924",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmoe-1b-0924",
+    "url": "https://huggingface.co/allenai/MolmoE-1B-0924/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-4b",
+    "url": "https://huggingface.co/api/models/allenai/Molmo2-4B",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-4b",
+    "url": "https://huggingface.co/allenai/Molmo2-4B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-8b",
+    "url": "https://huggingface.co/api/models/allenai/Molmo2-8B",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-8b",
+    "url": "https://huggingface.co/allenai/Molmo2-8B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-o-7b",
+    "url": "https://huggingface.co/api/models/allenai/Molmo2-O-7B",
+    "status": "cached"
+  },
+  {
+    "key": "allenai-molmo2-o-7b",
+    "url": "https://huggingface.co/allenai/Molmo2-O-7B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "google-gemma-3-4b-it",
+    "url": "https://huggingface.co/api/models/google/gemma-3-4b-it",
+    "status": "cached"
+  },
+  {
+    "key": "google-gemma-3-4b-it",
+    "url": "https://huggingface.co/google/gemma-3-4b-it/raw/main/README.md",
+    "status": "error",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  {
+    "key": "google-gemma-3-12b-it",
+    "url": "https://huggingface.co/api/models/google/gemma-3-12b-it",
+    "status": "cached"
+  },
+  {
+    "key": "google-gemma-3-12b-it",
+    "url": "https://huggingface.co/google/gemma-3-12b-it/raw/main/README.md",
+    "status": "error",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  {
+    "key": "google-gemma-3-27b-it",
+    "url": "https://huggingface.co/api/models/google/gemma-3-27b-it",
+    "status": "cached"
+  },
+  {
+    "key": "google-gemma-3-27b-it",
+    "url": "https://huggingface.co/google/gemma-3-27b-it/raw/main/README.md",
+    "status": "error",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  {
+    "key": "microsoft-phi-3-5-vision-instruct",
+    "url": "https://huggingface.co/api/models/microsoft/Phi-3.5-vision-instruct",
+    "status": "cached"
+  },
+  {
+    "key": "microsoft-phi-3-5-vision-instruct",
+    "url": "https://huggingface.co/microsoft/Phi-3.5-vision-instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "microsoft-phi-4-multimodal-instruct",
+    "url": "https://huggingface.co/api/models/microsoft/Phi-4-multimodal-instruct",
+    "status": "cached"
+  },
+  {
+    "key": "microsoft-phi-4-multimodal-instruct",
+    "url": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacem4-idefics2-8b",
+    "url": "https://huggingface.co/api/models/HuggingFaceM4/idefics2-8b",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacem4-idefics2-8b",
+    "url": "https://huggingface.co/HuggingFaceM4/idefics2-8b/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacem4-idefics3-8b-llama3",
+    "url": "https://huggingface.co/api/models/HuggingFaceM4/Idefics3-8B-Llama3",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacem4-idefics3-8b-llama3",
+    "url": "https://huggingface.co/HuggingFaceM4/Idefics3-8B-Llama3/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl-7b-chat",
+    "url": "https://huggingface.co/api/models/deepseek-ai/deepseek-vl-7b-chat",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl-7b-chat",
+    "url": "https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2-tiny",
+    "url": "https://huggingface.co/api/models/deepseek-ai/deepseek-vl2-tiny",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2-tiny",
+    "url": "https://huggingface.co/deepseek-ai/deepseek-vl2-tiny/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2-small",
+    "url": "https://huggingface.co/api/models/deepseek-ai/deepseek-vl2-small",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2-small",
+    "url": "https://huggingface.co/deepseek-ai/deepseek-vl2-small/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2",
+    "url": "https://huggingface.co/api/models/deepseek-ai/deepseek-vl2",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-ai-deepseek-vl2",
+    "url": "https://huggingface.co/deepseek-ai/deepseek-vl2/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-2-2b-instruct",
+    "url": "https://huggingface.co/api/models/HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-2-2b-instruct",
+    "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-2.2B-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-256m-video-instruct",
+    "url": "https://huggingface.co/api/models/HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-256m-video-instruct",
+    "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-256M-Video-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-500m-video-instruct",
+    "url": "https://huggingface.co/api/models/HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+    "status": "cached"
+  },
+  {
+    "key": "huggingfacetb-smolvlm2-500m-video-instruct",
+    "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-7-1b",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-V-4.7-1B",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-7-1b",
+    "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-7-35b-a3b",
+    "url": "https://huggingface.co/api/models/openbmb/MiniCPM-V-4.7-35B-A3B",
+    "status": "cached"
+  },
+  {
+    "key": "openbmb-minicpm-v-4-7-35b-a3b",
+    "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B/raw/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "qwen-release",
+    "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-VL/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "internvl-release",
+    "url": "https://raw.githubusercontent.com/OpenGVLab/InternVL/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "minicpm-release",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-V/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "molmo2-release",
+    "url": "https://allenai.org/blog/molmo2",
+    "status": "cached"
+  },
+  {
+    "key": "molmo-release",
+    "url": "https://allenai.org/blog/molmo",
+    "status": "cached"
+  },
+  {
+    "key": "gemma-release",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/",
+    "status": "cached"
+  },
+  {
+    "key": "deepseek-vl2-release",
+    "url": "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-VL2/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "llava-release",
+    "url": "https://raw.githubusercontent.com/haotian-liu/LLaVA/main/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "minicpm-history",
+    "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-V/main/docs/changelog_en.md",
+    "status": "ok",
+    "bytes": 10685
+  },
+  {
+    "key": "smolvlm2-release",
+    "url": "https://huggingface.co/blog/smolvlm2",
+    "status": "cached"
+  },
+  {
+    "key": "metric-vqa",
+    "url": "https://raw.githubusercontent.com/open-compass/VLMEvalKit/main/vlmeval/dataset/image_vqa.py",
+    "status": "cached"
+  },
+  {
+    "key": "metric-hallusion",
+    "url": "https://raw.githubusercontent.com/tianyi-lab/HallusionBench/main/evaluation.py",
+    "status": "cached"
+  },
+  {
+    "key": "metric-ocrbench",
+    "url": "https://raw.githubusercontent.com/Yuliang-Liu/MultimodalOCR/main/OCRBench/README.md",
+    "status": "cached"
+  },
+  {
+    "key": "metric-mmbench",
+    "url": "https://raw.githubusercontent.com/open-compass/VLMEvalKit/main/vlmeval/dataset/image_mcq.py",
+    "status": "cached"
+  }
+]

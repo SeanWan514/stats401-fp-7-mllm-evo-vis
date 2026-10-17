@@ -1,0 +1,51 @@
+{
+  "structural_checks_passed": true,
+  "checks": {
+    "required_files": true,
+    "canonical_unique_ids": true,
+    "task_unique_ids": true,
+    "verified_release_has_source": true,
+    "repository_provenance": true,
+    "repository_target": true,
+    "feedback_target": true,
+    "feedback_provenance": true,
+    "feedback_model_foreign_keys": true,
+    "feedback_task_foreign_keys": true,
+    "benchmark_finite_scores": true,
+    "benchmark_foreign_keys": true,
+    "benchmark_provenance": true,
+    "relationship_foreign_keys": true,
+    "relationship_provenance": true,
+    "view_count_repositories": true,
+    "view_count_feedback": true,
+    "view_count_benchmark_rows": true,
+    "view_no_missing_inputs": true
+  },
+  "counts": {
+    "canonical_models": 57,
+    "canonical_families": 10,
+    "task_definitions": 8,
+    "repositories": 18255,
+    "feedback": 21674,
+    "task_labeled_feedback": 1965,
+    "exact_canonical_feedback": 1507,
+    "human_validated_feedback": 0,
+    "benchmark_rows": 143086,
+    "relationship_rows": 15
+  },
+  "errors": [],
+  "artifact_sha256": {
+    "repositories.jsonl": "8cb5b04b9ff1d17e63123902dd4cacafec440d646becf01cbc91e46cce9c3284",
+    "models.json": "715a7e2bd466e9a534785fa79670d6fe0588fc4e38b254ead22980f767221f50",
+    "model_relationships.csv": "84594c3477667c1b9f633dec4df69149de5c87dc39672487f6175bca7de5dce0",
+    "feedback.jsonl": "7c0c58802b5b0ca4433c36ecb26a12eb2150cd813253d463ae3d817b31c125c6",
+    "tasks.json": "8c9871a9b789c06ef12a97e07b45ab0c0945a798b8a6f79b18d8894e914cae64",
+    "view_data.json": "0b86abae420ba285788aad9c4d5b45cc8b4bc4716e835eda13a116c478d0c4bc"
+  },
+  "research_validation": {
+    "human_label_validation_complete": false,
+    "human_reviewed_records": 0,
+    "completion_evidence": "Pending independent annotator review, overlap agreement and held-out accuracy report.",
+    "note": "Structural integrity and volume are not proof of label accuracy or causal/model suitability claims."
+  }
+}

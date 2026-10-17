@@ -1,0 +1,12 @@
+{
+  "baseline_values_checked": 142843,
+  "all_baseline_values_exactly_preserved": true,
+  "gzip_roundtrip_matches_csv": true,
+  "offline_rebuild_byte_identical": true,
+  "sha256": {
+    "data/final/benchmark_results.csv": "b8d3e0930009edd774746d1d5259e12ee418c235fe956c659c07411f027934db",
+    "data/final/benchmark_results.csv.gz": "dbc454d2b8e4083d100d5e7f7ff0b7e1668ab645f310824e97fa14393a5d2738",
+    "data/final/models.json": "715a7e2bd466e9a534785fa79670d6fe0588fc4e38b254ead22980f767221f50",
+    "data/final/model_relationships.csv": "84594c3477667c1b9f633dec4df69149de5c87dc39672487f6175bca7de5dce0"
+  }
+}

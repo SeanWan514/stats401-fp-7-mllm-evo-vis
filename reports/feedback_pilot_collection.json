@@ -1,0 +1,59 @@
+{
+  "collected_at": "2026-10-17T06:37:15.033093+00:00",
+  "sources": [
+    {
+      "platform": "github",
+      "repo": "OpenGVLab/InternVL",
+      "family_id": "internvl",
+      "scope": "family",
+      "evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "model_ids": [],
+      "status": "ok",
+      "raw_records": 200,
+      "started_at": "2026-10-17T06:37:09.400255+00:00",
+      "finished_at": "2026-10-17T06:37:13.425747+00:00",
+      "limited_run": true,
+      "pages": {
+        "issues": 2,
+        "issues/comments": 2
+      },
+      "threads": 100
+    },
+    {
+      "platform": "github",
+      "repo": "haotian-liu/LLaVA",
+      "family_id": "llava",
+      "scope": "family",
+      "evidence_url": "https://github.com/haotian-liu/LLaVA",
+      "model_ids": [],
+      "status": "ok",
+      "raw_records": 200,
+      "started_at": "2026-10-17T06:37:09.400039+00:00",
+      "finished_at": "2026-10-17T06:37:13.999934+00:00",
+      "limited_run": true,
+      "pages": {
+        "issues": 2,
+        "issues/comments": 2
+      },
+      "threads": 100
+    },
+    {
+      "platform": "github",
+      "repo": "QwenLM/Qwen2.5-VL",
+      "family_id": "qwen-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/QwenLM/Qwen2.5-VL",
+      "model_ids": [],
+      "status": "ok",
+      "raw_records": 200,
+      "started_at": "2026-10-17T06:37:09.400331+00:00",
+      "finished_at": "2026-10-17T06:37:15.032922+00:00",
+      "limited_run": true,
+      "pages": {
+        "issues": 2,
+        "issues/comments": 2
+      },
+      "threads": 100
+    }
+  ]
+}

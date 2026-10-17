@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.0",
+  "scope": "Public official MLLM family repositories and model repositories. Reddit disabled.",
+  "sources": [
+    {
+      "platform": "github",
+      "repo": "haotian-liu/LLaVA",
+      "family_id": "llava",
+      "scope": "family",
+      "evidence_url": "https://github.com/haotian-liu/LLaVA",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "OpenGVLab/InternVL",
+      "family_id": "internvl",
+      "scope": "family",
+      "evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "QwenLM/Qwen2.5-VL",
+      "family_id": "qwen-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/QwenLM/Qwen2.5-VL",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "OpenBMB/MiniCPM-V",
+      "family_id": "minicpm-v",
+      "scope": "family",
+      "evidence_url": "https://github.com/OpenBMB/MiniCPM-V",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "QwenLM/Qwen-VL",
+      "family_id": "qwen-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/QwenLM/Qwen-VL",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "LLaVA-VL/LLaVA-NeXT",
+      "family_id": "llava",
+      "scope": "family",
+      "evidence_url": "https://github.com/LLaVA-VL/LLaVA-NeXT",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "allenai/molmo",
+      "family_id": "molmo",
+      "scope": "family",
+      "evidence_url": "https://github.com/allenai/molmo",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "deepseek-ai/DeepSeek-VL",
+      "family_id": "deepseek-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "deepseek-ai/DeepSeek-VL2",
+      "family_id": "deepseek-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL2",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "THUDM/CogVLM",
+      "family_id": "cogvlm",
+      "scope": "family",
+      "evidence_url": "https://github.com/THUDM/CogVLM",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "THUDM/CogVLM2",
+      "family_id": "cogvlm",
+      "scope": "family",
+      "evidence_url": "https://github.com/THUDM/CogVLM2",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "mlfoundations/open_flamingo",
+      "family_id": "openflamingo",
+      "scope": "family",
+      "evidence_url": "https://github.com/mlfoundations/open_flamingo",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "Vision-CAIR/MiniGPT-4",
+      "family_id": "minigpt4",
+      "scope": "family",
+      "evidence_url": "https://github.com/Vision-CAIR/MiniGPT-4",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "X-PLUG/mPLUG-Owl",
+      "family_id": "mplug-owl",
+      "scope": "family",
+      "evidence_url": "https://github.com/X-PLUG/mPLUG-Owl",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "InternLM/InternLM-XComposer",
+      "family_id": "internlm-xcomposer",
+      "scope": "family",
+      "evidence_url": "https://github.com/InternLM/InternLM-XComposer",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "AIDC-AI/Ovis",
+      "family_id": "ovis",
+      "scope": "family",
+      "evidence_url": "https://github.com/AIDC-AI/Ovis",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "BAAI-DCAI/Bunny",
+      "family_id": "bunny",
+      "scope": "family",
+      "evidence_url": "https://github.com/BAAI-DCAI/Bunny",
+      "model_ids": []
+    },
+    {
+      "platform": "github",
+      "repo": "QwenLM/Qwen3-VL",
+      "family_id": "qwen-vl",
+      "scope": "family",
+      "evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "model_ids": []
+    },
+    {
+      "platform": "huggingface",
+      "repo": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "family_id": "qwen-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+      "model_ids": [
+        "Qwen/Qwen2.5-VL-7B-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "Qwen/Qwen2-VL-7B-Instruct",
+      "family_id": "qwen-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct",
+      "model_ids": [
+        "Qwen/Qwen2-VL-7B-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "family_id": "qwen-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct",
+      "model_ids": [
+        "Qwen/Qwen2.5-VL-3B-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "family_id": "qwen-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct",
+      "model_ids": [
+        "Qwen/Qwen2.5-VL-72B-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "OpenGVLab/InternVL3-8B",
+      "family_id": "internvl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/OpenGVLab/InternVL3-8B",
+      "model_ids": [
+        "OpenGVLab/InternVL3-8B"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "OpenGVLab/InternVL2_5-8B",
+      "family_id": "internvl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/OpenGVLab/InternVL2_5-8B",
+      "model_ids": [
+        "OpenGVLab/InternVL2_5-8B"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "OpenGVLab/InternVL2-8B",
+      "family_id": "internvl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/OpenGVLab/InternVL2-8B",
+      "model_ids": [
+        "OpenGVLab/InternVL2-8B"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "openbmb/MiniCPM-V-2_6",
+      "family_id": "minicpm-v",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/openbmb/MiniCPM-V-2_6",
+      "model_ids": [
+        "openbmb/MiniCPM-V-2_6"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "openbmb/MiniCPM-o-2_6",
+      "family_id": "minicpm-v",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/openbmb/MiniCPM-o-2_6",
+      "model_ids": [
+        "openbmb/MiniCPM-o-2_6"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "openbmb/MiniCPM-V-4_5",
+      "family_id": "minicpm-v",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/openbmb/MiniCPM-V-4_5",
+      "model_ids": [
+        "openbmb/MiniCPM-V-4_5"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "llava-hf/llava-1.5-7b-hf",
+      "family_id": "llava",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/llava-hf/llava-1.5-7b-hf",
+      "model_ids": [
+        "llava-hf/llava-1.5-7b-hf"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "llava-hf/llava-v1.6-mistral-7b-hf",
+      "family_id": "llava",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/llava-hf/llava-v1.6-mistral-7b-hf",
+      "model_ids": [
+        "llava-hf/llava-v1.6-mistral-7b-hf"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "liuhaotian/llava-v1.5-13b",
+      "family_id": "llava",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/liuhaotian/llava-v1.5-13b",
+      "model_ids": [
+        "liuhaotian/llava-v1.5-13b"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "allenai/Molmo-7B-D-0924",
+      "family_id": "molmo",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/allenai/Molmo-7B-D-0924",
+      "model_ids": [
+        "allenai/Molmo-7B-D-0924"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "allenai/Molmo-72B-0924",
+      "family_id": "molmo",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/allenai/Molmo-72B-0924",
+      "model_ids": [
+        "allenai/Molmo-72B-0924"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "microsoft/Phi-3.5-vision-instruct",
+      "family_id": "phi-vision",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/microsoft/Phi-3.5-vision-instruct",
+      "model_ids": [
+        "microsoft/Phi-3.5-vision-instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "microsoft/Phi-3-vision-128k-instruct",
+      "family_id": "phi-vision",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/microsoft/Phi-3-vision-128k-instruct",
+      "model_ids": [
+        "microsoft/Phi-3-vision-128k-instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-4b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-4b-it",
+      "model_ids": [
+        "google/gemma-3-4b-it"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-12b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-12b-it",
+      "model_ids": [
+        "google/gemma-3-12b-it"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-27b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-27b-it",
+      "model_ids": [
+        "google/gemma-3-27b-it"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceM4/idefics2-8b",
+      "family_id": "idefics",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceM4/idefics2-8b",
+      "model_ids": [
+        "HuggingFaceM4/idefics2-8b"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceM4/Idefics3-8B-Llama3",
+      "family_id": "idefics",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceM4/Idefics3-8B-Llama3",
+      "model_ids": [
+        "HuggingFaceM4/Idefics3-8B-Llama3"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceTB/SmolVLM-Instruct",
+      "family_id": "smolvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct",
+      "model_ids": [
+        "HuggingFaceTB/SmolVLM-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "family_id": "smolvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "model_ids": [
+        "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "deepseek-ai/deepseek-vl-7b-chat",
+      "family_id": "deepseek-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat",
+      "model_ids": [
+        "deepseek-ai/deepseek-vl-7b-chat"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "deepseek-ai/deepseek-vl2",
+      "family_id": "deepseek-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/deepseek-ai/deepseek-vl2",
+      "model_ids": [
+        "deepseek-ai/deepseek-vl2"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "THUDM/cogvlm-chat-hf",
+      "family_id": "cogvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/THUDM/cogvlm-chat-hf",
+      "model_ids": [
+        "THUDM/cogvlm-chat-hf"
+      ]
+    },
+    {
+      "platform": "huggingface",
+      "repo": "THUDM/cogvlm2-llama3-chat-19B",
+      "family_id": "cogvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/THUDM/cogvlm2-llama3-chat-19B",
+      "model_ids": [
+        "THUDM/cogvlm2-llama3-chat-19B"
+      ]
+    }
+  ]
+}

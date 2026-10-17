@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "file_count": 38,
+  "missing_local_links": [],
+  "forbidden_files": [],
+  "view_counts": {
+    "repositories": 18255,
+    "models_without_verified_release": 8,
+    "benchmark_rows": 143086,
+    "feedback": 21674,
+    "task_labeled_feedback": 1965,
+    "exact_model_feedback": 1507
+  }
+}

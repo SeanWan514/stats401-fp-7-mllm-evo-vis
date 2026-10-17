@@ -1,0 +1,947 @@
+{
+  "default_pair": [
+    "qwen-qwen2-5-vl-7b-instruct",
+    "qwen-qwen2-vl-7b-instruct"
+  ],
+  "default_pair_dimension_count": 8,
+  "dimensions": {
+    "mmmu": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:mmmu:unknown:validation:reported_score:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 58.6,
+        "qwen-qwen2-vl-7b-instruct": 54.1
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "c51e927d2653f8bff3e3c54b",
+        "qwen-qwen2-vl-7b-instruct": "203725862f83dce7d557f534"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "mathvista": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:mathvista:unknown:testmini:reported_score:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 68.2,
+        "qwen-qwen2-vl-7b-instruct": 58.2
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "7ece1b80832008274b46b84e",
+        "qwen-qwen2-vl-7b-instruct": "2f9958e64e875c43b4f60437"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "mmbench": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:mmbench:1.1:test:EN:reported_score:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 82.6,
+        "qwen-qwen2-vl-7b-instruct": 80.7
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "438e432db47e658d569d0844",
+        "qwen-qwen2-vl-7b-instruct": "2817bf47e7b7a48a2dc4611e"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "mmvet": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:mmvet:unknown:unknown:reported_score:judge=GPT-4-Turbo",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 67.1,
+        "qwen-qwen2-vl-7b-instruct": 62.0
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "30b3bb151a50b91d6837e105",
+        "qwen-qwen2-vl-7b-instruct": "2706c135aacfe202751d1670"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "hallusion": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:hallusion:unknown:unknown:reported_avg_definition_unknown:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 52.9,
+        "qwen-qwen2-vl-7b-instruct": 50.6
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "93dc7416330be12ce945efa1",
+        "qwen-qwen2-vl-7b-instruct": "d07de0996420705632d0b048"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "ocrbench": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:ocrbench:1:unknown:total_points:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 864.0,
+        "qwen-qwen2-vl-7b-instruct": 845.0
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "c404409d693f2a9e42c98136",
+        "qwen-qwen2-vl-7b-instruct": "1f96f1004110a0b6ec8a22fb"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "chartqa": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:chartqa:unknown:test:reported_score:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 87.3,
+        "qwen-qwen2-vl-7b-instruct": 83.0
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "b89919d46bd6efc2aa5e48db",
+        "qwen-qwen2-vl-7b-instruct": "e7b467368223bb83c2a3c804"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    "docvqa": {
+      "comparability_group": "card:qwen-qwen2-5-vl-7b-instruct:markdown-line-58:docvqa:unknown:test:reported_score:judge=unknown",
+      "scores": {
+        "qwen-qwen2-5-vl-7b-instruct": 95.7,
+        "qwen-qwen2-vl-7b-instruct": 94.5
+      },
+      "result_ids": {
+        "qwen-qwen2-5-vl-7b-instruct": "a1b5cacff92f65fc86997c36",
+        "qwen-qwen2-vl-7b-instruct": "5946f2f74382af0f35dc748a"
+      },
+      "comparability_status": "source_table_only",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct"
+    }
+  },
+  "fully_verified_evaluation_settings": false,
+  "limitation": "Eight published dimensions are available for the default pair when reported below. The original card does not fully specify evaluation settings; same-table comparison is qualified evidence, not a reproduced controlled evaluation. HallBench avg formula is unspecified.",
+  "models": [
+    {
+      "model_id": "qwen-qwen-vl-chat",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen2-vl-2b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "qwen-qwen2-vl-7b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "qwen-qwen2-vl-72b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "qwen-qwen2-5-vl-3b-instruct",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen2-5-vl-7b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "qwen-qwen2-5-vl-32b-instruct",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen2-5-vl-72b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "qwen-qwen3-vl-2b-instruct",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen3-vl-32b-instruct",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen3-vl-30b-a3b-instruct",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "qwen-qwen3-vl-235b-a22b-instruct",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl2-2b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl2-8b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl2-26b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl2-llama3-76b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl2-5-2b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl2-5-8b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl2-5-38b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl2-5-78b",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "opengvlab-internvl3-2b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl3-8b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl3-38b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "opengvlab-internvl3-78b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "liuhaotian-llava-v1-5-7b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "liuhaotian-llava-v1-5-13b",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "lmms-lab-llava-onevision-qwen2-7b-ov",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "lmms-lab-llava-onevision-qwen2-72b-ov",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "openbmb-minicpm-llama3-v-2-5",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa"
+      ]
+    },
+    {
+      "model_id": "openbmb-minicpm-v-2-6",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "openbmb-minicpm-o-2-6",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "openbmb-minicpm-v-4-5",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo-7b-d-0924",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo-7b-o-0924",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo-72b-0924",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "allenai-molmoe-1b-0924",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo2-4b",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo2-8b",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "allenai-molmo2-o-7b",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "google-gemma-3-4b-it",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "google-gemma-3-12b-it",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "google-gemma-3-27b-it",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "microsoft-phi-3-5-vision-instruct",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "microsoft-phi-4-multimodal-instruct",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "huggingfacem4-idefics2-8b",
+      "available_dimensions": [
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa"
+      ]
+    },
+    {
+      "model_id": "huggingfacem4-idefics3-8b-llama3",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "deepseek-ai-deepseek-vl-7b-chat",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "deepseek-ai-deepseek-vl2-tiny",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "deepseek-ai-deepseek-vl2-small",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "deepseek-ai-deepseek-vl2",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "huggingfacetb-smolvlm2-2-2b-instruct",
+      "available_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "model_id": "huggingfacetb-smolvlm2-256m-video-instruct",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "huggingfacetb-smolvlm2-500m-video-instruct",
+      "available_dimensions": [
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa"
+      ]
+    },
+    {
+      "model_id": "openbmb-minicpm-v-4-7-1b",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    },
+    {
+      "model_id": "openbmb-minicpm-v-4-7-35b-a3b",
+      "available_dimensions": [],
+      "missing_dimensions": [
+        "chartqa",
+        "docvqa",
+        "hallusion",
+        "mathvista",
+        "mmbench",
+        "mmmu",
+        "mmvet",
+        "ocrbench"
+      ]
+    }
+  ]
+}

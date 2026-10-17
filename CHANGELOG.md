@@ -1,5 +1,13 @@
 # Changelog
 
+## Teammate handoff organization — 2026-10-17
+
+- Rewrote the `shilin` branch README around preview, analysis and offline-rebuild workflows.
+- Added an English quick start, data dictionary, contribution guide, and documentation/script/report indexes.
+- Replaced the implementation plan with an English version; retained the designated Chinese delivery report.
+- Added optional Make tasks and lightweight regression, JavaScript syntax and static-build CI checks.
+- Clarified the shared data branch, standalone website deployment, archive restoration and legacy interim files.
+
 ## Interim submission polish — 2026-09-20
 
 - Reduced the opening headline scale on desktop and mobile for a cleaner first viewport.

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "tasks": [
+    {
+      "id": "visual-qa",
+      "label": "Visual question answering",
+      "definition": "Answer questions grounded in images.",
+      "inclusion_rules": [
+        "visual question",
+        "vqa",
+        "image question",
+        "question answering",
+        "视觉问答"
+      ],
+      "benchmark_ids": [
+        "mmbench",
+        "mmvet",
+        "hallusion"
+      ],
+      "mapping_rationale": "MMBench/MM-Vet provide general visual QA evidence; HallusionBench is specifically hallucination-related. Settings must match."
+    },
+    {
+      "id": "ocr",
+      "label": "OCR and text extraction",
+      "definition": "Read or extract text visible in an image.",
+      "inclusion_rules": [
+        "ocr",
+        "ocrbench",
+        "text recognition",
+        "text extraction",
+        "read text",
+        "textvqa",
+        "文字识别",
+        "识别文字"
+      ],
+      "benchmark_ids": [
+        "ocrbench"
+      ],
+      "mapping_rationale": "OCRBench measures a mixture of recognition and reasoning; it is task evidence, not a direct measure of every OCR workflow."
+    },
+    {
+      "id": "document-understanding",
+      "label": "Document understanding",
+      "definition": "Read and answer questions about document pages and layouts.",
+      "inclusion_rules": [
+        "document",
+        "docvqa",
+        "pdf",
+        "invoice",
+        "receipt",
+        "文档",
+        "票据"
+      ],
+      "benchmark_ids": [
+        "docvqa"
+      ],
+      "mapping_rationale": "DocVQA is evidence for document QA, not all document processing."
+    },
+    {
+      "id": "chart-understanding",
+      "label": "Chart and table understanding",
+      "definition": "Extract or reason about information in charts or visual tables.",
+      "inclusion_rules": [
+        "chart",
+        "plot",
+        "table extraction",
+        "chartqa",
+        "图表",
+        "表格"
+      ],
+      "benchmark_ids": [
+        "chartqa"
+      ],
+      "mapping_rationale": "ChartQA supports chart understanding; it does not measure every table workflow."
+    },
+    {
+      "id": "visual-reasoning",
+      "label": "Visual and mathematical reasoning",
+      "definition": "Reason over visual evidence, spatial relations, diagrams, or math.",
+      "inclusion_rules": [
+        "visual reasoning",
+        "mathematical reasoning",
+        "logical reasoning",
+        "mathvista",
+        "mathvision",
+        "geometry",
+        "spatial reasoning",
+        "counting",
+        "数学",
+        "视觉推理",
+        "逻辑推理",
+        "空间推理",
+        "图像推理",
+        "推理"
+      ],
+      "benchmark_ids": [
+        "mmmu",
+        "mathvista",
+        "mmvet"
+      ],
+      "mapping_rationale": "Benchmarks differ in domain and protocol; never pool raw scores. The Chinese reasoning/inference term is a candidate: capability/math/logic/visual contexts assign reasoning; speed/memory/deployment/error-only contexts are runtime. Ambiguous usage stays a candidate."
+    },
+    {
+      "id": "image-captioning",
+      "label": "Image description",
+      "definition": "Generate grounded descriptions of images.",
+      "inclusion_rules": [
+        "caption",
+        "captioning",
+        "describe the image",
+        "image description",
+        "describe images",
+        "图像描述",
+        "图片描述"
+      ],
+      "benchmark_ids": [],
+      "mapping_rationale": "No direct caption benchmark is in the current score table; leave quantitative task evidence missing."
+    },
+    {
+      "id": "multimodal-conversation",
+      "label": "Multimodal conversation",
+      "definition": "Follow instructions or maintain dialogue grounded in images.",
+      "inclusion_rules": [
+        "multi-turn",
+        "multiturn",
+        "conversation",
+        "chatting",
+        "多轮",
+        "图文对话",
+        "多模态对话"
+      ],
+      "benchmark_ids": [],
+      "mapping_rationale": "No single general benchmark is treated as a direct measure of conversation quality. A chat template is a setup detail, not task evidence."
+    },
+    {
+      "id": "video-understanding",
+      "label": "Video understanding",
+      "definition": "Answer questions about video frames and temporal events; adjacent to the image-and-text scope.",
+      "inclusion_rules": [
+        "video",
+        "temporal",
+        "视频"
+      ],
+      "benchmark_ids": [],
+      "mapping_rationale": "Video-only feedback is excluded; image/video combined feedback can retain this secondary tag."
+    }
+  ]
+}

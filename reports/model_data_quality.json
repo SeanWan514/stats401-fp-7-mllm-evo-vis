@@ -1,0 +1,67 @@
+{
+  "canonical_models": 57,
+  "canonical_families": {
+    "qwen-vl": 14,
+    "internvl": 12,
+    "llava": 4,
+    "minicpm-v": 6,
+    "molmo": 7,
+    "gemma": 3,
+    "phi-vision": 2,
+    "idefics": 2,
+    "deepseek-vl": 4,
+    "smolvlm": 3
+  },
+  "baseline_models_preserved": 285,
+  "baseline_numeric_measurements_preserved": 142843,
+  "official_card_measurements": 231,
+  "official_figure_measurements": 12,
+  "total_benchmark_rows": 143086,
+  "relationship_rows": 15,
+  "verified_day_release_dates": 49,
+  "verified_month_only_release_dates": 2,
+  "verified_after_snapshot_models": [
+    "qwen-qwen3-vl-2b-instruct",
+    "qwen-qwen3-vl-4b-instruct",
+    "qwen-qwen3-vl-8b-instruct",
+    "qwen-qwen3-vl-32b-instruct",
+    "qwen-qwen3-vl-30b-a3b-instruct",
+    "qwen-qwen3-vl-235b-a22b-instruct",
+    "allenai-molmo2-4b",
+    "allenai-molmo2-8b",
+    "allenai-molmo2-o-7b",
+    "openbmb-minicpm-v-4-7-1b",
+    "openbmb-minicpm-v-4-7-35b-a3b"
+  ],
+  "missing_raw_model_cards": [
+    "openbmb/MiniCPM-V-2_6",
+    "google/gemma-3-4b-it",
+    "google/gemma-3-12b-it",
+    "google/gemma-3-27b-it"
+  ],
+  "baseline_date_anomalies": [
+    {
+      "model": "KoreaDeep-VLM-OCR-32B",
+      "baseline_recorded_date": "2026-02-13",
+      "snapshot_date": "2025-09-17"
+    }
+  ],
+  "out_of_range_card_cells": [],
+  "checks": {
+    "all_result_ids_unique": true,
+    "all_result_models_registered": true,
+    "all_relationship_endpoints_registered": true,
+    "all_canonical_ids_unique": true,
+    "all_canonical_repositories_verified": true,
+    "default_pair_has_all_eight_dimensions": true,
+    "all_normalized_values_in_range": true
+  },
+  "limitations": [
+    "Baseline META.Time is not treated as a release date.",
+    "Unselected baseline models and closed-weight models are retained only in the baseline registry and raw measurements.",
+    "Rows are reported measurements, not independent new model evaluations; repeated reports across cards are not independent experiments.",
+    "Unknown versions, splits, metric definitions, prompt/settings, release dates and ancestry remain unknown.",
+    "Some official model cards require gated access or publish scores only as images; unverified figures were not transcribed.",
+    "No benchmark was rerun. Eight-dimensional coverage does not establish fully controlled comparability."
+  ]
+}
