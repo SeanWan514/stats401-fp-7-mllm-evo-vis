@@ -25,6 +25,60 @@ Chinese **推理** is a reasoning-task candidate. Capability, mathematical, logi
 
 The preview includes repository growth / verified releases, task exploration, family evolution, an eight-dimension two-model radar, and a task–model evidence matrix. Filters, brushing, task selection, model selection, evidence links, sorting and missing-data states operate on shared identifiers. The radar uses fixed scales and explicit protocol groups; missing values are gaps. The default pair has eight dimensions in the same official source table, with undisclosed evaluation details identified. This is not an independently reproduced controlled comparison.
 
+## How the team can use this data next
+
+### Integrate the final website
+
+Use `data/final/view_data.json` as the browser input. It already contains models, tasks, families, time series, qualified scores, relationships, feedback aggregates and capped redacted excerpts. The working `final.html`, `final.js` and `final.css` provide reference interactions that can be adapted to the team's final design. The browser does not need to download full feedback or the complete benchmark table.
+
+Build the main journey around: **select a task → inspect evidence-backed candidates → check benchmark and community evidence → select two models → compare profiles and open sources**. Show evidence counts and missingness beside the candidate choices.
+
+### Choose tables for the analysis question
+
+Paths below are relative to the repository root.
+
+| Question | Input | Suggested use |
+| --- | --- | --- |
+| How did the sampled repository ecosystem develop? | `data/final/repositories.jsonl` | Count distinct repository IDs by creation month, family and repository type. Describe the surviving sample's creation-time distribution, not a complete historical census. |
+| Which recent models have verified release evidence? | `data/final/models.json` | Filter verified `release_date` values for a recent-release timeline and candidate metadata cards. Present month-only dates separately. |
+| Which models have evidence for OCR, document understanding or reasoning? | `tasks.json`, `models.json`, `benchmark_results.csv.gz`, local `feedback.jsonl` | Build the task–model matrix using explicit benchmark mappings, with score coverage and community evidence shown separately. |
+| What tradeoffs appear between two candidates? | `models.json`, `benchmark_results.csv.gz` | Show fixed-scale profiles and raw score tables within explicit protocol groups, retaining units, sources and gaps. |
+| What practical issues are discussed? | Local `feedback.jsonl` | Summarize aspects, experience categories, platforms, periods and families; show a few redacted source examples. |
+| How do releases and documented relationships connect? | `models.json`, `model_relationships.csv` | Build a timeline with distinct edge styles for release chronology and architecture relationships. |
+
+### Join and count consistently
+
+- Canonical models use `models.json.models[].id`. Join benchmark rows through `canonical_model_id` and feedback through `model_ids`; do not fuzzy-join display names. The baseline registry retains older benchmark-only entries.
+- Join `tasks.json.tasks[].id` to feedback `task_ids`; use each task's `benchmark_ids` and `mapping_rationale` for benchmark evidence.
+- Use `family_id` for family summaries. Family-only comments stay at that level and never become evidence for every model variant.
+- Count distinct repository or feedback IDs. A multi-task comment can enter several task buckets but counts once in the corpus denominator; task totals need not sum to the corpus total.
+- For selected-model score views, require `is_canonical`, `is_primary_metric` and `visualization_eligible`, then inspect `comparability_group`, version, split, metric and unit. A shared source table still retains its undisclosed settings.
+
+### Use an end-to-end example in the presentation
+
+For a document OCR workflow, select OCR or document understanding, inspect the mapped OCRBench/DocVQA evidence, and narrow candidates using license, available parameter information and score coverage. Inspect relevant exact-model comments for recognition, memory or deployment issues, then compare two candidates and open their raw sources. Label family-only evidence explicitly. This journey can also become a task in the team's usability study; it does not require an invented overall suitability score.
+
+### Reuse the material in the final report and poster
+
+The methods section can document sources, collection dates, bounded queries, deduplication units, exclusions, attribution rules and missingness. Results can show ecosystem growth, task/benchmark coverage, practical issue themes and a candidate comparison case. Record each figure's filters and denominator.
+
+Use `repository_counts.json`, `feedback_quality.json` and `model_data_quality.json` for frozen totals, and cite `final_validation.json` and `reproducibility.json` for structural and rebuild checks. For example, report that rules assigned a task to 1,965 of 21,674 retained feedback records, with labels pending validation. These records are not 1,965 independent users who completed a controlled task test.
+
+### Update labels or extend the snapshot
+
+Task definitions and feedback rules are in `scripts/process_feedback.py`; curated model/source additions belong in `config/canonical_models.json`. Keep human corrections in a separate versioned record and explicitly apply them during processing; direct edits to generated JSON will be overwritten. From a complete local handoff, rerun:
+
+```sh
+python3 scripts/collect_repositories.py --process
+python3 scripts/build_final_models.py
+python3 scripts/process_feedback.py
+python3 scripts/build_final_views.py
+python3 scripts/validate_final_data.py
+python3 scripts/build_static_site.py
+```
+
+These commands replay existing caches rather than collect a new time point. For longitudinal work, preserve the current raw caches, configuration, outputs and hashes first, then collect a separately dated snapshot using the pipeline guide. Track additions, changes and unavailable objects; retain download-counter windows and retrieval dates when comparing snapshots.
+
 ## Verification
 
 The repository, feedback and view regression suites contain 28 passing checks. [`final_validation.json`](final_validation.json) checks actual exported IDs, foreign keys, provenance, finite scores, independent volume targets and browser count reconciliation. [`model_validation.json`](model_validation.json) checks all 142,843 original numeric values and gzip round-trip equality. [`reproducibility.json`](reproducibility.json) records the full local offline rebuild and output SHA-256 values. Browser QA covers desktop/mobile layout, linked controls, empty states and source drill-down.
