@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "accepted_unique_objects": 21674,
+  "required_fields_complete": true,
+  "unique_source_object_ids": true,
+  "canonical_model_references_valid": true,
+  "task_references_valid": true,
+  "family_records_do_not_claim_model_ids": true,
+  "bot_and_known_maintainer_excluded": true,
+  "targeted_audit_cases_corrected": true,
+  "real_annotation_template_rows": 250,
+  "human_validated_count": 0,
+  "regression_tests": 9,
+  "regression_tests_are_not_accuracy_validation": true,
+  "feedback_sha256": "7c0c58802b5b0ca4433c36ecb26a12eb2150cd813253d463ae3d817b31c125c6",
+  "tasks_sha256": "00442839dea719e88055cc8b5968b3de0a8cd7dc62c683a5cdae0e7f884b4dc0"
+}

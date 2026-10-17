@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "raw_objects": 45047,
+  "accepted_unique_objects": 21674,
+  "raw_unique_source_objects": 37738,
+  "target": 10000,
+  "shortfall": 0,
+  "exclusions": {
+    "pull_request": 1680,
+    "repository_administration": 1,
+    "no_task_aspect_or_use_signal": 2273,
+    "insufficient_substantive_text": 5220,
+    "maintainer": 5267,
+    "acknowledgement_only": 724,
+    "video_only_topic": 755,
+    "same_author_exact_long_text": 67,
+    "administrative_or_promotional_topic": 12,
+    "duplicate_source_object": 7309,
+    "audio_only_topic": 52,
+    "bot": 1,
+    "directory_promotion": 12
+  },
+  "platforms": {
+    "github": 19547,
+    "huggingface": 2127
+  },
+  "families": {
+    "openflamingo": 251,
+    "minigpt4": 1097,
+    "llava": 5267,
+    "mplug-owl": 358,
+    "qwen-vl": 5856,
+    "internlm-xcomposer": 743,
+    "cogvlm": 1638,
+    "internvl": 2194,
+    "minicpm-v": 2213,
+    "bunny": 248,
+    "deepseek-vl": 359,
+    "idefics": 313,
+    "phi-vision": 189,
+    "ovis": 193,
+    "molmo": 201,
+    "smolvlm": 79,
+    "gemma": 475
+  },
+  "roles": {
+    "community": 19547,
+    "unknown": 2127
+  },
+  "attribution_levels": {
+    "family": 19623,
+    "model": 2051
+  },
+  "conflicting_model_mentions": 76,
+  "canonical_model_mapped_objects": 1507,
+  "experience_types": {
+    "usage_observation": 2514,
+    "community_discussion": 4993,
+    "usage_question": 9166,
+    "problem_report": 4534,
+    "feature_request": 467
+  },
+  "tasks": {
+    "visual-qa": 141,
+    "image-captioning": 269,
+    "ocr": 222,
+    "multimodal-conversation": 501,
+    "video-understanding": 521,
+    "visual-reasoning": 109,
+    "document-understanding": 346,
+    "chart-understanding": 68
+  },
+  "unclassified_task_count": 19709,
+  "primary_image_task_labeled_objects": 1511,
+  "chinese_reasoning_resolution": {
+    "absent": 20927,
+    "capability": 61,
+    "ambiguous": 368,
+    "runtime": 318
+  },
+  "sentiment": {
+    "positive": 2104,
+    "unknown": 13072,
+    "negative": 5019,
+    "mixed": 1479
+  },
+  "evaluative_status": {
+    "evaluative": 8602,
+    "unknown": 6522,
+    "non_evaluative": 6550
+  },
+  "label_method": "transparent_rules_v1",
+  "human_validated_count": 0,
+  "validation_status": "Sean review not yet completed",
+  "sentiment_accuracy": null,
+  "notes": [
+    "Independent source objects; no sentence splitting or family-to-model replication.",
+    "Labels and task relevance are rule-based suggestions, not validated user-study findings.",
+    "Specialized model-family repository context supplies association; task IDs require direct text matches.",
+    "No fuzzy deduplication: exact source IDs and same-author long exact texts only."
+  ]
+}

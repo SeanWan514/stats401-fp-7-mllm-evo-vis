@@ -1,0 +1,245 @@
+{
+  "collected_at": "2026-10-17T06:48:23.112806+00:00",
+  "sources": [
+    {
+      "platform": "huggingface",
+      "repo": "allenai/Molmo-7B-D-0924",
+      "family_id": "molmo",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/allenai/Molmo-7B-D-0924",
+      "model_ids": [
+        "allenai/Molmo-7B-D-0924"
+      ],
+      "status": "ok",
+      "raw_records": 140,
+      "started_at": "2026-10-17T06:42:07.292825+00:00",
+      "finished_at": "2026-10-17T06:43:05.415679+00:00",
+      "limited_run": false,
+      "threads": 40
+    },
+    {
+      "platform": "huggingface",
+      "repo": "allenai/Molmo-72B-0924",
+      "family_id": "molmo",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/allenai/Molmo-72B-0924",
+      "model_ids": [
+        "allenai/Molmo-72B-0924"
+      ],
+      "status": "ok",
+      "raw_records": 46,
+      "started_at": "2026-10-17T06:43:05.415761+00:00",
+      "finished_at": "2026-10-17T06:43:06.509166+00:00",
+      "limited_run": false,
+      "threads": 16
+    },
+    {
+      "platform": "huggingface",
+      "repo": "microsoft/Phi-3.5-vision-instruct",
+      "family_id": "phi-vision",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/microsoft/Phi-3.5-vision-instruct",
+      "model_ids": [
+        "microsoft/Phi-3.5-vision-instruct"
+      ],
+      "status": "ok",
+      "raw_records": 56,
+      "started_at": "2026-10-17T06:43:06.509228+00:00",
+      "finished_at": "2026-10-17T06:43:19.180094+00:00",
+      "limited_run": false,
+      "threads": 31
+    },
+    {
+      "platform": "huggingface",
+      "repo": "microsoft/Phi-3-vision-128k-instruct",
+      "family_id": "phi-vision",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/microsoft/Phi-3-vision-128k-instruct",
+      "model_ids": [
+        "microsoft/Phi-3-vision-128k-instruct"
+      ],
+      "status": "ok",
+      "raw_records": 202,
+      "started_at": "2026-10-17T06:43:19.180209+00:00",
+      "finished_at": "2026-10-17T06:43:47.331730+00:00",
+      "limited_run": false,
+      "threads": 55
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-4b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-4b-it",
+      "model_ids": [
+        "google/gemma-3-4b-it"
+      ],
+      "status": "ok",
+      "raw_records": 192,
+      "started_at": "2026-10-17T06:43:47.331909+00:00",
+      "finished_at": "2026-10-17T06:44:15.584729+00:00",
+      "limited_run": false,
+      "threads": 55
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-12b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-12b-it",
+      "model_ids": [
+        "google/gemma-3-12b-it"
+      ],
+      "status": "ok",
+      "raw_records": 87,
+      "started_at": "2026-10-17T06:44:15.584842+00:00",
+      "finished_at": "2026-10-17T06:44:27.708912+00:00",
+      "limited_run": false,
+      "threads": 23
+    },
+    {
+      "platform": "huggingface",
+      "repo": "google/gemma-3-27b-it",
+      "family_id": "gemma",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/google/gemma-3-27b-it",
+      "model_ids": [
+        "google/gemma-3-27b-it"
+      ],
+      "status": "ok",
+      "raw_records": 335,
+      "started_at": "2026-10-17T06:44:27.709097+00:00",
+      "finished_at": "2026-10-17T06:45:11.685276+00:00",
+      "limited_run": false,
+      "threads": 87
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceM4/idefics2-8b",
+      "family_id": "idefics",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceM4/idefics2-8b",
+      "model_ids": [
+        "HuggingFaceM4/idefics2-8b"
+      ],
+      "status": "ok",
+      "raw_records": 325,
+      "started_at": "2026-10-17T06:45:11.685504+00:00",
+      "finished_at": "2026-10-17T06:45:47.928952+00:00",
+      "limited_run": false,
+      "threads": 74
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceM4/Idefics3-8B-Llama3",
+      "family_id": "idefics",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceM4/Idefics3-8B-Llama3",
+      "model_ids": [
+        "HuggingFaceM4/Idefics3-8B-Llama3"
+      ],
+      "status": "ok",
+      "raw_records": 72,
+      "started_at": "2026-10-17T06:45:47.929184+00:00",
+      "finished_at": "2026-10-17T06:45:58.348970+00:00",
+      "limited_run": false,
+      "threads": 21
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceTB/SmolVLM-Instruct",
+      "family_id": "smolvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct",
+      "model_ids": [
+        "HuggingFaceTB/SmolVLM-Instruct"
+      ],
+      "status": "ok",
+      "raw_records": 48,
+      "started_at": "2026-10-17T06:45:58.349187+00:00",
+      "finished_at": "2026-10-17T06:46:08.830869+00:00",
+      "limited_run": false,
+      "threads": 22
+    },
+    {
+      "platform": "huggingface",
+      "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "family_id": "smolvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "model_ids": [
+        "HuggingFaceTB/SmolVLM2-2.2B-Instruct"
+      ],
+      "status": "ok",
+      "raw_records": 58,
+      "started_at": "2026-10-17T06:46:08.831034+00:00",
+      "finished_at": "2026-10-17T06:46:17.947183+00:00",
+      "limited_run": false,
+      "threads": 18
+    },
+    {
+      "platform": "huggingface",
+      "repo": "deepseek-ai/deepseek-vl-7b-chat",
+      "family_id": "deepseek-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat",
+      "model_ids": [
+        "deepseek-ai/deepseek-vl-7b-chat"
+      ],
+      "status": "ok",
+      "raw_records": 11,
+      "started_at": "2026-10-17T06:46:17.947497+00:00",
+      "finished_at": "2026-10-17T06:46:20.361386+00:00",
+      "limited_run": false,
+      "threads": 5
+    },
+    {
+      "platform": "huggingface",
+      "repo": "deepseek-ai/deepseek-vl2",
+      "family_id": "deepseek-vl",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/deepseek-ai/deepseek-vl2",
+      "model_ids": [
+        "deepseek-ai/deepseek-vl2"
+      ],
+      "status": "ok",
+      "raw_records": 33,
+      "started_at": "2026-10-17T06:46:20.361432+00:00",
+      "finished_at": "2026-10-17T06:46:27.181078+00:00",
+      "limited_run": false,
+      "threads": 12
+    },
+    {
+      "platform": "huggingface",
+      "repo": "THUDM/cogvlm-chat-hf",
+      "family_id": "cogvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/THUDM/cogvlm-chat-hf",
+      "model_ids": [
+        "THUDM/cogvlm-chat-hf"
+      ],
+      "status": "ok",
+      "raw_records": 74,
+      "started_at": "2026-10-17T06:46:27.181277+00:00",
+      "finished_at": "2026-10-17T06:48:09.942995+00:00",
+      "limited_run": false,
+      "threads": 20
+    },
+    {
+      "platform": "huggingface",
+      "repo": "THUDM/cogvlm2-llama3-chat-19B",
+      "family_id": "cogvlm",
+      "scope": "model",
+      "evidence_url": "https://huggingface.co/THUDM/cogvlm2-llama3-chat-19B",
+      "model_ids": [
+        "THUDM/cogvlm2-llama3-chat-19B"
+      ],
+      "status": "ok",
+      "raw_records": 45,
+      "started_at": "2026-10-17T06:48:09.943467+00:00",
+      "finished_at": "2026-10-17T06:48:23.112650+00:00",
+      "limited_run": false,
+      "threads": 16
+    }
+  ]
+}

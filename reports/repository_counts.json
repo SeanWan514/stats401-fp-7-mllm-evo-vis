@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "raw_observations": 24182,
+  "unique_repositories_before_filter": 20497,
+  "duplicates_across_queries": 3685,
+  "excluded": 2242,
+  "exclusion_reasons": {
+    "explicit_test_repository": 107,
+    "conflicting_image_generation_task": 25,
+    "explicit_text_only_model": 56,
+    "tag_only_without_card_or_family_evidence": 31,
+    "non_generative_clip_classifier": 1,
+    "legacy_task_without_vlm_evidence": 2022
+  },
+  "accepted_repositories": 18255,
+  "target": 10000,
+  "target_met": true,
+  "shortfall": 0,
+  "by_family": {
+    "gemma": 2636,
+    "llava": 432,
+    "unknown": 3316,
+    "qwen-vl": 9765,
+    "glm-vision": 153,
+    "molmo": 53,
+    "florence": 126,
+    "minicpm-v": 234,
+    "internvl": 357,
+    "kimi-vl": 23,
+    "smolvlm": 150,
+    "blip": 363,
+    "moondream": 33,
+    "ovis": 47,
+    "paligemma": 95,
+    "mllama": 142,
+    "idefics": 41,
+    "deepseek-vl": 57,
+    "eagle": 29,
+    "pixtral": 38,
+    "mistral-vision": 71,
+    "keye-vl": 7,
+    "llama-vision": 7,
+    "phi-vision": 35,
+    "mplug": 16,
+    "nvila": 22,
+    "kosmos": 6,
+    "cogvlm": 1
+  },
+  "by_repository_type": {
+    "quantization": 10722,
+    "unknown": 2549,
+    "fine_tune": 3908,
+    "adapter": 821,
+    "original_release": 255
+  },
+  "by_derivative_flag": {
+    "format_conversion": 8346,
+    "quantization": 10722,
+    "fine_tune": 4431,
+    "adapter": 989,
+    "quantization_metadata_conflict": 154
+  },
+  "by_task": {
+    "image-text-to-text": 17116,
+    "visual-question-answering": 466,
+    "image-to-text": 673
+  },
+  "missing": {
+    "created_at": 0,
+    "last_modified": 0,
+    "license": 1866,
+    "parameters_stored": 6667,
+    "downloads": 0,
+    "likes": 0
+  },
+  "retrieval_start": "2026-10-17T06:42:54.857986+00:00",
+  "retrieval_end": "2026-10-17T06:45:26.257131+00:00",
+  "sampling": "Bounded multi-query sample: popularity plus recent repository creation; not an exhaustive Hub census.",
+  "limitations": [
+    "Metadata-supported relevance; repository classification and family inference are not human validated.",
+    "Repository creation history is a surviving-snapshot history, not a count of original model releases.",
+    "Original release means publisher distribution rather than a proven new model architecture.",
+    "Family inference prioritizes model name, explicit base model and then bare architecture tags; dataset tags are excluded.",
+    "GGUF/MLX alone indicates format conversion; quantization requires a lower-bit/method signal or an uncontradicted explicit relation.",
+    "Stored tensor counts can describe adapters or quantized tensors; not total or active model parameters.",
+    "Downloads and likes are engagement counters, not unique users or satisfaction ratings."
+  ]
+}

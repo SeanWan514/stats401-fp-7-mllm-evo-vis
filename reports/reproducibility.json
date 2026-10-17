@@ -1,0 +1,33 @@
+{
+  "offline_rebuild_byte_identical": true,
+  "outputs_match": {
+    "repositories.jsonl": true,
+    "models.json": true,
+    "benchmark_results.csv": true,
+    "benchmark_results.csv.gz": true,
+    "model_relationships.csv": true,
+    "feedback.jsonl": true,
+    "tasks.json": true,
+    "view_data.json": true
+  },
+  "artifact_sha256": {
+    "repositories.jsonl": "8cb5b04b9ff1d17e63123902dd4cacafec440d646becf01cbc91e46cce9c3284",
+    "models.json": "715a7e2bd466e9a534785fa79670d6fe0588fc4e38b254ead22980f767221f50",
+    "benchmark_results.csv": "b8d3e0930009edd774746d1d5259e12ee418c235fe956c659c07411f027934db",
+    "benchmark_results.csv.gz": "dbc454d2b8e4083d100d5e7f7ff0b7e1668ab645f310824e97fa14393a5d2738",
+    "model_relationships.csv": "84594c3477667c1b9f633dec4df69149de5c87dc39672487f6175bca7de5dce0",
+    "feedback.jsonl": "7c0c58802b5b0ca4433c36ecb26a12eb2150cd813253d463ae3d817b31c125c6",
+    "tasks.json": "00442839dea719e88055cc8b5968b3de0a8cd7dc62c683a5cdae0e7f884b4dc0",
+    "view_data.json": "f8e28a83afe70304796f8c4011e86039939b3852a47ec3234f59f395f5d12778"
+  },
+  "commands": [
+    "python3 scripts/collect_repositories.py --process",
+    "python3 scripts/build_final_models.py",
+    "python3 scripts/process_feedback.py",
+    "python3 scripts/build_final_views.py",
+    "python3 scripts/validate_final_data.py"
+  ],
+  "local_raw_file_count": 1861,
+  "local_raw_manifest_sha256": "4db1a6a5d374bc90b1da7ff0260d13f8fc14a1fc95ec497eee366952689fb667",
+  "scope": "Rebuild from local frozen caches; raw feedback caches are normalized extracts with separately documented response-archive limits. No network acquisition or human label validation."
+}

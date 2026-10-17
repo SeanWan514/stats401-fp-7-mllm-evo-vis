@@ -1,0 +1,18 @@
+{
+  "response_bodies": 96,
+  "platforms": {
+    "github": 36,
+    "huggingface": 60
+  },
+  "purpose": "backfill_later_snapshot",
+  "coverage": "Two representative successful later API responses per configured source (18 GitHub routes and 28 HF repositories), plus four HF redirect bodies. Initial full collection preserved selected normalized fields, not all original API responses. Future uncached collector requests preserve response bodies.",
+  "hash_validation": "all archived response body SHA-256 values matched",
+  "storage": "data/raw/feedback/api_responses (local ignored files)",
+  "all_original_first_fetch_payloads_preserved": false,
+  "http_status_counts": {
+    "200": 92,
+    "307": 4
+  },
+  "successful_response_bodies": 92,
+  "redirect_response_bodies": 4
+}

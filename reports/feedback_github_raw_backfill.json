@@ -1,0 +1,114 @@
+{
+  "retrieved_at": "2026-10-17T06:51:39.678817+00:00",
+  "scope": "At most two representative responses per source; not a complete first-fetch archive.",
+  "sources": [
+    {
+      "repo": "haotian-liu/LLaVA",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "OpenGVLab/InternVL",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "QwenLM/Qwen2.5-VL",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "OpenBMB/MiniCPM-V",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "QwenLM/Qwen-VL",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "LLaVA-VL/LLaVA-NeXT",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "allenai/molmo",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "deepseek-ai/DeepSeek-VL",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "deepseek-ai/DeepSeek-VL2",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "THUDM/CogVLM",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "THUDM/CogVLM2",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "mlfoundations/open_flamingo",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "Vision-CAIR/MiniGPT-4",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "X-PLUG/mPLUG-Owl",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "InternLM/InternLM-XComposer",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "AIDC-AI/Ovis",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "BAAI-DCAI/Bunny",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    },
+    {
+      "repo": "QwenLM/Qwen3-VL",
+      "platform": "github",
+      "status": "ok",
+      "purpose": "backfill_later_snapshot"
+    }
+  ]
+}

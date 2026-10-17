@@ -4,6 +4,14 @@ An interactive guide to the evolution and practical selection of open-weight mul
 
 **Live site:** [https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)
 
+## Final data handoff (2026-10-17)
+
+The `codex/final-data-pipeline` branch adds reproducible repository and community-data collection, curated canonical model metadata, preserved benchmark measurements, and a separate five-view [Data Handoff Explorer](final.html). See [data pipeline and reproduction](docs/data-pipeline.md), [model evidence](docs/model-methodology.md), [feedback methodology](docs/feedback-methodology.md), and [view contract](docs/final-view-contract.md).
+
+Run `python3 -m http.server 8765 --bind 127.0.0.1` and open `http://127.0.0.1:8765/final.html`. The prepared small browser payload is included. Full feedback and raw caches are local research artifacts; read the pipeline instructions before rebuilding from a fresh clone. See the [delivery report](reports/delivery.md) and [structural checks](reports/final_validation.json). Machine feedback labels remain provisional pending the planned human review.
+
+The sections below describe the preserved interim prototype. They are not a claim that the revised final-project research validation is complete.
+
 ## Group 7
 
 - Sean Wan — Project Lead

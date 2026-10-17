@@ -1,0 +1,296 @@
+[
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand%5B%5D=author&expand%5B%5D=createdAt&expand%5B%5D=lastModified&expand%5B%5D=downloads&expand%5B%5D=likes&expand%5B%5D=tags&expand%5B%5D=cardData&expand%5B%5D=safetensors&expand%5B%5D=pipeline_tag&expand%5B%5D=gated&expand%5B%5D=sha&expand%5B%5D=library_name",
+    "retrieved_at": "2026-10-17T06:42:54.857986+00:00",
+    "response_sha256": "e1291f0e97386fde806d83e818653670f5f5a38f4ce011a2ea3cecb6a1a56989",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NDEzMjgsIl9pZCI6eyIkZ3QiOiI2YWNiZGQ0YjBmZGQzNTc1YTYxY2M3MTcifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo0MTMyOH19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDT25KeWdJYUNTRUFBQUFBQUM3a1FCb09XZ3hxeTkxTEQ5MDFkYVljeHhjaURsb01hc3ZkU3cvZE5YV21ITWNYIn0%3D",
+    "retrieved_at": "2026-10-17T06:43:25.812024+00:00",
+    "response_sha256": "57e8d0ad27e96225f1a8185079f746cfd05a58d0fb381d55bdf42bd1b63ab268",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6OTUzNSwiX2lkIjp7IiRndCI6IjY5ZjQyYjMzZDZjMGM5ZGQ3ZDA1MDQzMiJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjk1MzV9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0lTM3ZnSWFDU0VBQUFBQWdKL0NRQm9PV2d4cDlDc3oxc0RKM1gwRkJESWlEbG9NYWZRck05YkF5ZDE5QlFReSJ9",
+    "retrieved_at": "2026-10-17T06:43:28.203785+00:00",
+    "response_sha256": "13972b89ea33b064107ef0b801814f4f4019445ada314c3acc787fefd74b10cc",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzU5MiwiX2lkIjp7IiRndCI6IjZhODJhYTA4OWVhYTM0NDZkNTU1ZTc1NyJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjM1OTJ9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ1BiWnhnSWFDU0VBQUFBQUFCQ3NRQm9PV2d4cWdxb0lucW8wUnRWVjUxY2lEbG9NYW9LcUNKNnFORWJWVmVkWCJ9",
+    "retrieved_at": "2026-10-17T06:43:30.525496+00:00",
+    "response_sha256": "48a063bd59c52a2efd73b0f88f870e06e2854ca7c12df923cd623a00ff07d139",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjA2MCwiX2lkIjp7IiRndCI6IjZhN2FkOWVlYTZhZWJiMTNjN2MxNmM2NSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjIwNjB9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0tuWXdRSWFDU0VBQUFBQUFCaWdRQm9PV2d4cWV0bnVwcTY3RThmQmJHVWlEbG9NYW5yWjdxYXV1eFBId1d4bCJ9",
+    "retrieved_at": "2026-10-17T06:43:38.920855+00:00",
+    "response_sha256": "216098d39d2f92f5ef1a76250d281b1d8c74b0802b230dca0532e0b6238ab4e0",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTM0MSwiX2lkIjp7IiRndCI6IjZhY2ViZmNjNWM1OTRmYWQ4YjAzNmEwYyJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjEzNDF9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ09ubjB3SWFDU0VBQUFBQUFQU1VRQm9PV2d4cXpyL01YRmxQcllzRGFnd2lEbG9NYXM2L3pGeFpUNjJMQTJvTSJ9",
+    "retrieved_at": "2026-10-17T06:43:41.503547+00:00",
+    "response_sha256": "6e4b70a242fb024461c426e412a447d37a8b2401de5561f1833a567a87e44a2c",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6OTc1LCJfaWQiOnsiJGd0IjoiNmFiZTg3NGU2ZDVlNWQyNDhhMjk5ZjMyIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6OTc1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOUE15Z0lhQ1NFQUFBQUFBSGlPUUJvT1dneHF2b2RPYlY1ZEpJb3BueklpRGxvTWFyNkhUbTFlWFNTS0taOHkifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:44.087471+00:00",
+    "response_sha256": "09afda480dfb4ae645476964ddcdd10cf5f3a5d3d07fab92ee1d964ab2f1a6f9",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NzM3LCJfaWQiOnsiJGd0IjoiNmFiNjYyYjNlYWVlZDc1ZDNhMTJmMDMyIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NzM3fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNPYVkwQUlhQ1NFQUFBQUFBQWlIUUJvT1dneHF0bUt6NnU3WFhUb1M4RElpRGxvTWFyWmlzK3J1MTEwNkV2QXkifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:46.714971+00:00",
+    "response_sha256": "aff85791bd091c55bec6b2d68b49edba43bea067260ffa3e0eba482377a96c20",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTgwLCJfaWQiOnsiJGd0IjoiNmFjMzNkNTg5OTE1M2YwYjMxZWMwMGM0In19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTgwfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMcTF1Z0lhQ1NFQUFBQUFBQ0NDUUJvT1dneHF3ejFZbVJVL0N6SHNBTVFpRGxvTWFzTTlXSmtWUHdzeDdBREUifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:49.325440+00:00",
+    "response_sha256": "3423ddc5234f636a9a1b0ebbc50b2eba7d3dc20df8bef4a2ea0dc2cf173f61fb",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NDYxLCJfaWQiOnsiJGd0IjoiNmFjNzEwNmU2NzY1MjVkZTcwNzQ4MDcwIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NDYxfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNPSEF1UUlhQ1NFQUFBQUFBTkI4UUJvT1dneHF4eEJ1WjJVbDNuQjBnSEFpRGxvTWFzY1FibWRsSmQ1d2RJQncifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:51.953428+00:00",
+    "response_sha256": "fe4635ea414fd5155d31ba5dd7729c9a9779fc42270ac3ebeed3bc1206942ce7",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzgxLCJfaWQiOnsiJGd0IjoiNjlkZGNhMGFlNzU1MzJhMWQwMmQ4MmQ3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MzgxfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNQdmp2UUlhQ1NFQUFBQUFBTkIzUUJvT1dneHAzY29LNTFVeW9kQXRndGNpRGxvTWFkM0tDdWRWTXFIUUxZTFgifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:56.850171+00:00",
+    "response_sha256": "a0b42455c21f664671361318105967ee2098e1aee0d672de025c0a3bf6aefc40",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzE5LCJfaWQiOnsiJGd0IjoiNmFhYTBlOGUyODU5ODI3YThkOWRjNDIyIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MzE5fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNNLzl5Z0lhQ1NFQUFBQUFBUEJ6UUJvT1dneHFxZzZPS0ZtQ2VvMmR4Q0lpRGxvTWFxb09qaWhaZ25xTm5jUWkifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:43:59.498391+00:00",
+    "response_sha256": "165c380885b2e9c3fb97412330c27f47d57edcb83a6513ff1f9ed55f9cd84583",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjcyLCJfaWQiOnsiJGd0IjoiNjhmYzc5ODZkNjUzMDE5NDRiMmQ1ZWY3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MjcyfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMNkNyd0lhQ1NFQUFBQUFBQUJ4UUJvT1dneG8vSG1HMWxNQmxFc3RYdmNpRGxvTWFQeDVodFpUQVpSTExWNzMifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:01.897857+00:00",
+    "response_sha256": "0b195873d9df3da10b56fc239f69986e9d5071f97ab541892c8bf63b03598156",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjM3LCJfaWQiOnsiJGd0IjoiNmE5MzAyZGUwZWUzZjJhNjgwYjczNzc1In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MjM3fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNQT3N5QUlhQ1NFQUFBQUFBS0J0UUJvT1dneHFrd0xlRHVQeXBvQzNOM1VpRGxvTWFwTUMzZzdqOHFhQXR6ZDEifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:05.743821+00:00",
+    "response_sha256": "29403d274c3e04a1d79f43882e9daf0f378141895e5ce2f11846b148a83b8306",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjA2LCJfaWQiOnsiJGd0IjoiNmFhNGRjN2FlMTM5ODU0NTU3NDFhNzkzIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MjA2fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLMlJ5UUlhQ1NFQUFBQUFBTUJwUUJvT1dneHFwTng2NFRtRlJWZEJwNU1pRGxvTWFxVGNldUU1aFVWWFFhZVQifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:08.167135+00:00",
+    "response_sha256": "a3acec041f545f1ab0bb155c1a5d178be54e72930ea1fe75477e63ad897bbe54",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTgwLCJfaWQiOnsiJGd0IjoiNjllMDdmYmI2MTc5Yzg0ZDllMzRmY2I3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTgwfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNQYlF3d0lhQ1NFQUFBQUFBSUJtUUJvT1dneHA0SCs3WVhuSVRaNDAvTGNpRGxvTWFlQi91MkY1eUUyZU5QeTMifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:11.617211+00:00",
+    "response_sha256": "4a812c67aa27a6e50799617728ce4938f5ca5bd765894ca7cb2e967fbca4022f",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTU5LCJfaWQiOnsiJGd0IjoiNjkwMTA2ZGU1N2EzNDM3NGVhOGJhN2RjIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTU5fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNJaWF2Z0lhQ1NFQUFBQUFBT0JqUUJvT1dneHBBUWJlVjZORGRPcUxwOXdpRGxvTWFRRUczbGVqUTNUcWk2ZmMifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:14.110585+00:00",
+    "response_sha256": "40588f99b3147c76633877e581c78edc69b08c0a25920446cab8a646392960b0",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTQxLCJfaWQiOnsiJGd0IjoiNmE2NjRjNWVmNzkzNGNiNTEwNzRmMWNmIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTQxfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLMlV3Z0lhQ1NFQUFBQUFBS0JoUUJvT1dneHFaa3hlOTVOTXRSQjA4YzhpRGxvTWFtWk1YdmVUVExVUWRQSFAifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:16.824817+00:00",
+    "response_sha256": "c3824e6067aa8749da989213759a0f1715e38e73931606773a016f272e1a7e39",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTIyLCJfaWQiOnsiJGd0IjoiNjlhOGFhOWFlMGI2NjVmODNmNzQzNjIxIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTIyfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOemh1d0lhQ1NFQUFBQUFBSUJlUUJvT1dneHBxS3FhNExabCtEOTBOaUVpRGxvTWFhaXFtdUMyWmZnL2REWWgifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:19.350651+00:00",
+    "response_sha256": "ad198f5de3166fa24a276409b9f58de86de9b60ca404269990cce5fc906b2adf",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTA2LCJfaWQiOnsiJGd0IjoiNjllYzI1OGQ2MmQ5OWU2ZDQzYmFiZTc3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTA2fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLckF6QUlhQ1NFQUFBQUFBSUJhUUJvT1dneHA3Q1dOWXRtZWJVTzZ2bmNpRGxvTWFld2xqV0xabm0xRHVyNTMifQ%3D%3D",
+    "retrieved_at": "2026-10-17T06:44:21.802217+00:00",
+    "response_sha256": "ddb0ba7e316287c1aec5f769f8e3f10ff2d6df62db1732345c27eb6c7ceb4dc7",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6OTIsIl9pZCI6eyIkZ3QiOiI2ODUyOTUxZDEzYzY2YTg3YzIzMGI5ZmEifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo5Mn19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTjdCbWdJYUNTRUFBQUFBQUFCWFFCb09XZ3hvVXBVZEU4WnFoOEl3dWZvaURsb01hRktWSFJQR2FvZkNNTG42In0%3D",
+    "retrieved_at": "2026-10-17T06:44:24.956400+00:00",
+    "response_sha256": "083682cca8abfc358d4bc257fa1d072a8fb37310f2eea2dacd90900988c3979f",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6ODEsIl9pZCI6eyIkZ3QiOiI2YWFiOTEyZWZjY2NlMDgyYjE5MTc0YmEifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo4MX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTlhFOWdFYUNTRUFBQUFBQUVCVVFCb09XZ3hxcTVFdS9NemdnckdSZExvaURsb01hcXVSTHZ6TTRJS3hrWFM2In0%3D",
+    "retrieved_at": "2026-10-17T06:44:27.537449+00:00",
+    "response_sha256": "407c460b381ca52997bc8e23bb3e96300a74ea6472e06f29a39dd476f2933960",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NzEsIl9pZCI6eyIkZ3QiOiI2YTFhMDFmOTY4NDI1ZWYyYjkxOGM4NTUifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo3MX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSlBId0FJYUNTRUFBQUFBQU1CUlFCb09XZ3hxR2dINWFFSmU4cmtZeUZVaURsb01haG9CK1doQ1h2SzVHTWhWIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:29.951673+00:00",
+    "response_sha256": "e65764d641ba33a95225a39801eacaea2d5e63b676f94446eafca4784decedff",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NjMsIl9pZCI6eyIkZ3QiOiI2N2QzYTYzMzczNjBlYTkwOGNmM2FjNjYifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo2M319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTTNZeVFJYUNTRUFBQUFBQUlCUFFCb09XZ3huMDZZemMyRHFrSXp6ckdZaURsb01aOU9tTTNOZzZwQ004NnhtIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:32.520371+00:00",
+    "response_sha256": "829cd3de4edcc77182d4ba112f6f3564f57ab4d61cd4fbf62da6396f08e3b0c9",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTcsIl9pZCI6eyIkZ3QiOiI2YTExNjI3M2U1NjAwZGQ2MDYwMzFmODEifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo1N319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSVNCdGdJYUNTRUFBQUFBQUlCTVFCb09XZ3hxRVdKejVXQU4xZ1lESDRFaURsb01haEZpYytWZ0RkWUdBeCtCIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:34.956335+00:00",
+    "response_sha256": "c2c85922124c5d5970a7733f75743580274c88047ba0d9edb817eedcc961d7c6",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTEsIl9pZCI6eyIkZ3QiOiI2YTQ0ZTg2OTkzNGJiNDc5OWRiM2Q4YTgifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo1MX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSVRXMFFJYUNTRUFBQUFBQUlCSlFCb09XZ3hxUk9ocGswdTBlWjJ6MktnaURsb01ha1RvYVpOTHRIbWRzOWlvIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:37.408088+00:00",
+    "response_sha256": "d8e52427abd8fd968ca88caf1ead3f3924d97500cd18195b24e9d14dbd478427",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NDYsIl9pZCI6eyIkZ3QiOiI2YTgxZjJlMTU5NWY2MjhlMmMyNjIyMzAifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo0Nn19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTStHeUFJYUNTRUFBQUFBQUFCSFFCb09XZ3hxZ2ZMaFdWOWlqaXdtSWpBaURsb01hb0h5NFZsZllvNHNKaUl3In0%3D",
+    "retrieved_at": "2026-10-17T06:44:39.900956+00:00",
+    "response_sha256": "77b3da59ec0b96974a05479f8b470b2aa897e6f827d140d4a514f8d1ff5ac2d8",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NDIsIl9pZCI6eyIkZ3QiOiI2YWIwYTRmNDZkMzI2MzVhOTZmYjkwMzkifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo0Mn19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDS1NKc2dFYUNTRUFBQUFBQUFCRlFCb09XZ3hxc0tUMGJUSmpXcGI3a0RraURsb01hckNrOUcweVkxcVcrNUE1In0%3D",
+    "retrieved_at": "2026-10-17T06:44:42.256763+00:00",
+    "response_sha256": "46a268cdbc57239b65b7ae9ff7b4f05ac92735e8833559397d58cdc3f6218571",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzgsIl9pZCI6eyIkZ3QiOiI2ODc2ODZjMDAyMGI5Nzc2Y2M1NWU4MjIifX0seyJkb3dubG9hZHMiOnsiJGx0IjozOH19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSWJTdXdJYUNTRUFBQUFBQUFCRFFCb09XZ3hvZG9iQUFndVhkc3hWNkNJaURsb01hSGFHd0FJTGwzYk1WZWdpIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:44.746845+00:00",
+    "response_sha256": "ee0ff30d8ddff2d55d1ba8a92899874c98729faf1ec28f0adbafd799035b1d32",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzUsIl9pZCI6eyIkZ3QiOiI2ODk0YmI1ZDBkODhmYTRjMGJmYTMzMjAifX0seyJkb3dubG9hZHMiOnsiJGx0IjozNX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTnJRdVFJYUNTRUFBQUFBQUlCQlFCb09XZ3hvbEx0ZERZajZUQXY2TXlBaURsb01hSlM3WFEySStrd0wrak1nIn0%3D",
+    "retrieved_at": "2026-10-17T06:44:47.278836+00:00",
+    "response_sha256": "42bac0465fbf6b8156357a965744306eb44c299f84f30a9f237bdeb9783c56bd",
+    "query_name": "image-text-popular"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand%5B%5D=author&expand%5B%5D=createdAt&expand%5B%5D=lastModified&expand%5B%5D=downloads&expand%5B%5D=likes&expand%5B%5D=tags&expand%5B%5D=cardData&expand%5B%5D=safetensors&expand%5B%5D=pipeline_tag&expand%5B%5D=gated&expand%5B%5D=sha&expand%5B%5D=library_name",
+    "retrieved_at": "2026-10-17T06:42:57.187331+00:00",
+    "response_sha256": "7916aff468f5efb845564d65ca47a5b13b47c0f391221ff96104389c537b6600",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFjZTZhNDgyY2FjYjlmMWI2ZGFlNmRhIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTUdJMUFJYURsb01hczVxU0N5c3VmRzIydWJhSWc1YURHck9ha2dzckxueHR0cm0yZz09In0%3D",
+    "retrieved_at": "2026-10-17T06:44:49.582392+00:00",
+    "response_sha256": "548a2c5441fc12350b38059f0082459aaa563b2bcc6c51f26380685aae23fa9e",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFjYWEwYTU2MjNlOGUwMDE3MmFiMTU0In0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTlR4emdJYURsb01hc3FncFdJK2pnQVhLckZVSWc1YURHcktvS1ZpUG80QUZ5cXhWQT09In0%3D",
+    "retrieved_at": "2026-10-17T06:44:52.079827+00:00",
+    "response_sha256": "765dbc2170269854b96b1a06ab4c194f21343d945b512c7349d5f356a1677690",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFjNTdhZjY4NDk4ZjFhYzIwMjhhZTcyIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTitleXdJYURsb01hc1Y2OW9TWThhd2dLSzV5SWc1YURHckZldmFFbVBHc0lDaXVjZz09In0%3D",
+    "retrieved_at": "2026-10-17T06:44:54.499082+00:00",
+    "response_sha256": "023b20077a5155903f5bfd06106863b3dd2b5582a63503f1eda3427dda02f793",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFjMDI0NmFjMTVkOTE5ZTc4MDY1Y2U1In0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSXVueHdJYURsb01hc0FrYXNGZGtaNTRCbHpsSWc1YURHckFKR3JCWFpHZWVBWmM1UT09In0%3D",
+    "retrieved_at": "2026-10-17T06:44:56.950684+00:00",
+    "response_sha256": "3c1be9d7dd31fb72ea7a6f87abb3d39b87b52a466151412a59b14a6d99140ab3",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFiYjRiMGJlMGNmM2MzYzdhOGI1NTBkIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSWJVendJYURsb01hcnRMQytEUFBEeDZpMVVOSWc1YURHcTdTd3Znenp3OGVvdFZEUT09In0%3D",
+    "retrieved_at": "2026-10-17T06:44:59.519667+00:00",
+    "response_sha256": "dd759945dda4047a67fca469634578e451a9dc334b5ce6028b2d3476e727e8ab",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFiNWRhYTgwOWQ5Yjg1NWU4MjU4Y2ViIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTitjMEFJYURsb01hclhhcUFuWnVGWG9KWXpySWc1YURHcTEycWdKMmJoVjZDV002dz09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:02.182523+00:00",
+    "response_sha256": "27762b9de1b17b1f466a590a0e1941a83babdfa68847fd94401d1301a38f4b7a",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFiMWJmYWU5NzcyZTUzNmJhNGZlMTdjIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTkxkdUFJYURsb01hckcvcnBkeTVUYTZUK0Y4SWc1YURHcXh2NjZYY3VVMnVrL2hmQT09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:04.659207+00:00",
+    "response_sha256": "accf38a9427cc3b250fc506592d34bc64c7bbead37ed1257ae280a88cebc18ba",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFhYmM2NmM2MTYyODhiMzVhNWNlMjQxIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSkxlbXdFYURsb01hcXZHYkdGaWlMTmFYT0pCSWc1YURHcXJ4bXhoWW9peldsemlRUT09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:07.099183+00:00",
+    "response_sha256": "9ab174cb878d25220460f0d214917d4aeba82a7b502421caa20eb909e8074ec9",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFhNWI3MDQ1MzY5Mjc2NDBiN2FkMmE3In0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTmlheXdJYURsb01hcVczQkZOcEoyUUxldEtuSWc1YURHcWx0d1JUYVNka0MzclNwdz09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:09.482090+00:00",
+    "response_sha256": "f80089534f74ee2652c5026a8c39b997271058679f042111b3f87bd6580231f3",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmFhMDEzOTI5ZWQxMDk5MjIzMGMyYTdiIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDUEN1eGdJYURsb01hcUFUa3A3UkNaSWpEQ3A3SWc1YURHcWdFNUtlMFFtU0l3d3Fldz09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:11.852078+00:00",
+    "response_sha256": "dab1a6acfeff4ba685494def81b8bb926fef8187749c9ba45a49f9bd7764fa14",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-text-to-text&sort=createdAt&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyJfaWQiOnsiJGx0IjoiNmE5OWM1MTc2NGI5NzJiNGQzODg0ZTBhIn0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDT3Z5eFFJYURsb01hcG5GRjJTNWNyVFRpRTRLSWc1YURHcVp4UmRrdVhLMDA0aE9DZz09In0%3D",
+    "retrieved_at": "2026-10-17T06:45:14.204038+00:00",
+    "response_sha256": "ca09021b0093a2a08bae943487ad941c3448aee39b7c3e60d867959e257c0c8c",
+    "query_name": "image-text-recent"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=500&expand%5B%5D=author&expand%5B%5D=createdAt&expand%5B%5D=lastModified&expand%5B%5D=downloads&expand%5B%5D=likes&expand%5B%5D=tags&expand%5B%5D=cardData&expand%5B%5D=safetensors&expand%5B%5D=pipeline_tag&expand%5B%5D=gated&expand%5B%5D=sha&expand%5B%5D=library_name",
+    "retrieved_at": "2026-10-17T06:42:59.515550+00:00",
+    "response_sha256": "4be9768a432fec7ccd8d3d76f8561fd5f699ac2bb244d887cefef369223b25eb",
+    "query_name": "image-to-text"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6OTYsIl9pZCI6eyIkZ3QiOiI2YWM2M2QwMDc0NzM2NjUyYWE2MDBkN2YifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo5Nn19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDS216eWdJYUNTRUFBQUFBQUFCWVFCb09XZ3hxeGowQWRITm1VcXBnRFg4aURsb01hc1k5QUhSelpsS3FZQTEvIn0%3D",
+    "retrieved_at": "2026-10-17T06:45:17.443183+00:00",
+    "response_sha256": "155cb6108a385e3dbd12fe037cad7659673f573a9ef9be1fe1cc440eafbd5974",
+    "query_name": "image-to-text"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTcsIl9pZCI6eyIkZ3QiOiI2YTFmNGY0Mzk1Nzg5YzgzZWFiMTZkNGUifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxN319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSVhlemdJYUNTRUFBQUFBQUFBeFFCb09XZ3hxSDA5RGxYaWNnK3F4YlU0aURsb01haDlQUTVWNG5JUHFzVzFPIn0%3D",
+    "retrieved_at": "2026-10-17T06:45:19.694392+00:00",
+    "response_sha256": "b528902344341135ab283770cc4850e40d71acf3f9783897fa3c4b412122dc1b",
+    "query_name": "image-to-text"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NywiX2lkIjp7IiRndCI6IjZhNDFlYzg4NWU0ZjliMDZkNDBiYTQ0NyJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjd9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0tPa3hBSWFDU0VBQUFBQUFBQWNRQm9PV2d4cVFleUlYaytiQnRRTHBFY2lEbG9NYWtIc2lGNVBtd2JVQzZSSCJ9",
+    "retrieved_at": "2026-10-17T06:45:21.935655+00:00",
+    "response_sha256": "0dab4e9c2a9e41d47c8aabc2e0b6343ecd77216a23ab086e1083d0d9af29dfe0",
+    "query_name": "image-to-text"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=image-to-text&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MCwiX2lkIjp7IiRndCI6IjY5ZDRiNTU2NTllZGUyNTQ1ZmI3NmY2NiJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjB9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0pLK2tnRWFDU0VBQUFBQUFBQUFBQm9PV2d4cDFMVldXZTNpVkYrM2IyWWlEbG9NYWRTMVZsbnQ0bFJmdDI5bSJ9",
+    "retrieved_at": "2026-10-17T06:45:23.965169+00:00",
+    "response_sha256": "53eafab9598e436ccdd4fce0d12ead9c38aa7c538ed58bd1c041bded9bbc2dc1",
+    "query_name": "image-to-text"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=visual-question-answering&sort=downloads&direction=-1&limit=500&expand%5B%5D=author&expand%5B%5D=createdAt&expand%5B%5D=lastModified&expand%5B%5D=downloads&expand%5B%5D=likes&expand%5B%5D=tags&expand%5B%5D=cardData&expand%5B%5D=safetensors&expand%5B%5D=pipeline_tag&expand%5B%5D=gated&expand%5B%5D=sha&expand%5B%5D=library_name",
+    "retrieved_at": "2026-10-17T06:43:02.141461+00:00",
+    "response_sha256": "046664ccc57d85490197a4313d383b6d497779342ceae7baed057f4e73d0269a",
+    "query_name": "visual-qa"
+  },
+  {
+    "url": "https://huggingface.co/api/models?pipeline_tag=visual-question-answering&sort=downloads&direction=-1&limit=500&expand=author&expand=createdAt&expand=lastModified&expand=downloads&expand=likes&expand=tags&expand=cardData&expand=safetensors&expand=pipeline_tag&expand=gated&expand=sha&expand=library_name&cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTEsIl9pZCI6eyIkZ3QiOiI2NjEyYTk0OGI1ZGRkNmNjNDcyN2IzYzQifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxMX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDUHJoa1FJYUNTRUFBQUFBQUFBbVFCb09XZ3htRXFsSXRkM1d6RWNuczhRaURsb01aaEtwU0xYZDFzeEhKN1BFIn0%3D",
+    "retrieved_at": "2026-10-17T06:45:26.257131+00:00",
+    "response_sha256": "eab442061131839ba9654b326633bace570708e511abfc19b55fae4735456ed3",
+    "query_name": "visual-qa"
+  }
+]

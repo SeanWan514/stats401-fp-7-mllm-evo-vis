@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "raw_observations": 2000,
+  "unique_repositories_before_filter": 2000,
+  "duplicates_across_queries": 0,
+  "excluded": 621,
+  "exclusion_reasons": {
+    "conflicting_image_generation_task": 11,
+    "legacy_task_without_vlm_evidence": 608,
+    "explicit_test_repository": 2
+  },
+  "accepted_repositories": 1379,
+  "target": 10000,
+  "target_met": false,
+  "shortfall": 8621,
+  "by_family": {
+    "llava": 88,
+    "unknown": 202,
+    "minicpm-v": 69,
+    "qwen-vl": 678,
+    "gemma": 121,
+    "blip": 72,
+    "florence": 16,
+    "molmo": 1,
+    "llama-vision": 20,
+    "mplug": 6,
+    "internvl": 31,
+    "smolvlm": 5,
+    "glm-vision": 14,
+    "paligemma": 11,
+    "pixtral": 2,
+    "deepseek-vl": 6,
+    "idefics": 11,
+    "mllama": 7,
+    "moondream": 6,
+    "phi-vision": 5,
+    "kosmos": 1,
+    "kimi-vl": 1,
+    "eagle": 4,
+    "hunyuan-vision": 1,
+    "mistral-vision": 1
+  },
+  "by_repository_type": {
+    "unknown": 252,
+    "adapter": 60,
+    "quantization": 702,
+    "fine_tune": 289,
+    "original_release": 76
+  },
+  "by_task": {
+    "visual-question-answering": 287,
+    "image-text-to-text": 991,
+    "image-to-text": 101
+  },
+  "missing": {
+    "created_at": 0,
+    "last_modified": 0,
+    "license": 150,
+    "parameters_stored": 525,
+    "downloads": 0,
+    "likes": 0
+  },
+  "retrieval_start": "2026-10-17T06:42:54.857986+00:00",
+  "retrieval_end": "2026-10-17T06:43:02.141461+00:00",
+  "sampling": "Bounded multi-query sample: popularity plus recent repository creation; not an exhaustive Hub census.",
+  "limitations": [
+    "Metadata-supported relevance; repository classification and family inference are not human validated.",
+    "Repository creation history is a surviving-snapshot history, not a count of original model releases.",
+    "Original release means publisher distribution rather than a proven new model architecture.",
+    "Stored tensor counts can describe adapters or quantized tensors; not total or active model parameters.",
+    "Downloads and likes are engagement counters, not unique users or satisfaction ratings."
+  ]
+}

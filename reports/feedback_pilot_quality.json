@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "raw_objects": 600,
+  "accepted_unique_objects": 332,
+  "target": 10000,
+  "shortfall": 9668,
+  "exclusions": {
+    "pull_request": 47,
+    "insufficient_substantive_text": 91,
+    "maintainer": 130
+  },
+  "platforms": {
+    "github": 332
+  },
+  "families": {
+    "llava": 120,
+    "internvl": 89,
+    "qwen-vl": 123
+  },
+  "roles": {
+    "community": 332
+  },
+  "attribution_levels": {
+    "family": 332
+  },
+  "tasks": {
+    "ocr": 10,
+    "multimodal-conversation": 11,
+    "document-understanding": 8,
+    "visual-reasoning": 16,
+    "image-captioning": 8,
+    "visual-qa": 4,
+    "video-understanding": 23,
+    "chart-understanding": 2
+  },
+  "unclassified_task_count": 262,
+  "sentiment": {
+    "positive": 40,
+    "negative": 59,
+    "mixed": 26,
+    "unknown": 207
+  },
+  "label_method": "transparent_rules_v1",
+  "human_validated_count": 0,
+  "validation_status": "Sean review not yet completed",
+  "sentiment_accuracy": null,
+  "notes": [
+    "Independent source objects; no sentence splitting or family-to-model replication.",
+    "Labels and task relevance are rule-based suggestions, not validated user-study findings.",
+    "Specialized model-family repository context supplies association; task IDs require direct text matches.",
+    "No fuzzy deduplication: exact source IDs and same-author long exact texts only."
+  ]
+}

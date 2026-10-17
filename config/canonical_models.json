@@ -1,0 +1,932 @@
+{
+  "schema_version": "1.0",
+  "baseline_snapshot_date": "2025-09-17",
+  "models": [
+    {
+      "id": "qwen-qwen-vl-chat",
+      "repo_id": "Qwen/Qwen-VL-Chat",
+      "name": "Qwen-VL-Chat",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen-VL-Chat"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "qwen-qwen2-vl-2b-instruct",
+      "repo_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "name": "Qwen2-VL-2B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2-VL-2B"
+      ],
+      "release_date": "2024-08-30",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-vl-7b-instruct",
+      "repo_id": "Qwen/Qwen2-VL-7B-Instruct",
+      "name": "Qwen2-VL-7B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2-VL-7B"
+      ],
+      "release_date": "2024-08-30",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-vl-72b-instruct",
+      "repo_id": "Qwen/Qwen2-VL-72B-Instruct",
+      "name": "Qwen2-VL-72B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2-VL-72B"
+      ],
+      "release_date": "2024-09-19",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-5-vl-3b-instruct",
+      "repo_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+      "name": "Qwen2.5-VL-3B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2.5-VL-3B"
+      ],
+      "release_date": "2025-01-28",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-5-vl-7b-instruct",
+      "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "name": "Qwen2.5-VL-7B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2.5-VL-7B"
+      ],
+      "release_date": "2025-01-28",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-5-vl-32b-instruct",
+      "repo_id": "Qwen/Qwen2.5-VL-32B-Instruct",
+      "name": "Qwen2.5-VL-32B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2.5-VL-32B"
+      ],
+      "release_date": "2025-03-25",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen2-5-vl-72b-instruct",
+      "repo_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+      "name": "Qwen2.5-VL-72B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [
+        "Qwen2.5-VL-72B"
+      ],
+      "release_date": "2025-01-28",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-2b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-2B-Instruct",
+      "name": "Qwen3-VL-2B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-10-21",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-4b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-4B-Instruct",
+      "name": "Qwen3-VL-4B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-10-15",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-8b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "name": "Qwen3-VL-8B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-10-15",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-32b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-32B-Instruct",
+      "name": "Qwen3-VL-32B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-10-21",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-30b-a3b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+      "name": "Qwen3-VL-30B-A3B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-10-04",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "qwen-qwen3-vl-235b-a22b-instruct",
+      "repo_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+      "name": "Qwen3-VL-235B-A22B-Instruct",
+      "family_id": "qwen-vl",
+      "baseline_names": [],
+      "release_date": "2025-09-23",
+      "release_evidence_url": "https://github.com/QwenLM/Qwen3-VL",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "opengvlab-internvl2-2b",
+      "repo_id": "OpenGVLab/InternVL2-2B",
+      "name": "InternVL2-2B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2-2B"
+      ],
+      "release_date": "2024-07-04",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-8b",
+      "repo_id": "OpenGVLab/InternVL2-8B",
+      "name": "InternVL2-8B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2-8B"
+      ],
+      "release_date": "2024-07-04",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-26b",
+      "repo_id": "OpenGVLab/InternVL2-26B",
+      "name": "InternVL2-26B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2-26B"
+      ],
+      "release_date": "2024-07-04",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-llama3-76b",
+      "repo_id": "OpenGVLab/InternVL2-Llama3-76B",
+      "name": "InternVL2-Llama3-76B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2-Llama3-76B"
+      ],
+      "release_date": "2024-07-04",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-5-2b",
+      "repo_id": "OpenGVLab/InternVL2_5-2B",
+      "name": "InternVL2_5-2B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2.5-2B"
+      ],
+      "release_date": "2024-12-05",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-5-8b",
+      "repo_id": "OpenGVLab/InternVL2_5-8B",
+      "name": "InternVL2_5-8B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2.5-8B"
+      ],
+      "release_date": "2024-12-05",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-5-38b",
+      "repo_id": "OpenGVLab/InternVL2_5-38B",
+      "name": "InternVL2_5-38B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2.5-38B"
+      ],
+      "release_date": "2024-12-05",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl2-5-78b",
+      "repo_id": "OpenGVLab/InternVL2_5-78B",
+      "name": "InternVL2_5-78B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL2.5-78B"
+      ],
+      "release_date": "2024-12-05",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl3-2b",
+      "repo_id": "OpenGVLab/InternVL3-2B",
+      "name": "InternVL3-2B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL3-2B"
+      ],
+      "release_date": "2025-04-11",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl3-8b",
+      "repo_id": "OpenGVLab/InternVL3-8B",
+      "name": "InternVL3-8B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL3-8B"
+      ],
+      "release_date": "2025-04-11",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl3-38b",
+      "repo_id": "OpenGVLab/InternVL3-38B",
+      "name": "InternVL3-38B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL3-38B"
+      ],
+      "release_date": "2025-04-11",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "opengvlab-internvl3-78b",
+      "repo_id": "OpenGVLab/InternVL3-78B",
+      "name": "InternVL3-78B",
+      "family_id": "internvl",
+      "baseline_names": [
+        "InternVL3-78B"
+      ],
+      "release_date": "2025-04-11",
+      "release_evidence_url": "https://github.com/OpenGVLab/InternVL",
+      "release_evidence": "Official dated series announcement; exact variant is linked by the series model list.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "liuhaotian-llava-v1-5-7b",
+      "repo_id": "liuhaotian/llava-v1.5-7b",
+      "name": "llava-v1.5-7b",
+      "family_id": "llava",
+      "baseline_names": [
+        "LLaVA-v1.5-7B"
+      ],
+      "release_date": "2023-10-05",
+      "release_evidence_url": "https://github.com/haotian-liu/LLaVA",
+      "release_evidence": "Official October 5 2023 news announces LLaVA-1.5 and links Model Zoo.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "liuhaotian-llava-v1-5-13b",
+      "repo_id": "liuhaotian/llava-v1.5-13b",
+      "name": "llava-v1.5-13b",
+      "family_id": "llava",
+      "baseline_names": [
+        "LLaVA-v1.5-13B"
+      ],
+      "release_date": "2023-10-05",
+      "release_evidence_url": "https://github.com/haotian-liu/LLaVA",
+      "release_evidence": "Official October 5 2023 news announces LLaVA-1.5 and links Model Zoo.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "lmms-lab-llava-onevision-qwen2-7b-ov",
+      "repo_id": "lmms-lab/llava-onevision-qwen2-7b-ov",
+      "name": "llava-onevision-qwen2-7b-ov",
+      "family_id": "llava",
+      "baseline_names": [
+        "LLaVA-OneVision-7B"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "lmms-lab-llava-onevision-qwen2-72b-ov",
+      "repo_id": "lmms-lab/llava-onevision-qwen2-72b-ov",
+      "name": "llava-onevision-qwen2-72b-ov",
+      "family_id": "llava",
+      "baseline_names": [
+        "LLaVA-OneVision-72B"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "openbmb-minicpm-llama3-v-2-5",
+      "repo_id": "openbmb/MiniCPM-Llama3-V-2_5",
+      "name": "MiniCPM-Llama3-V-2_5",
+      "family_id": "minicpm-v",
+      "baseline_names": [
+        "MiniCPM-Llama3-V2.5"
+      ],
+      "release_date": "2024-05-20",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/changelog_en.md",
+      "release_evidence": "Official dated changelog explicitly announces open-sourcing of this exact model version.",
+      "release_date_scope": "exact_variant"
+    },
+    {
+      "id": "openbmb-minicpm-v-2-6",
+      "repo_id": "openbmb/MiniCPM-V-2_6",
+      "name": "MiniCPM-V-2_6",
+      "family_id": "minicpm-v",
+      "baseline_names": [
+        "MiniCPM-V-2.6"
+      ],
+      "release_date": "2024-08-06",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/changelog_en.md",
+      "release_evidence": "Official dated changelog explicitly announces open-sourcing of this exact model version.",
+      "release_date_scope": "exact_variant"
+    },
+    {
+      "id": "openbmb-minicpm-o-2-6",
+      "repo_id": "openbmb/MiniCPM-o-2_6",
+      "name": "MiniCPM-o-2_6",
+      "family_id": "minicpm-v",
+      "baseline_names": [
+        "MiniCPM-o-2.6"
+      ],
+      "release_date": "2025-01-13",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/changelog_en.md",
+      "release_evidence": "Official dated changelog explicitly announces open-sourcing of this exact model version.",
+      "release_date_scope": "exact_variant"
+    },
+    {
+      "id": "openbmb-minicpm-v-4-5",
+      "repo_id": "openbmb/MiniCPM-V-4_5",
+      "name": "MiniCPM-V-4_5",
+      "family_id": "minicpm-v",
+      "baseline_names": [],
+      "release_date": "2025-08-26",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/changelog_en.md",
+      "release_evidence": "Official dated changelog explicitly announces open-sourcing of this exact model version.",
+      "release_date_scope": "exact_variant"
+    },
+    {
+      "id": "allenai-molmo-7b-d-0924",
+      "repo_id": "allenai/Molmo-7B-D-0924",
+      "name": "Molmo-7B-D-0924",
+      "family_id": "molmo",
+      "baseline_names": [
+        "Molmo-7B-D"
+      ],
+      "release_date": "2024-09-25",
+      "release_evidence_url": "https://allenai.org/blog/molmo",
+      "release_evidence": "Official family release announcement and linked model collection.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "allenai-molmo-7b-o-0924",
+      "repo_id": "allenai/Molmo-7B-O-0924",
+      "name": "Molmo-7B-O-0924",
+      "family_id": "molmo",
+      "baseline_names": [
+        "Molmo-7B-O"
+      ],
+      "release_date": "2024-09-25",
+      "release_evidence_url": "https://allenai.org/blog/molmo",
+      "release_evidence": "Official family release announcement and linked model collection.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "allenai-molmo-72b-0924",
+      "repo_id": "allenai/Molmo-72B-0924",
+      "name": "Molmo-72B-0924",
+      "family_id": "molmo",
+      "baseline_names": [
+        "Molmo-72B"
+      ],
+      "release_date": "2024-09-25",
+      "release_evidence_url": "https://allenai.org/blog/molmo",
+      "release_evidence": "Official family release announcement and linked model collection.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "allenai-molmoe-1b-0924",
+      "repo_id": "allenai/MolmoE-1B-0924",
+      "name": "MolmoE-1B-0924",
+      "family_id": "molmo",
+      "baseline_names": [
+        "MolmoE-1B"
+      ],
+      "release_date": "2024-09-25",
+      "release_evidence_url": "https://allenai.org/blog/molmo",
+      "release_evidence": "Official family release announcement and linked model collection.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "allenai-molmo2-4b",
+      "repo_id": "allenai/Molmo2-4B",
+      "name": "Molmo2-4B",
+      "family_id": "molmo",
+      "baseline_names": [],
+      "release_date": "2025-12-11",
+      "release_evidence_url": "https://allenai.org/blog/molmo2",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "allenai-molmo2-8b",
+      "repo_id": "allenai/Molmo2-8B",
+      "name": "Molmo2-8B",
+      "family_id": "molmo",
+      "baseline_names": [],
+      "release_date": "2025-12-11",
+      "release_evidence_url": "https://allenai.org/blog/molmo2",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "allenai-molmo2-o-7b",
+      "repo_id": "allenai/Molmo2-O-7B",
+      "name": "Molmo2-O-7B",
+      "family_id": "molmo",
+      "baseline_names": [],
+      "release_date": "2025-12-11",
+      "release_evidence_url": "https://allenai.org/blog/molmo2",
+      "release_evidence": "Official dated announcement identifies this released variant; repository creation/modification dates are not used."
+    },
+    {
+      "id": "google-gemma-3-4b-it",
+      "repo_id": "google/gemma-3-4b-it",
+      "name": "gemma-3-4b-it",
+      "family_id": "gemma",
+      "baseline_names": [
+        "Gemma3-4B"
+      ],
+      "release_date": "2025-03-12",
+      "release_evidence_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/",
+      "release_evidence": "Official launch dated March 12, 2025 names the 4B, 12B and 27B sizes.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "google-gemma-3-12b-it",
+      "repo_id": "google/gemma-3-12b-it",
+      "name": "gemma-3-12b-it",
+      "family_id": "gemma",
+      "baseline_names": [
+        "Gemma3-12B"
+      ],
+      "release_date": "2025-03-12",
+      "release_evidence_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/",
+      "release_evidence": "Official launch dated March 12, 2025 names the 4B, 12B and 27B sizes.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "google-gemma-3-27b-it",
+      "repo_id": "google/gemma-3-27b-it",
+      "name": "gemma-3-27b-it",
+      "family_id": "gemma",
+      "baseline_names": [
+        "Gemma3-27B"
+      ],
+      "release_date": "2025-03-12",
+      "release_evidence_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/",
+      "release_evidence": "Official launch dated March 12, 2025 names the 4B, 12B and 27B sizes.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "microsoft-phi-3-5-vision-instruct",
+      "repo_id": "microsoft/Phi-3.5-vision-instruct",
+      "name": "Phi-3.5-vision-instruct",
+      "family_id": "phi-vision",
+      "baseline_names": [
+        "Phi-3.5-Vision"
+      ],
+      "release_date": null,
+      "release_evidence_url": "https://huggingface.co/microsoft/Phi-3.5-vision-instruct",
+      "release_month": "2024-08",
+      "release_evidence": "Model card states Release date: August 2024; day unknown."
+    },
+    {
+      "id": "microsoft-phi-4-multimodal-instruct",
+      "repo_id": "microsoft/Phi-4-multimodal-instruct",
+      "name": "Phi-4-multimodal-instruct",
+      "family_id": "phi-vision",
+      "baseline_names": [
+        "Phi-4-MultiModal"
+      ],
+      "release_date": null,
+      "release_evidence_url": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct",
+      "release_month": "2025-02",
+      "release_evidence": "Model card states Release date: February 2025; day unknown."
+    },
+    {
+      "id": "huggingfacem4-idefics2-8b",
+      "repo_id": "HuggingFaceM4/idefics2-8b",
+      "name": "idefics2-8b",
+      "family_id": "idefics",
+      "baseline_names": [
+        "IDEFICS2-8B"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "huggingfacem4-idefics3-8b-llama3",
+      "repo_id": "HuggingFaceM4/Idefics3-8B-Llama3",
+      "name": "Idefics3-8B-Llama3",
+      "family_id": "idefics",
+      "baseline_names": [
+        "Idefics3-8B-Llama3"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "deepseek-ai-deepseek-vl-7b-chat",
+      "repo_id": "deepseek-ai/deepseek-vl-7b-chat",
+      "name": "deepseek-vl-7b-chat",
+      "family_id": "deepseek-vl",
+      "baseline_names": [
+        "DeepSeek-VL-7B"
+      ],
+      "release_date": null,
+      "release_evidence_url": null
+    },
+    {
+      "id": "deepseek-ai-deepseek-vl2-tiny",
+      "repo_id": "deepseek-ai/deepseek-vl2-tiny",
+      "name": "deepseek-vl2-tiny",
+      "family_id": "deepseek-vl",
+      "baseline_names": [
+        "DeepSeek-VL2-Tiny"
+      ],
+      "release_date": "2024-12-13",
+      "release_evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL2",
+      "release_evidence": "Dated release entry explicitly includes tiny, small and full variants.",
+      "release_date_scope": "exact_variants"
+    },
+    {
+      "id": "deepseek-ai-deepseek-vl2-small",
+      "repo_id": "deepseek-ai/deepseek-vl2-small",
+      "name": "deepseek-vl2-small",
+      "family_id": "deepseek-vl",
+      "baseline_names": [
+        "DeepSeek-VL2-Small"
+      ],
+      "release_date": "2024-12-13",
+      "release_evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL2",
+      "release_evidence": "Dated release entry explicitly includes tiny, small and full variants.",
+      "release_date_scope": "exact_variants"
+    },
+    {
+      "id": "deepseek-ai-deepseek-vl2",
+      "repo_id": "deepseek-ai/deepseek-vl2",
+      "name": "deepseek-vl2",
+      "family_id": "deepseek-vl",
+      "baseline_names": [
+        "DeepSeek-VL2"
+      ],
+      "release_date": "2024-12-13",
+      "release_evidence_url": "https://github.com/deepseek-ai/DeepSeek-VL2",
+      "release_evidence": "Dated release entry explicitly includes tiny, small and full variants.",
+      "release_date_scope": "exact_variants"
+    },
+    {
+      "id": "huggingfacetb-smolvlm2-2-2b-instruct",
+      "repo_id": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+      "name": "SmolVLM2-2.2B-Instruct",
+      "family_id": "smolvlm",
+      "baseline_names": [
+        "SmolVLM2"
+      ],
+      "release_date": "2025-02-20",
+      "release_evidence_url": "https://huggingface.co/blog/smolvlm2",
+      "release_evidence": "Official launch blog dated February 20, 2025 introduces 2.2B, 500M and 256M variants.",
+      "release_date_scope": "series",
+      "table_aliases": [
+        "SmolVLM2 2.2B"
+      ]
+    },
+    {
+      "id": "huggingfacetb-smolvlm2-256m-video-instruct",
+      "repo_id": "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+      "name": "SmolVLM2-256M-Video-Instruct",
+      "family_id": "smolvlm",
+      "baseline_names": [
+        "SmolVLM2-256M"
+      ],
+      "release_date": "2025-02-20",
+      "release_evidence_url": "https://huggingface.co/blog/smolvlm2",
+      "release_evidence": "Official launch blog dated February 20, 2025 introduces 2.2B, 500M and 256M variants.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "huggingfacetb-smolvlm2-500m-video-instruct",
+      "repo_id": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "name": "SmolVLM2-500M-Video-Instruct",
+      "family_id": "smolvlm",
+      "baseline_names": [
+        "SmolVLM2-500M"
+      ],
+      "release_date": "2025-02-20",
+      "release_evidence_url": "https://huggingface.co/blog/smolvlm2",
+      "release_evidence": "Official launch blog dated February 20, 2025 introduces 2.2B, 500M and 256M variants.",
+      "release_date_scope": "series"
+    },
+    {
+      "id": "openbmb-minicpm-v-4-7-1b",
+      "repo_id": "openbmb/MiniCPM-V-4.7-1B",
+      "name": "MiniCPM-V-4.7-1B",
+      "family_id": "minicpm-v",
+      "baseline_names": [],
+      "release_date": "2026-10-12",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V",
+      "release_evidence": "News entry dated 2026-10-12 and Model Weights section explicitly name both 1B and 35B-A3B variants."
+    },
+    {
+      "id": "openbmb-minicpm-v-4-7-35b-a3b",
+      "repo_id": "openbmb/MiniCPM-V-4.7-35B-A3B",
+      "name": "MiniCPM-V-4.7-35B-A3B",
+      "family_id": "minicpm-v",
+      "baseline_names": [],
+      "release_date": "2026-10-12",
+      "release_evidence_url": "https://github.com/OpenBMB/MiniCPM-V",
+      "release_evidence": "News entry dated 2026-10-12 and Model Weights section explicitly name both 1B and 35B-A3B variants."
+    }
+  ],
+  "sources": [
+    {
+      "id": "qwen-release",
+      "url": "https://raw.githubusercontent.com/QwenLM/Qwen3-VL/main/README.md",
+      "public_url": "https://github.com/QwenLM/Qwen3-VL"
+    },
+    {
+      "id": "internvl-release",
+      "url": "https://raw.githubusercontent.com/OpenGVLab/InternVL/main/README.md",
+      "public_url": "https://github.com/OpenGVLab/InternVL"
+    },
+    {
+      "id": "minicpm-release",
+      "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-V/main/README.md",
+      "public_url": "https://github.com/OpenBMB/MiniCPM-V"
+    },
+    {
+      "id": "molmo2-release",
+      "url": "https://allenai.org/blog/molmo2",
+      "public_url": "https://allenai.org/blog/molmo2"
+    },
+    {
+      "id": "molmo-release",
+      "url": "https://allenai.org/blog/molmo",
+      "public_url": "https://allenai.org/blog/molmo"
+    },
+    {
+      "id": "gemma-release",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/",
+      "public_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-3/"
+    },
+    {
+      "id": "deepseek-vl2-release",
+      "url": "https://raw.githubusercontent.com/deepseek-ai/DeepSeek-VL2/main/README.md",
+      "public_url": "https://github.com/deepseek-ai/DeepSeek-VL2"
+    },
+    {
+      "id": "llava-release",
+      "url": "https://raw.githubusercontent.com/haotian-liu/LLaVA/main/README.md",
+      "public_url": "https://github.com/haotian-liu/LLaVA"
+    },
+    {
+      "id": "minicpm-history",
+      "url": "https://raw.githubusercontent.com/OpenBMB/MiniCPM-V/main/docs/changelog_en.md",
+      "public_url": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/changelog_en.md"
+    },
+    {
+      "id": "smolvlm2-release",
+      "url": "https://huggingface.co/blog/smolvlm2",
+      "public_url": "https://huggingface.co/blog/smolvlm2"
+    },
+    {
+      "id": "metric-vqa",
+      "url": "https://raw.githubusercontent.com/open-compass/VLMEvalKit/main/vlmeval/dataset/image_vqa.py",
+      "public_url": "https://github.com/open-compass/VLMEvalKit/blob/main/vlmeval/dataset/image_vqa.py"
+    },
+    {
+      "id": "metric-hallusion",
+      "url": "https://raw.githubusercontent.com/tianyi-lab/HallusionBench/main/evaluation.py",
+      "public_url": "https://github.com/tianyi-lab/HallusionBench/blob/main/evaluation.py"
+    },
+    {
+      "id": "metric-ocrbench",
+      "url": "https://raw.githubusercontent.com/Yuliang-Liu/MultimodalOCR/main/OCRBench/README.md",
+      "public_url": "https://github.com/Yuliang-Liu/MultimodalOCR/tree/main/OCRBench"
+    },
+    {
+      "id": "metric-mmbench",
+      "url": "https://raw.githubusercontent.com/open-compass/VLMEvalKit/main/vlmeval/dataset/image_mcq.py",
+      "public_url": "https://github.com/open-compass/VLMEvalKit/blob/main/vlmeval/dataset/image_mcq.py"
+    },
+    {
+      "id": "qwen3-4b-8b-vl-instruct-performance",
+      "url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "public_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "suffix": ".jpg"
+    }
+  ],
+  "manual_benchmark_observations": [
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MMMU val",
+      "score": 67.4,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MMMU val; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MMMU val",
+      "score": 69.6,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MMMU val; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MathVista mini",
+      "score": 73.7,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MathVista mini; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MathVista mini",
+      "score": 77.2,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MathVista mini; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MMBench DEV EN V1.1",
+      "score": 85.1,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MMBench DEV EN V1.1; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "MMBench DEV EN V1.1",
+      "score": 85.0,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=MMBench DEV EN V1.1; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "HallusionBench",
+      "score": 57.6,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=HallusionBench; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "HallusionBench",
+      "score": 61.1,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=HallusionBench; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "DocVQA TEST",
+      "score": 95.3,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=DocVQA TEST; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "DocVQA TEST",
+      "score": 96.1,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=DocVQA TEST; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-4b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "OCRBench",
+      "score": 881,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=OCRBench; model_column=1 (Qwen3-VL-4B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    },
+    {
+      "model_id": "qwen-qwen3-vl-8b-instruct",
+      "source_id": "qwen3-4b-8b-vl-instruct-performance",
+      "source_label": "OCRBench",
+      "score": 896,
+      "source_url": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3-VL/qwen3vl_4b_8b_vl_instruct.jpg",
+      "source_pointer": "row=OCRBench; model_column=2 (Qwen3-VL-8B-Instruct)",
+      "evidence_path": "data/raw/model_cards/qwen3-4b-8b-vl-instruct-performance.jpg",
+      "evidence_sha256": "74ea909866e42fca39a4b69dcbe75b3bea3bd49cbfdd1b1951bedce63b17ccba",
+      "verification_method": "assistant_visual_transcription",
+      "linked_official_card": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "notes": "MMBench is development English v1.1, not the test split. HallusionBench metric variant is not specified."
+    }
+  ]
+}
