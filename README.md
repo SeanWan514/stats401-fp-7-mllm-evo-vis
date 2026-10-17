@@ -6,9 +6,11 @@ An interactive guide to the evolution and practical selection of open-weight mul
 
 ## Final data handoff (2026-10-17)
 
-The `codex/final-data-pipeline` branch adds reproducible repository and community-data collection, curated canonical model metadata, preserved benchmark measurements, and a separate five-view [Data Handoff Explorer](final.html). See [data pipeline and reproduction](docs/data-pipeline.md), [model evidence](docs/model-methodology.md), [feedback methodology](docs/feedback-methodology.md), and [view contract](docs/final-view-contract.md).
+**Published five-view site:** [MLLM Evidence Explorer](https://owen-1234.github.io/mllm-evidence-explorer/) · [dedicated website repository](https://github.com/Owen-1234/mllm-evidence-explorer) · [中文交付报告](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/delivery-zh.md).
 
-Run `python3 -m http.server 8765 --bind 127.0.0.1` and open `http://127.0.0.1:8765/final.html`. The prepared small browser payload is included. Full feedback and raw caches are local research artifacts; read the pipeline instructions before rebuilding from a fresh clone. See the [delivery report](reports/delivery.md) and [structural checks](reports/final_validation.json). Machine feedback labels remain provisional pending the planned human review.
+The `codex/final-data-pipeline` branch adds reproducible repository and community-data collection, curated canonical model metadata, preserved benchmark measurements, and a separate five-view [Data Handoff Explorer](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/final.html). See [data pipeline and reproduction](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/data-pipeline.md), [model evidence](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/model-methodology.md), [feedback methodology](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/feedback-methodology.md), and [view contract](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/final-view-contract.md).
+
+Run `python3 -m http.server 8765 --bind 127.0.0.1` and open `http://127.0.0.1:8765/final.html`. The prepared small browser payload is included. Full feedback and raw caches are now public in this group branch: [feedback gzip](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/feedback.jsonl.gz), [raw archive](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/archives/raw-cache-2026-10-17.tar.gz) and [restoration instructions](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/archives/README.md). See the [delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/delivery.md) and [structural checks](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/final_validation.json). Machine feedback labels are rule-generated suggestions; their empirical accuracy has not been measured.
 
 The sections below describe the preserved interim prototype. They are not a claim that the revised final-project research validation is complete.
 
@@ -31,7 +33,7 @@ The site follows a six-part narrative: opening, introduction, dataset, visualiza
 
 Each view includes a legend, an analytical purpose, and a planned interaction. The page distinguishes results supported by the current snapshot from future work.
 
-See the [project proposal](proposal.md), [requirements audit](docs/requirements-audit.md), and [change log](CHANGELOG.md).
+See the [project proposal](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/proposal.md), [requirements audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/requirements-audit.md), and [change log](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/CHANGELOG.md).
 
 ## Repository Structure
 

@@ -237,7 +237,7 @@ def main():
     if any(n == 0 for n in coverage.values()):
         warnings.append('No unambiguous canonical score for: ' + ', '.join(m['label'] for m in metrics if coverage[m['id']] == 0))
     if counts['feedback'] and not any(b['validated_count'] for b in feedback_buckets.values()):
-        warnings.append('Feedback labels have not been manually validated; counts are provisional rule-based labels.')
+        warnings.append('Feedback labels are rule-generated suggestions; empirical label accuracy has not been measured.')
     payload = {'schema_version': '1.0', 'generated_at': max(snapshot_times) if snapshot_times else None, 'timestamp_definition': 'latest source retrieved_at / collected_at; no wall-clock build timestamp',
         'missing_inputs': missing, 'warnings': warnings, 'counts': dict(counts), 'feedback_roles': dict(feedback_roles), 'models': models,
         'metrics': metrics, 'tasks': tasks, 'families': [{'id': f, 'label': family_names.get(f) or f} for f in families],

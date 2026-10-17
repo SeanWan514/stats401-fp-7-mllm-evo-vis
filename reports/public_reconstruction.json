@@ -1,0 +1,21 @@
+{
+  "public_archives_reconstructed_offline": true,
+  "counts": {
+    "canonical_models": 57,
+    "canonical_families": 10,
+    "task_definitions": 8,
+    "repositories": 18255,
+    "feedback": 21674,
+    "task_labeled_feedback": 1965,
+    "exact_canonical_feedback": 1507,
+    "human_validated_feedback": 0,
+    "benchmark_rows": 143086,
+    "relationship_rows": 15
+  },
+  "feedback_matches_published_gzip_content": true,
+  "credential_redactions": {
+    "openai_key": 3,
+    "bearer": 5
+  },
+  "source_originals_unchanged": true
+}

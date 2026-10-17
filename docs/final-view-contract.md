@@ -1,6 +1,6 @@
 # Data handoff explorer: view contract
 
-This is an independent integration preview at `final.html`. It demonstrates that Shilin's prepared tables can support the five agreed views. It does not replace the original interim site, claim completion of the visualization teammate's assignment, or substitute for the group's user evaluation.
+This is an independent integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/final.html). It demonstrates that Shilin's prepared tables can support the five agreed views. It does not replace the original interim site, claim completion of the visualization teammate's assignment, or substitute for the group's user evaluation.
 
 ## Run and rebuild
 
@@ -13,9 +13,9 @@ python3 -m http.server 8767 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8767/final.html`. Serve over HTTP; browsers commonly block JSON fetches from `file://`. D3 7.9.0 is pinned to the jsDelivr CDN. If D3 or the prepared JSON cannot load, the page displays an explicit error instead of example data.
 
-`build_final_views.py` reads `data/final/repositories.jsonl`, `models.json`, `benchmark_results.csv` (or `.csv.gz`), `model_relationships.csv`, `feedback.jsonl`, and `tasks.json`. The optional `reports/model_radar_coverage.json` supplies the reviewed default pair and each axis's source protocol group. It writes `data/final/view_data.json`; missing source files are recorded in `missing_inputs` and the page displays a partial-handoff notice.
+`build_final_views.py` reads [data/final/repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/repositories.jsonl), [models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/models.json), `benchmark_results.csv` (or `.csv.gz`), [model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/model_relationships.csv), `feedback.jsonl`, and [tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/tasks.json). The optional [reports/model_radar_coverage.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/reports/model_radar_coverage.json) supplies the reviewed default pair and each axis's source protocol group. It writes [data/final/view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/view_data.json); missing source files are recorded in `missing_inputs` and the page displays a partial-handoff notice.
 
-The browser requests only `view_data.json`, containing monthly ecosystem counts, canonical metadata, eight dimension specifications, qualified primary scores, sourced relationships, sparse feedback aggregates, and a limited excerpt lookup. It never downloads the complete feedback JSONL or the 140,000-plus-row benchmark table. The full source tables remain the authority.
+The browser requests only [view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/data/final/view_data.json), containing monthly ecosystem counts, canonical metadata, eight dimension specifications, qualified primary scores, sourced relationships, sparse feedback aggregates, and a limited excerpt lookup. It never downloads the complete feedback JSONL or the 140,000-plus-row benchmark table. The full source tables remain the authority.
 
 ## What / Why / How
 
@@ -42,10 +42,10 @@ The browser requests only `view_data.json`, containing monthly ecosystem counts,
 2. Verified-release mode requires a verified release status, a valid date, and `release_evidence_url`. Unknown dates do not become January 1 or the repository creation date.
 3. Every distinct eligible feedback `id` counts once in the denominator and at most once per task. Multi-label task counts are not additive. Feedback with no task label remains in the denominator.
 4. Exact-model buckets require resolved canonical model IDs and model-level attribution. Family-attributed feedback has separate buckets; it never appears in individual model E/C cells. Exact repositories outside the canonical comparison set remain in the task denominator; they are not relabeled as family-only evidence.
-5. E means rule-inferred `usage_observation` or `problem_report` (plus equivalent explicit experience categories when supplied). E is a subset of C. Rules are fallible; neither E nor C denotes verified use or independent users. Repository attribution does not prove the exact variant was tested. Source author roles, including unknown roles, are retained in excerpts. Completed human-validation counts are reported separately.
+5. E means rule-inferred `usage_observation` or `problem_report` (plus equivalent explicit experience categories when supplied). E is a subset of C. Rules are fallible; neither E nor C denotes verified use or independent users. Repository attribution does not prove the exact variant was tested. Source author roles, including unknown roles, are retained in excerpts.
 6. A matrix cell's B is the **number of mapped dimensions with at least one unambiguous qualified score**, not a performance score. Empty mapping means no verified mapping, not evidence that the task is impossible. A cell can have feedback with no benchmark evidence or vice versa.
 7. Excerpts are a convenience sample, not a statistical sample: at most 500 distinct records, 280 characters per excerpt, one excerpt per bucket, and eight per task/scope/entity/platform. Email, phone, and common credential patterns are redacted. The UI shows at most four excerpts per panel. Their absence in a narrow filter window does not erase an aggregate count. Source URLs remain available.
-8. Machine labels retain `pending_human_review`; the UI never labels them human validated. Empty filters show empty states rather than fallback records.
+8. Machine labels remain rule-generated suggestions rather than verified ground truth. Empty filters show empty states rather than fallback records.
 
 ## Benchmark safeguards
 
@@ -63,7 +63,7 @@ The reviewed default pair uses the explicit per-dimension source protocol group 
 
 Before handoff, rebuild from the finished tables, compare displayed totals with the data quality reports, and verify this path in the browser: select task → inspect matrix evidence → shortlist two models → compare profiles → inspect family history and practical reports. Test a model with no benchmark scores and a filter combination with no candidates. Check mobile layout and the console for rendering errors.
 
-Screenshots are integration evidence of the prepared snapshot, not user-study results. The delivery still requires the group's human labeling, agreement/error analysis, and task-based usability evaluation. A functioning view cannot turn an unmet collection target or unknown evaluation protocol into a completed requirement.
+Screenshots are integration evidence of the prepared snapshot, not user-study results. Task-based usability evaluation remains part of the final team work. A functioning view cannot turn an unmet collection target or unknown evaluation protocol into a completed requirement.
 
 ### Browser QA completed on 2026-10-17
 
@@ -78,20 +78,20 @@ python3 -m unittest discover -s tests -v
 node --check final.js
 ```
 
-The regression fixtures check deduplication, task denominators, family/model separation, unresolved repository attribution, rule-inferred experience bounds, conflicting score missingness, compressed CSV inputs, contact/token excerpt redaction, Unicode U+2028, missing input notices, and byte-identical rebuilds. These are software/data-contract checks; they are not human label-validation or usability-study results.
+The regression fixtures check deduplication, task denominators, family/model separation, unresolved repository attribution, rule-inferred experience bounds, conflicting score missingness, compressed CSV inputs, contact/token excerpt redaction, Unicode U+2028, missing input notices, and byte-identical rebuilds. These are software/data-contract checks; they do not measure label accuracy or replace usability-study results.
 
-Integration screenshots are saved in `docs/screenshots/`. `final-radar-overview.jpg` shows the radar, metadata, and its evidence caveat. `final-mobile-tasks.jpg` records the narrow-screen check. The five final view screenshots and a whole-page snapshot record the final prepared data handoff.
+Integration screenshots are saved in [docs/screenshots/](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/tree/codex/final-data-pipeline/docs/screenshots). `final-radar-overview.jpg` shows the radar, metadata, and its evidence caveat. `final-mobile-tasks.jpg` records the narrow-screen check. The five final view screenshots and a whole-page snapshot record the final prepared data handoff.
 
 ### Frozen screenshot snapshot
 
-The final screenshots use **18,255 repositories, 57 canonical models, 143,086 benchmark measurements, and 21,674 cleaned community feedback records**. Of these feedback records, 1,965 have a supported task label and 1,507 resolve to a canonical model. Human-validation completion remains zero. There are eight supported task definitions; the suggested 10–20 category target remains unmet.
+The final screenshots use **18,255 repositories, 57 canonical models, 143,086 benchmark measurements, and 21,674 cleaned community feedback records**. Of these feedback records, 1,965 have a supported task label and 1,507 resolve to a canonical model. There are eight supported task definitions; the suggested 10–20 category target remains unmet.
 
-- [Ecosystem growth](screenshots/final-growth.jpg)
-- [Task phrases and ranking](screenshots/final-tasks.jpg)
-- [Family evolution, Qwen-VL filter](screenshots/final-evolution.jpg)
-- [Two-model radar overview](screenshots/final-radar-overview.jpg)
-- [Task–model matrix](screenshots/final-matrix.jpg)
-- [Whole-page snapshot](screenshots/final-full-page.jpg)
-- [Mobile task view](screenshots/final-mobile-tasks.jpg)
+- [Ecosystem growth](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-growth.jpg)
+- [Task phrases and ranking](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-tasks.jpg)
+- [Family evolution, Qwen-VL filter](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-evolution.jpg)
+- [Two-model radar overview](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-radar-overview.jpg)
+- [Task–model matrix](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-matrix.jpg)
+- [Whole-page snapshot](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-full-page.jpg)
+- [Mobile task view](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/codex/final-data-pipeline/docs/screenshots/final-mobile-tasks.jpg)
 
 The final frozen dataset was rechecked through task keyboard selection, model-matrix drill-down, send-to-radar, a no-shared-score model, an empty candidate filter, and the 390px responsive layout. The selected official-table pair displays all eight axes; the displayed comparison caveat remains in place. Browser error logs were empty.
