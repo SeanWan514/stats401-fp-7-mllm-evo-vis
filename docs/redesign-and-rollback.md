@@ -71,3 +71,22 @@ python3 -m http.server 8768 --bind 127.0.0.1
 ```
 
 If a deployed modal revision must be rolled back, first identify its release commit(s), preserve teammates' subsequent changes, and use normal `git revert` commits followed by validation and deployment. Do not reset or force-push shared history.
+
+## Fourteen-page layout refinement · 18 October 2026
+
+- Pre-layout commit: `07b158262cc0259f6d992cd29b249c4cffe62949`, preserved by annotated tag `pre-slides-layout-2026-10-18`.
+- Immediate visual fallback: `pre-slides.html`, with five saved implementation dependencies: `pre-slides.js`, `pre-slides.css`, `pre-slides-core.mjs`, `pre-slides-dialogs.css` and `pre-slides-task-selection.css`. These six files preserve the preceding continuous-page interface; bundled D3 and data remain shared, while the tag preserves the complete historical tree.
+- The new layout organizes the same story into fourteen pages: cover, summary, mission, context, visual goals, datasets, five chart pages, findings, methods/limits, and closing. A progress indicator and previous/next/keyboard navigation replace continuous-page presentation.
+- The five chart/data semantics are preserved. Responsive fitting may change dimensions; View 5's requested initial task becomes visual question answering. Data counts, missingness, comparison-source rules and methodological limits are not relaxed.
+- No original datasets, prior saved views or recovery tags are removed by this layout change.
+- This entry records preservation and the layout contract, not successful acceptance or publication. Final source/content review, regression tests, browser workflows, CI/Pages deployment and published-file verification remain pending for this revision. See [the fourteen-page checklist](slide-layout-checklist.md) and [website audit](final-website-audit.md).
+
+For immediate visual comparison, open `pre-slides.html`. To preview the complete pre-layout tree without altering the active branch:
+
+```bash
+git worktree add --detach ../mllm-before-slides pre-slides-layout-2026-10-18
+cd ../mllm-before-slides
+python3 -m http.server 8769 --bind 127.0.0.1
+```
+
+For a deployed rollback, inspect the layout release commit(s) and teammates' later changes, then use normal revert commits and a fresh validation/deployment cycle. Do not reset or force-push shared `main`.

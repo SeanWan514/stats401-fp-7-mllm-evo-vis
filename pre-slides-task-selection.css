@@ -1,0 +1,26 @@
+/* Task ranking board: explicit tiers and common score scales, with no overlapping marks. */
+#task-mapping.task-tier-board{overflow:visible;background:none;min-width:0}
+.tier-scale{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#6a5a62;font-size:.83rem;margin:0 0 16px}
+.tier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.size-tier{border:1px solid #e4d6d0;border-radius:17px;background:#fffcf8;padding:20px;min-width:0}
+.tier-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.tier-heading h3{font-family:inherit;font-size:1.1rem;font-weight:750;line-height:1.25;margin:0;color:#3e3038}
+.tier-heading>span{font-size:.76rem;color:#79666d;white-space:nowrap}
+.tier-rows{display:flex;flex-direction:column;gap:7px}
+.task-ranked-row{display:block;width:100%;min-width:0;background:transparent;text-align:left;border:1px solid transparent;border-radius:10px;padding:12px 10px;color:#342d33;cursor:pointer;font:inherit}
+.task-ranked-row:hover,.task-ranked-row:focus-visible{background:#fff0ef;border-color:#eab2bd}
+.task-ranked-row:focus-visible{outline:2px solid #b52e54;outline-offset:2px}
+.task-ranked-row.tier-leading{background:#fff2ef}
+.tier-row-top{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:9px;align-items:baseline}
+.tier-rank{font-size:.75rem;font-variant-numeric:tabular-nums;color:#9c6b78}
+.tier-model-name{font-size:.88rem;font-weight:700;line-height:1.45;overflow-wrap:anywhere}
+.tier-score{font-size:1.16rem;font-weight:750;font-variant-numeric:tabular-nums;color:#a82c50}
+.tier-row-meta{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin:5px 0 6px 33px;font-size:.71rem;line-height:1.45;color:#79666d}
+.tier-leader-label{color:#a82c50;font-weight:650}
+#task-mapping .tier-score-bar{display:block;width:calc(100% - 33px);height:9px;min-width:0;margin-left:33px;overflow:visible}
+.tier-empty{font-size:.88rem;color:#8d7a81;margin:18px 0 5px}
+.size-tier-empty{background:#fbf7f2}
+.tier-more{display:block;background:none;border:0;border-bottom:1px solid #c98b9c;padding:3px 0;margin:12px 0 0 33px;color:#9d3453;font-size:.78rem;cursor:pointer}
+#candidate-evidence .candidate-score{display:block;font-size:2.5rem;line-height:1.1;margin:20px 0;color:#b33659}
+#candidate-evidence .candidate-score small{display:block;font-size:.85rem;font-weight:500;line-height:1.5;color:#79666d;margin-top:5px}
+@media(max-width:760px){.tier-grid{grid-template-columns:1fr;gap:14px}.size-tier{padding:17px}.tier-scale{font-size:.76rem;gap:7px}.tier-model-name{font-size:.86rem}.tier-score{font-size:1.1rem}}

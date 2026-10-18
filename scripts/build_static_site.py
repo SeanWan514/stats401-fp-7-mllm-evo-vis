@@ -9,7 +9,9 @@ DIST = ROOT / "dist"
 FILES = ["index.html", "app.js", "styles.css", "proposal.md", "README.md", "CONTRIBUTING.md", "CHANGELOG.md", ".nojekyll",
          "final.html", "final.js", "final.css", "interim.html", "handoff.html",
          "explorer.js", "explorer.css", "explorer-core.mjs", "dialogs.css", "task-selection.css",
-         "pre-modal.html", "pre-modal.js", "pre-modal.css", "pre-modal-core.mjs"]
+         "pre-modal.html", "pre-modal.js", "pre-modal.css", "pre-modal-core.mjs",
+         "slides.js", "slides.css", "pre-slides.html", "pre-slides.js", "pre-slides.css",
+         "pre-slides-core.mjs", "pre-slides-dialogs.css", "pre-slides-task-selection.css"]
 # An explicit allowlist prevents research caches and full community text from
 # being published by the existing deployment workflow.
 PUBLIC_DATA = ["OpenVLM.json", "interim_models.json", "final/models.json",
@@ -17,7 +19,8 @@ PUBLIC_DATA = ["OpenVLM.json", "interim_models.json", "final/models.json",
 PUBLIC_DOCS = ["requirements-audit.md", "final-view-contract.md", "data-pipeline.md",
                "model-methodology.md", "feedback-methodology.md", "implementation-plan.md",
                "README.md", "quickstart.md", "data-dictionary.md", "user-review.md",
-               "final-website-audit.md", "redesign-and-rollback.md", "modal-refinement-checklist.md"]
+               "final-website-audit.md", "redesign-and-rollback.md", "modal-refinement-checklist.md",
+               "slide-layout-checklist.md"]
 PUBLIC_REPORTS = ["delivery.md", "delivery-zh.md", "final_validation.json", "repository_counts.json",
                   "feedback_quality.json", "model_data_quality.json", "model_radar_coverage.json",
                   "model_validation.json", "feedback_raw_provenance.json", "reproducibility.json",

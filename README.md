@@ -1,4 +1,4 @@
-# Pixels to Intelligence · MLLM Evidence Atlas
+# MLLMs: Which Model for Your Task?
 
 STATS 401 · Group 7 · **Sean Wan, Yuxuan Huang, Shilin Ou**
 
@@ -8,7 +8,9 @@ STATS 401 · Group 7 · **Sean Wan, Yuxuan Huang, Shilin Ou**
 
 Help researchers and developers understand the open-weight MLLM ecosystem, identify user concerns, compare two models' measured capabilities, and find task-specific candidates within a parameter-size range before testing locally.
 
-The narrative moves from context → user concerns → family evaluation → two-model comparison → task-specific model choices. Five interactive views support it:
+The website presents **14 pages**, navigated with the top progress bar, edge arrows or keyboard. The sequence is cover → framing → mission → context → goals → data → five visualization pages → conclusions → methods → closing. Existing chart deep links such as `#growth` and `#matrix` open their corresponding pages. On narrow screens, long content scrolls within the current page without mixing it with another page.
+
+Five interactive views support the narrative:
 
 1. **Ecosystem growth:** bright, smooth cumulative areas show repository growth from January 2023, retaining earlier records in the cumulative baseline. Category baseline reordering and month inspection support comparison; repository creations and verified canonical releases remain distinct.
 2. **Community concerns:** a full-width phrase cloud emphasizes mention-frequency differences. Select a concern to open source excerpts and task links; exact counts and the feedback collection method open in a separate dialog.
@@ -18,7 +20,7 @@ The narrative moves from context → user concerns → family evaluation → two
 
 There is no opaque overall model ranking. Task ranks describe one selected benchmark/source group, not universal model quality. Parameter tiers are size categories, not measured hardware requirements. A missing value is not zero; mention frequency is not satisfaction or performance. All 57 models remain in the family story, and the dataset retains all eight task categories even though only five support scored, known-size task comparisons.
 
-Reading guides and detailed evidence for all five views use centered native dialogs with a backdrop, close button, Escape and outside-click dismissal. The global exploration bar has been removed; controls stay with the view they affect. **This modal-focused revision passed local regression and browser checks; publication status is recorded in the [website audit](docs/final-website-audit.md).** The preceding release's checks are separate from tests of these changes.
+Reading guides and detailed evidence for all five views use centered native dialogs with a backdrop, close button, Escape and outside-click dismissal. Controls stay with the view they affect. Page changes preserve chart selections; View 5 initially opens on **Visual question answering**. The five chart interiors and original evidence dialogs are unchanged by the page-layout revision. Publication and verification status are recorded in the [website audit](docs/final-website-audit.md); earlier release checks remain version-specific.
 
 ## Run locally
 
@@ -81,6 +83,6 @@ Sean completed a qualitative review of the **old** handoff site, then confirmed 
 
 Design references: [The Pudding — Is the Love Song Dying?](https://pudding.cool/2024/11/love-songs/) for persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) for common-baseline category comparison. Class connections and What–Why–How are on the website. Our SVG layout and interactions are custom; D3 is [BSD-licensed](vendor/D3-LICENSE).
 
-Pushes to `main` run validation and deploy the public-only bundle using GitHub Actions. Preserve the original fallback pages: [interim](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/interim.html) and [handoff](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/handoff.html). The new [pre-modal snapshot](pre-modal.html) and tag `pre-modal-redesign-2026-10-18` preserve the state at `bfe6314ea937c1bd37c42ce6eb77b31cb7a954de` before this revision. The earlier pre-redesign and pre-clarity tags remain available; see the recovery log.
+Pushes to `main` run validation and deploy the public-only bundle using GitHub Actions. The [saved scrolling website](pre-slides.html) uses its own six frozen page/script/style assets. Tag `pre-slides-layout-2026-10-18` preserves the full tree at `07b158262cc0259f6d992cd29b249c4cffe62949`. Earlier [pre-modal](pre-modal.html), [interim](interim.html) and [handoff](handoff.html) pages and recovery tags remain available. See the [page-layout checklist](docs/slide-layout-checklist.md) and recovery log.
 
 The final report, poster and presentation are separate submission deliverables; this website release does not assert that those are complete.

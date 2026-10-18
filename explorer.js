@@ -1,7 +1,7 @@
 import {normalized, available, protocolGroups, pairScores, eligible, matchFeedback, concernCount, sharedCoverage, comparisonChoices, bestComparisonPartner, paretoFrontier} from './explorer-core.mjs';
 
 const $=id=>document.getElementById(id), fmt=n=>Number(n||0).toLocaleString('en-US');
-const state={family:'all',platform:'all',experience:'all',cloud:'all',concern:'documents',task:'document-understanding',stage:0,focus:null,candidateFocus:null,a:null,b:null,page:0,groups:{},growthFocus:null};
+const state={family:'all',platform:'all',experience:'all',cloud:'all',concern:'documents',task:'visual-qa',stage:0,focus:null,candidateFocus:null,a:null,b:null,page:0,groups:{},growthFocus:null};
 let data, models, tasks, metrics, color, timer, evolutionSvg;
 const palette=['#ea4b73','#00a0b5','#d7a119','#7955d9','#36a46b','#ee8336','#467bdf','#c24bb8','#e73e66','#18a7a0'];
 const typeColors={original_release:'#13a694',fine_tune:'#f2aa24',adapter:'#8b62df',quantization:'#f36783',unknown:'#aab5c7',canonical_release:'#13a694'};
@@ -122,7 +122,7 @@ function renderCloud(){
   el('h3',c.label,panel);const count=concernCount(data,c.id,state);
   el('p',fmt(count)+' matching records · from '+fmt(data.counts.feedback)+' retained posts and comments',panel,'modal-count');
   el('p',c.rationale,panel);
-  if(c.task_id&&supportedTask(c.task_id)){const b=el('button','Find models for this task',panel,'button primary');b.onclick=()=>{setTask(c.task_id);closeModal('dialog-concern');$('matrix').scrollIntoView({behavior:'instant'});};}
+  if(c.task_id&&supportedTask(c.task_id)){const b=el('button','Find models for this task',panel,'button primary');b.onclick=()=>{setTask(c.task_id);closeModal('dialog-concern');document.dispatchEvent(new CustomEvent('story:navigate',{detail:{id:'matrix'}}));};}
   else if(c.task_id)el('p','This interest remains in the feedback corpus, but the collected benchmarks cannot support a measured model comparison for it.',panel,'chart-note');
   const buckets=data.concern_buckets.filter(r=>r.concern_id===c.id&&r.scope==='all'&&matchFeedback(r,state));
   const samples=state.experience==='experience'?Object.fromEntries(Object.entries(data.concern_excerpts).filter(([,r])=>['usage_observation','problem_report'].includes(r.experience_type))):data.concern_excerpts;
@@ -327,6 +327,7 @@ function findings(){const box=clear($('findings-grid'));const quant=total(data.g
 function stopStory(){if(timer)clearInterval(timer);timer=null;$('story-play').textContent='Play story';}
 function wire(){
  wireDialogs();
+ document.addEventListener('story:pagechange',e=>{hideTip();if(e.detail?.id!=='evolution')stopStory();});
  let compactLayout=innerWidth<650;window.addEventListener('resize',()=>{const next=innerWidth<650;if(next!==compactLayout){compactLayout=next;renderCloud();renderRadar();}});
  $('platform-filter').onchange=e=>{state.platform=e.target.value;renderCloud();};
  $('experience-filter').onchange=e=>{state.experience=e.target.value;renderCloud();};
@@ -359,9 +360,9 @@ async function init(){try{
  $('reduce-motion').checked=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const stats=clear($('summary'));
  [[data.counts.repositories,'unique retained model repositories'],[data.counts.feedback,'distinct community records'],[data.models.length,'canonical comparison models'],[data.tasks.length,'rule-supported task categories']].forEach(([n,t])=>{const p=el('div',null,stats);el('strong',fmt(n),p);el('span',t,p);});
- $('load-status').textContent='Snapshot: '+data.generated_at.slice(0,10)+' · Source-linked, reproducible data · Feedback labels remain unvalidated.';
+ $('load-status').textContent='';$('load-status').hidden=true;
  wire();prepareTaskMeasure();refresh();findings();document.body.dataset.ready='true';
- if(location.hash){const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)requestAnimationFrame(()=>target.scrollIntoView({behavior:'instant'}));}
- }catch(error){$('load-status').textContent='Unable to load the atlas: '+error.message+'. See the repository and saved views in the footer.';$('load-status').className='error';console.error(error);}
+ document.dispatchEvent(new CustomEvent('story:ready'));
+ }catch(error){$('load-status').hidden=false;$('load-status').textContent='Unable to load the atlas: '+error.message+'. Reload the page or open the saved scrolling version.';$('load-status').className='error';console.error(error);}
 }
 init();

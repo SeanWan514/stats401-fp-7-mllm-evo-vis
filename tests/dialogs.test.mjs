@@ -9,15 +9,18 @@ const html=read('index.html'),js=read('explorer.js');
 test('each help link opens a named native dialog with close and focus support',()=>{
  const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
  const targets=[...html.matchAll(/data-modal-target="([^"]+)"/g)].map(m=>m[1]);
- assert.equal(targets.length,7);
+ assert.equal(targets.length,12);
  for(const id of targets){assert.ok(ids.has(id));assert.ok(html.includes(`<dialog id="${id}"`));assert.ok(ids.has(id+'-title'));}
- assert.equal((html.match(/<dialog /g)||[]).length,10);
- assert.equal((html.match(/class="modal-close"/g)||[]).length,10);
+ assert.equal((html.match(/<dialog /g)||[]).length,15);
+ assert.equal((html.match(/class="modal-close"/g)||[]).length,15);
  assert.ok(js.includes('dialog.showModal()'));assert.ok(js.includes("d.addEventListener('close'"));
  assert.ok(js.includes('returnFocus'));assert.ok(read('dialogs.css').includes('::backdrop'));
 });
 test('five visualization sections no longer expand support content or expose global/pair clutter',()=>{
- const charts=html.slice(html.indexOf('<section class="chapter shell" id="growth">'),html.indexOf('<section class="shell conclusions"'));
+ const start=html.search(/<section\b[^>]*\bid="growth"[^>]*>/),end=html.search(/<section\b[^>]*\bid="findings"[^>]*>/);
+ assert.ok(start>=0&&end>start,'chart sections must exist in order');
+ const charts=html.slice(start,end);
+ assert.equal((charts.match(/data-modal-target="([^"]+)"/g)||[]).length,7,'the seven chart-help links remain unchanged');
  assert.ok(!charts.includes('<details'));assert.ok(!charts.includes('chapter-next'));
  for(const id of ['family-filter','selected-task-label','reset','shortlist-summary','export-shortlist','growth-insight','date-from','date-to'])assert.ok(!html.includes(`id="${id}"`),id);
  assert.ok(!html.includes('YOUR EXPLORATION'));assert.ok(!charts.includes('YOUR SHORTLIST'));

@@ -34,6 +34,7 @@ syntax:
 	node --check final.js
 	node --check explorer.js
 	node --check explorer-core.mjs
+	node --check slides.js
 
 reproducibility: require-cache
 	$(PYTHON) scripts/verify_offline_rebuild.py

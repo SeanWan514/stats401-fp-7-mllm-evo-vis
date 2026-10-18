@@ -12,7 +12,9 @@ BASE = 'https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/'
 FILES = ['index.html', 'explorer.js', 'explorer-core.mjs', 'explorer.css',
          'vendor/d3.v7.min.js', 'data/final/explorer_data.json',
          'interim.html', 'handoff.html', 'final.html', 'dialogs.css', 'task-selection.css',
-         'pre-modal.html', 'pre-modal.js', 'pre-modal.css', 'pre-modal-core.mjs']
+         'pre-modal.html', 'pre-modal.js', 'pre-modal.css', 'pre-modal-core.mjs',
+         'slides.js', 'slides.css', 'pre-slides.html', 'pre-slides.js', 'pre-slides.css',
+         'pre-slides-core.mjs', 'pre-slides-dialogs.css', 'pre-slides-task-selection.css']
 
 def check(name):
     result = subprocess.run(['curl', '--max-time', '60', '--compressed', '-fsS', BASE + name],

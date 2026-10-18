@@ -61,6 +61,12 @@ These responses document that clarity iteration, not verified gains in usability
 
 **Status: implemented; technical verification is recorded in the [website audit](final-website-audit.md).** No human check of this modal-focused revision has been reported. The earlier production confirmation does not certify the new layout, dialogs or task rankings. Data counts are unchanged; feedback-label accuracy remains unvalidated. Automated and agent-operated browser checks are not participant feedback.
 
+## Final layout request · 18 October 2026
+
+Sean described all five current visualizations as good and asked that they remain unchanged. He requested a fourteen-page presentation layout with progress/arrow navigation, separate cover and mission pages, clearer goals and dataset context, concise conclusions/methods, and a closing page. The only requested chart-default change is Visual question answering in View 5.
+
+This is approval of the preceding chart designs and a new layout specification, not a completed user test of the new slideshow. Chart preservation, navigation and technical checks belong in the website audit; no new participant or semantic-label validation result is claimed.
+
 ## Interpretation limits
 
 The formative reviews identify design problems and motivate revisions; the recorded production check confirms that two requested workflows worked on an earlier release for the same reviewer. None establishes ease of use for new users or constitutes a representative usability study. Website inspection is separate from human validation of scraped feedback/task labels, which remains pending. Automated or AI-assisted checks must not be described as human participant results.
