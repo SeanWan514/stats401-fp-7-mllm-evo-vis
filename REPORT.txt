@@ -96,6 +96,6 @@ References and reproducibility
 - Repository counts (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/repository_counts.json), feedback quality (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/feedback_quality.json), model data quality (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/model_data_quality.json), and concern aggregation (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/explorer_data_audit.json).
 - OpenVLM Leaderboard (https://huggingface.co/spaces/opencompass/open_vlm_leaderboard); benchmark methodology and official sources (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/model-methodology.md).
 - Formative review record (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/user-review.md); final website audit (https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/final-website-audit.md).
-- The Pudding, *Is the Love Song Dying?* (https://pudding.cool/2024/11/love-songs/); *Dancing Histograms* (https://www.meandeviation.com/dancing-histograms/).
+- The Pudding, Is the Love Song Dying? (https://pudding.cool/2024/11/love-songs/); Dancing Histograms (https://www.meandeviation.com/dancing-histograms/).
 
 Screenshots show the final website implementation at commit 6ed38ea, captured on 18 October 2026. The report body is approximately 1,500 words; figure captions and references are supplementary.
