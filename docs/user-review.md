@@ -25,6 +25,24 @@
 - Reviewer response: “Yes, both workflows work”.
 - Result: both requested production workflows confirmed working by the reviewer. This closes the outstanding live-browser smoke check. No task timings, error rates or broader usability outcomes were collected.
 
+## Subsequent clarity review and revision
+
+- Reviewer: Sean Wan, the same project-member reviewer; no new participant is counted.
+- Feedback received: 18 October 2026, after the production workflow check above, with eight screenshots and written comments on the published redesign.
+- Method: qualitative visual inspection and written design feedback. This is not a new task-completion experiment.
+- Overall feedback: the structure was acceptable, but excessive text, crowded controls and weak visual hierarchy obscured the charts. The five views needed a clearer user-task loop. The reviewer also reported confusing A/B controls and comparisons with too little usable evidence.
+
+| Reported issue | Clarity revision response |
+| --- | --- |
+| View 1 looked broken and dim; controls and framing were excessive | Smooth cumulative filled areas, brighter categories, the first observed date as the start, fewer visible controls and shorter captions; repository creations stay distinct from verified releases |
+| View 2 needed to emphasize the cloud and make frequency differences visible | Full-width phrase cloud with stronger type-size differences, clearer discussion-evidence control, compact excerpts, and exact counts/methods available on demand |
+| View 3 controls were confusing; A/B selection seemed ineffective | Shorter stage descriptions, performance-only controls, compact model details, visible selected-state buttons and A/B dot labels |
+| View 4 was overwhelmed by text and weak comparison pairs | Prominent six-concern radar with an optional eight-benchmark profile, a four-shared-dimension threshold, concise comparison gaps, and expandable raw evidence; 47 models have usable partners while all 57 remain in the family story |
+| View 5 was visually naive and did not support an insightful decision | Task-specific score–size map with a correctly defined Pareto frontier, concise candidate evidence, constraint filters, and a direct path to compare and export two models |
+| Views did not form a clear user-task loop | Concern selection links to a task; task constraints lead to candidate inspection and A/B comparison. Pinned models outside current filters are explicitly flagged, including in the evidence brief |
+
+These responses document implementation changes, not verified gains in usability. The earlier “both workflows work” confirmation applies to the preceding deployed version. **A human workflow test of this latest clarity revision has not yet been reported.** Technical regression and browser checks are documented separately in the website audit; they must not be presented as independent participant feedback.
+
 ## Interpretation limits
 
-The earlier formative review identified design problems and motivated revisions; the subsequent production check confirms that two requested workflows worked for the same reviewer. Neither establishes ease of use for new users or constitutes a representative usability study. Both are separate from human validation of scraped feedback/task labels, which remains pending. Automated or AI-assisted checks must not be described as human participant results.
+The formative reviews identify design problems and motivate revisions; the recorded production check confirms that two requested workflows worked on an earlier release for the same reviewer. None establishes ease of use for new users or constitutes a representative usability study. Website inspection is separate from human validation of scraped feedback/task labels, which remains pending. Automated or AI-assisted checks must not be described as human participant results.

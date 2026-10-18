@@ -10,13 +10,13 @@ Help researchers and developers choose an image-and-text task, shortlist two ope
 
 Five coordinated interactive views support this workflow:
 
-1. **Ecosystem growth:** stacked area, monthly/cumulative/share modes, temporal brush and category baseline reordering.
-2. **Community concerns:** a collision-tested phrase cloud, exact counts, source excerpts and linked task selection.
-3. **Model-family story:** persistent model dots move between release dates, hierarchical family groups and within-source benchmark distributions.
-4. **Two-model radar:** selected user concerns map to benchmark proxies; speed and memory remain explicitly unmeasured. An eight-benchmark detail mode and raw table expose sources and settings.
-5. **Task-to-model shortlist:** task links and aligned scores, parameter/license filters, exact-model versus family evidence, pair selection and a downloadable evidence brief.
+1. **Ecosystem growth:** a brighter, smooth cumulative stacked area starts at the first observed date in the selected dataset. A temporal brush and category baseline reordering support exploration; repository creations and verified canonical releases remain distinct.
+2. **Community concerns:** a prominent full-width phrase cloud uses stronger size differences. Select a concern to inspect counts and source excerpts or continue to a linked task; detailed counts and methods stay available on demand.
+3. **Model-family story:** the same 57 model dots move between release dates, hierarchical family groups and within-source performance distributions. Performance controls appear only in that stage; model cards show explicit A/B selection status.
+4. **Two-model radar:** six measured user concerns map to benchmark proxies, with an optional eight-benchmark detail profile. Comparison pairs must share at least four valid measured dimensions; 47 models have a qualifying partner. Speed and memory are disclosed as unmeasured outside the polygon. Sources and raw scores remain inspectable.
+5. **Task-to-model shortlist:** a task-specific score–size scatterplot uses logarithmic parameter position and an empirical Pareto frontier to reveal tradeoffs. Parameter/license filters, source-linked candidate evidence and A/B selection lead back to the radar and a downloadable evidence brief.
 
-There is no opaque overall model ranking. A missing value is not zero; mention frequency is not satisfaction or model performance.
+There is no opaque overall model ranking. A missing value is not zero; mention frequency is not satisfaction or model performance. All 57 models remain available in the family story even when their benchmark coverage is insufficient for radar selection. Pinned comparison models outside current metadata filters are flagged, including in the exported brief; the size–score frontier is not a measure of hardware efficiency.
 
 ## Run locally
 
@@ -75,7 +75,7 @@ For original table reconstruction in a **fresh clone**, use `make restore`, then
 
 ## Review, design and release
 
-Sean completed a qualitative review of the **old** handoff site, then confirmed that task selection → A/B assignment → radar updates and all three Families stages worked on the **published redesigned** site. [The review and production check](docs/user-review.md) are documented separately. Both involve the same project-member reviewer, not an independent user study or validation of feedback labels. No fabricated participants, timings, agreement or completion rates are reported.
+Sean completed a qualitative review of the **old** handoff site, then confirmed that task selection → A/B assignment → radar updates and all three Families stages worked on the **first published redesign**. He subsequently provided screenshot-based feedback about clutter, excessive text, unclear selection and weak comparison views. The latest clarity revision responds with simpler controls, stronger chart hierarchy and a more direct concern → task → candidate → comparison loop. [The reviews, production check and revision responses](docs/user-review.md) are recorded separately. The earlier workflow confirmation does not constitute a user test of this latest revision; no new human test result is claimed. All feedback is from the same project-member reviewer, not an independent user study or validation of feedback labels. No fabricated participants, timings, agreement or completion rates are reported.
 
 Design references: [The Pudding — Is the Love Song Dying?](https://pudding.cool/2024/11/love-songs/) for persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) for common-baseline category comparison. Class connections and What–Why–How are on the website. Our SVG layout and interactions are custom; D3 is [BSD-licensed](vendor/D3-LICENSE).
 

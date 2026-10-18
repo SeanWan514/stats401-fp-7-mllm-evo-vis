@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
-import {normalized,pairScores,protocolGroups,eligible,concernCount} from '../explorer-core.mjs';
+import {normalized,available,pairScores,protocolGroups,eligible,concernCount,sharedCoverage,comparisonChoices,bestComparisonPartner,paretoFrontier} from '../explorer-core.mjs';
 const data=JSON.parse(readFileSync(new URL('../data/final/explorer_data.json',import.meta.url)));
 const m={range_min:0,range_max:100};
 test('missing and ambiguous scores never become zero',()=>{
@@ -30,6 +30,52 @@ test('default pair has eight shared-group benchmark measurements',()=>{
   const [a,b]=data.radar_defaults.pair;
   for(const metric of data.metrics){const p=pairScores(data,a,b,metric.id,data.radar_defaults.groups[metric.id]);assert.ok(p.a&&p.b,metric.id);assert.equal(p.a.comparability_group,p.b.comparability_group);}
 });
+test('shared coverage counts valid dimensions once, not mismatched or missing scores',()=>{
+  const sample={metrics:['x','y','z','w'].map(id=>({id,...m})),scores:[
+    {model_id:'a',benchmark_id:'x',score:0,comparability_group:'shared'},
+    {model_id:'a',benchmark_id:'x',score:0,comparability_group:'shared'},
+    {model_id:'b',benchmark_id:'x',score:75,comparability_group:'shared'},
+    {model_id:'a',benchmark_id:'y',score:80,comparability_group:'p'},
+    {model_id:'b',benchmark_id:'y',score:90,comparability_group:'q'},
+    {model_id:'a',benchmark_id:'z',score:50,comparability_group:'shared'},
+    {model_id:'b',benchmark_id:'z',score:null,comparability_group:'shared'},
+    {model_id:'a',benchmark_id:'w',score:60,comparability_group:'shared'},
+    {model_id:'b',benchmark_id:'w',score:70,ambiguous:true,comparability_group:'shared'}
+  ]};
+  assert.equal(sharedCoverage(sample,'a','b'),1);
+  assert.equal(sharedCoverage(sample,'a','b',['x','x','unknown']),1);
+  assert.equal(sharedCoverage(sample,'a','b',['y','z','w']),0);
+  assert.equal(sharedCoverage(sample,'a','a'),0);
+  assert.equal(sharedCoverage(sample,'a','missing'),0);
+  assert.deepEqual(pairScores(sample,'a','b','x').shared,['shared']);
+});
+test('comparison choices exclude weak pairs and have stable coverage/name ordering',()=>{
+  const sample={models:[{id:'a',name:'Anchor'},{id:'z',name:'Zulu'},{id:'b',name:'Alpha'},{id:'c',name:'Charlie'},{id:'d',name:'No evidence'}],metrics:['x','y','z','w'].map(id=>({id,...m})),scores:[]};
+  for(const [id,n] of [['a',4],['z',4],['b',4],['c',3]])for(const metric of sample.metrics.slice(0,n))sample.scores.push({model_id:id,benchmark_id:metric.id,score:80,comparability_group:metric.id});
+  assert.deepEqual(comparisonChoices(sample,'a').map(m=>m.id),['b','z','c']);
+  assert.equal(bestComparisonPartner(sample,'a'),sample.models[2]);
+  assert.deepEqual(comparisonChoices(sample,'a',undefined,4).map(m=>m.id),['b','z']);
+  assert.deepEqual(comparisonChoices(sample,'a',['x','y']),[]);
+  assert.equal(bestComparisonPartner(sample,'d'),null);
+  assert.deepEqual(comparisonChoices(sample,'unknown'),[]);
+});
+test('real comparison pool has useful coverage and the original default pair remains valid',()=>{
+  const ids=data.radar_concerns.map(id=>data.concerns.find(c=>c.id===id).benchmark_id).filter(Boolean);
+  assert.equal(sharedCoverage(data,...data.radar_defaults.pair),8);
+  assert.equal(sharedCoverage(data,...data.radar_defaults.pair,ids),6);
+  const pool=data.models.filter(m=>bestComparisonPartner(data,m.id,ids));
+  assert.ok(pool.length>=40&&pool.length<data.models.length);
+  for(const model of pool)assert.ok(sharedCoverage(data,model.id,bestComparisonPartner(data,model.id,ids).id,ids)>=3);
+});
+test('Pareto frontier handles equal sizes, ties, zero scores and missing values honestly',()=>{
+  const rows=[{id:'a',score:50,parameters:2},{id:'b',score:70,parameters:2},{id:'c',score:70,parameters:4},{id:'d',score:80,parameters:4},{id:'e',score:70,parameters:2},{id:'f',score:0,parameters:1},
+    {id:'missing-score',score:null,parameters:1},{id:'missing-size',score:99,parameters:null},{id:'zero-size',score:99,parameters:0},{id:'infinite',score:Infinity,parameters:1}];
+  const before=rows.map(r=>({...r}));
+  assert.deepEqual(paretoFrontier(rows).map(r=>r.id),['f','b','e','d']);
+  assert.equal(paretoFrontier(rows)[1],rows[1]);
+  assert.deepEqual(rows,before);
+  assert.deepEqual(paretoFrontier([]),[]);
+});
 test('concern radar keeps practical axes unmeasured',()=>{
   assert.equal(data.radar_concerns.length,8);
   const axes=data.radar_concerns.map(id=>data.concerns.find(c=>c.id===id));
@@ -50,6 +96,15 @@ test('all benchmark selections expose source evidence',()=>{
     assert.ok(group.row.source_urls.length>0);assert.ok(group.models.size>0);
     assert.ok(group.row.source_urls.every(u=>/^https?:\/\//.test(u)));
   }
+});
+test('protocol group counts match actual valid canonical model marks, including filtered sets',()=>{
+  const ids=data.models.map(m=>m.id),subset=ids.slice(0,8);
+  for(const metric of data.metrics)for(const selected of [ids,subset])for(const group of protocolGroups(data,metric.id,selected)){
+    const visible=selected.filter(id=>available(data,id,metric.id).some(row=>row.comparability_group===group.id));
+    assert.equal(group.models.size,visible.length);
+    assert.deepEqual([...group.models].sort(),visible.sort());
+  }
+  assert.equal(new Set(data.scores.map(r=>[r.model_id,r.benchmark_id,r.comparability_group].join('|'))).size,data.scores.length);
 });
 test('all task mappings refer to known benchmark definitions',()=>{
   for(const task of data.tasks)for(const id of task.benchmark_ids)assert.ok(data.metrics.some(m=>m.id===id));
