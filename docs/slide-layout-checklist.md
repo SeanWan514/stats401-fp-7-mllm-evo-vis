@@ -2,7 +2,7 @@
 
 Scope: reorganize the existing website into fourteen navigable pages, with one page visible at a time. Preserve the five charts and their data/interaction semantics; the sole requested chart-default change is **Visual question answering** for View 5. Responsive sizing is permitted to fit each page.
 
-Status: source/content review, all local acceptance checks and the complete 65-test regression run pass. Publication verification remains pending. **No release GO is recorded for this revision yet.** Earlier successful releases do not transfer to this layout.
+Status: source/content review, local acceptance checks, all 65 tests, GitHub validation, Pages deployment and 23-file HTTPS verification pass. **Technical website release: GO.** The audit records the production in-app browser limitation separately.
 
 ## Exact page sequence
 
