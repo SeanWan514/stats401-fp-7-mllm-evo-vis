@@ -45,7 +45,18 @@ Scope: website, prepared data and code. The approximately 1,500-word report, pos
 - Mobile check at 390 × 844: document width equals viewport width; wide data plots scroll within their containers, not the page.
 - Source-code and evidence limitations are exposed rather than hidden by attractive styling.
 
-The deployment workflow and production smoke test must also pass for the release to be considered published. Consult the latest GitHub Actions run for the exact commit and deployment result.
+## Published release verification
+
+Implementation commit: `66dbf30e077a3858615226d65d5bea9115560b63`.
+
+- [GitHub validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39106927160): passed.
+- [GitHub Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39106927049): passed.
+- Nine public core/data/fallback files returned successfully over HTTPS and matched the local tested release byte-for-byte. See [machine-readable verification](../reports/production_release_check.json); repeat with `python3 scripts/verify_deployed_site.py`.
+- The module is served as JavaScript and the JSON payload supports gzip (approximately 323 KB transferred versus 2.86 MB uncompressed).
+- The local deployment bundle passed the old `final.html#radar` redirect, real brush-handle drag, and downloaded shortlist-content checks. Desktop and phone interaction checks used this local bundle.
+- **Production-browser limitation:** the in-app browser repeatedly timed out when inspecting the live HTTPS page. This did not occur in local interaction testing. HTTP/hash checks verify publication, but are not mislabeled as a successful live interactive test.
+
+Minimum remaining release check: in an ordinary browser, open the published website, select a task, choose model A and B, and confirm that the radar updates and the family-stage controls work. This is a new-site smoke check, separate from Sean's completed review of the old site. It should take approximately two minutes. Do not claim that all ten requested checks are unconditionally closed before this succeeds.
 
 ## Honest readiness limits
 

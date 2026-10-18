@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-10-18T07:18:52.494037+00:00",
+  "url": "https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/",
+  "source_commit": "66dbf30e077a3858615226d65d5bea9115560b63",
+  "checks": [
+    {
+      "file": "index.html",
+      "bytes": 20773,
+      "sha256": "56d8c15a8b436262a3ad0c382e120b02e1b9b4be07f0b565d6f6b0b06eb2ccb7",
+      "matches_local": true
+    },
+    {
+      "file": "explorer.js",
+      "bytes": 43588,
+      "sha256": "de5563e3b7d784bd2b0051ccdc18878f7948a5f1d22a2e5ed767aa6a0af6a645",
+      "matches_local": true
+    },
+    {
+      "file": "explorer-core.mjs",
+      "bytes": 2577,
+      "sha256": "54d6f0682bf5bf12e63428b5758cd1f8d5baf2d605a7efc67d03f6ae38dac57c",
+      "matches_local": true
+    },
+    {
+      "file": "explorer.css",
+      "bytes": 13853,
+      "sha256": "c384f5e571978dc58ff39750aaa7850f9477fd3fdd0f14cf068532f4a7c9ec66",
+      "matches_local": true
+    },
+    {
+      "file": "vendor/d3.v7.min.js",
+      "bytes": 279706,
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "matches_local": true
+    },
+    {
+      "file": "data/final/explorer_data.json",
+      "bytes": 2858275,
+      "sha256": "2ed6f3f7ed0896d4ea9c605ff01b016afb9e1633e578315ebe2c8d6ff43de53a",
+      "matches_local": true
+    },
+    {
+      "file": "interim.html",
+      "bytes": 18986,
+      "sha256": "d92258daa166ba16fa42476ceffca7706ac0b866ed49f67606e5a0a6f5a9db3b",
+      "matches_local": true
+    },
+    {
+      "file": "handoff.html",
+      "bytes": 9828,
+      "sha256": "a26f02eb6b84ee0a22804925853ae16cf07e6aa532f87796e52183bdc9465a14",
+      "matches_local": true
+    },
+    {
+      "file": "final.html",
+      "bytes": 608,
+      "sha256": "550225711e35d5fcf0114aee4571b904dbf99b3e74b1aeb3cc741e5c73904401",
+      "matches_local": true
+    }
+  ],
+  "all_match": true,
+  "scope": "HTTPS retrieval and byte identity; not an interactive production-browser test."
+}

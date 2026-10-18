@@ -21,7 +21,7 @@ PUBLIC_REPORTS = ["delivery.md", "delivery-zh.md", "final_validation.json", "rep
                   "feedback_quality.json", "model_data_quality.json", "model_radar_coverage.json",
                   "model_validation.json", "feedback_raw_provenance.json", "reproducibility.json",
                   "public_data_manifest.json", "public_reconstruction.json", "README.md",
-                  "teammate_workflow_validation.json", "explorer_data_audit.json"]
+                  "teammate_workflow_validation.json", "explorer_data_audit.json", "production_release_check.json"]
 
 def main() -> None:
     if DIST.exists():
