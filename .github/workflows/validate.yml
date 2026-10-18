@@ -1,8 +1,8 @@
-name: Validate handoff
+name: Validate website and data
 
 on:
   push:
-    branches: [shilin]
+    branches: [main, shilin]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -25,5 +25,7 @@ jobs:
         run: make test
       - name: Check JavaScript syntax
         run: make syntax
+      - name: Test explorer evidence operations
+        run: node --test tests/explorer.test.mjs
       - name: Build public website bundle
         run: make site

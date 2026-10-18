@@ -1,102 +1,84 @@
-# MLLM Evidence Explorer — Group 7 Data Handoff
+# Pixels to Intelligence · MLLM Evidence Atlas
 
-Data, processing code, and a five-view explorer for selecting open-weight image-and-text models. This is Shilin Ou's final-project handoff on the **`shilin` branch** of the shared STATS 401 Group 7 repository.
+STATS 401 · Group 7 · **Sean Wan, Yuxuan Huang, Shilin Ou**
 
-**[Open the interactive explorer](https://owen-1234.github.io/mllm-evidence-explorer/)** · **[Quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md)** · **[Data dictionary](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-dictionary.md)** · **[English delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery.md)** · **[Chinese delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery-zh.md)**
+**[Open the final website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)** · [Website audit](docs/final-website-audit.md) · [Review and revisions](docs/user-review.md) · [Rollback](docs/redesign-and-rollback.md)
 
-## Start with your goal
+## User task
 
-| I want to… | Start here | Setup |
-| --- | --- | --- |
-| Explore the five views or prepare a demo | [Published explorer](https://owen-1234.github.io/mllm-evidence-explorer/) | Browser only |
-| Run or edit the explorer locally | Follow the preview commands below; edit `final.html`, `final.js`, and `final.css` | Python 3.10+; no package installation |
-| Analyze models, scores, or feedback | [File formats, join keys, and examples](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-dictionary.md) | Python standard library can read every table |
-| Reproduce the cleaned data | [Restore archives and rebuild](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md#rebuild-the-data-offline) | Python 3.10+; no API credentials |
-| Write the report or poster | [Delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery.md) and [quality-report index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/README.md) | Use the documented counts and evidence limits |
-| Change sources, rules, or charts | [Contribution guide](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/CONTRIBUTING.md) and [script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md) | Online recollection has separate dependencies |
+Help researchers and developers choose an image-and-text task, shortlist two open-weight models under their constraints, and compare measured capabilities, reported practical concerns and evidence gaps before testing locally.
 
-## Preview locally
+Five coordinated interactive views support this workflow:
+
+1. **Ecosystem growth:** stacked area, monthly/cumulative/share modes, temporal brush and category baseline reordering.
+2. **Community concerns:** a collision-tested phrase cloud, exact counts, source excerpts and linked task selection.
+3. **Model-family story:** persistent model dots move between release dates, hierarchical family groups and within-source benchmark distributions.
+4. **Two-model radar:** selected user concerns map to benchmark proxies; speed and memory remain explicitly unmeasured. An eight-benchmark detail mode and raw table expose sources and settings.
+5. **Task-to-model shortlist:** task links and aligned scores, parameter/license filters, exact-model versus family evidence, pair selection and a downloadable evidence brief.
+
+There is no opaque overall model ranking. A missing value is not zero; mention frequency is not satisfaction or model performance.
+
+## Run locally
 
 ```bash
-git clone --branch shilin --single-branch https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis.git mllm-final-project
-cd mllm-final-project
+git clone https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis.git
+cd stats401-fp-7-mllm-evo-vis
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8765/final.html`. The prepared browser data is already included: **do not run a collector or rebuild the interim dataset to preview the final explorer**. D3 and fonts load from CDNs, so browser rendering needs internet access. Stop the server with Ctrl+C.
+Open **http://127.0.0.1:8765/**. Prepared browser data and D3 7.9.0 are included; the redesigned charts do not need a CDN. External evidence links require internet access. `final.html` redirects to the main explorer, retaining its fragment.
 
-The five linked views cover ecosystem growth, tasks, family evolution, two-model benchmark comparison, and a task–model evidence matrix. A useful demo path is: choose a task → inspect candidate evidence → choose two models → compare scores → open the sources.
+## Data snapshot and counting rules
 
-## What the snapshot contains
+Collection snapshot: **17 October 2026**. The concern-led website revision is dated 18 October. These units must not be added together.
 
-Snapshot date: **2026-10-17**. Counts describe different units and must not be added together.
-
-| Layer | Count | Interpretation |
+| Layer | Count | Meaning |
 | --- | ---: | --- |
-| HF repositories | 18,255 | Unique retained repositories, including fine-tunes, adapters and quantized variants |
-| Canonical comparison models | 57 / 10 families | Selected exact official variants |
-| Benchmark measurements | 143,086 | 142,843 preserved baseline numeric values plus 243 official-source values |
-| Community feedback records | 21,674 | Distinct retained issue bodies or comments; not a unique-user count |
-| Feedback with task labels | 1,965 | Rule-labeled subset across 8 supported task definitions |
-| Feedback linked to canonical models | 1,507 | Exact repository association; not confirmation that the variant was tested |
-| Raw-cache files | 1,861 | Complete cached-file set in the published archive |
+| HF repository records | 18,255 | Distinct retained repositories; original distributions, fine-tunes, adapters and quantizations remain distinct categories |
+| Canonical comparison models | 57 in 10 families | Smaller source-checked set, including 49 verified release dates |
+| Benchmark measurements | 143,086 | 142,843 baseline numeric values plus 243 official-source values; these are not distinct models |
+| Community records | 21,674 | Unique retained issue bodies/comments from GitHub and Hugging Face, not unique people or independent product reviews |
+| Task-labeled feedback | 1,965 | Rule-supported subset across eight task categories |
+| Exact-model-associated feedback | 1,507 | Repository association does not prove that a specific variant was tested |
+| Concern-labeled feedback | 15,798 | At least one of 15 overlapping concern categories |
 
-Labels are generated by transparent rules; their empirical accuracy has not been measured. Repository creation dates, verified model releases, engagement counts, benchmark scores and community observations remain separate evidence types.
+Labels are rule-generated, not human-validated. The corpus overrepresents support forums. Family evidence is never silently assigned to every variant. Metadata classification and benchmark comparability remain imperfect.
 
-## Download and read the data
+## Files and reproducibility
 
-| File | Use |
+| File | Purpose |
 | --- | --- |
-| [Prepared browser payload](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/view_data.json) | Fastest input for website integration |
-| [Repository JSONL](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/repositories.jsonl) | Ecosystem, family and derivative analysis |
-| [Models JSON](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/models.json) | Canonical models, baseline registry, metadata and axis definitions |
-| [Benchmark CSV gzip](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/benchmark_results.csv.gz) | Full measurement table, including source and comparison settings |
-| [Feedback JSONL gzip](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) | All retained feedback records |
-| [Tasks JSON](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/tasks.json) | Task definitions and benchmark mappings |
-| [Relationships CSV](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/model_relationships.csv) | Typed, sourced edges |
-| [Complete raw-cache archive](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/raw-cache-2026-10-17.tar.gz) | Offline reconstruction and source inspection |
-| [Publication manifest](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/public_data_manifest.json) | SHA-256 values, archive members and credential-redaction metadata |
+| [Repository JSONL](data/final/repositories.jsonl) | Full retained repository metadata |
+| [Canonical model registry](data/final/models.json) | Models, metadata and benchmark definitions |
+| [Benchmark table](data/final/benchmark_results.csv.gz) | All measurements with provenance |
+| [Feedback JSONL gzip](data/final/feedback.jsonl.gz) | Full cleaned public feedback corpus |
+| [Task definitions](data/final/tasks.json) | Task labels and benchmark mappings |
+| [Model relationships](data/final/model_relationships.csv) | Sourced typed relationships |
+| [Explorer payload](data/final/explorer_data.json) | Compact aggregates and capped, shortened public excerpts |
+| [Raw-cache archive](data/archives/raw-cache-2026-10-17.tar.gz) | Preserved source cache for offline reconstruction |
+| [Publication manifest](reports/public_data_manifest.json) | Checksums and credential-redaction details |
+| [Data dictionary](docs/data-dictionary.md) | Field definitions and joins |
+| [Acquisition/processing methods](docs/data-pipeline.md) | Collection, cleaning and exclusions |
+| [Concern aggregation audit](reports/explorer_data_audit.json) | Counts, source hash and interpretation limits |
 
-Open a GitHub file link and use **Download raw file** to download it. Python's `gzip` module reads the compressed tables directly; archive restoration is only needed for a full rebuild. Public copies retain all records/files and mask credential-like strings. Original source terms and attribution still apply; the dataset has no blanket license replacing those terms.
+Source terms still apply; public availability does not create blanket redistribution permission. Published excerpts remove code/quoted material and contact/credential patterns, retain source links, and are capped. The Pages bundle excludes raw caches and full feedback text. Some first-collection full API responses were not preserved; normalized records, provenance ledgers and successful backfills are documented in the inherited reports.
 
-## Common commands
-
-Run from the repository root. `make` is optional; equivalent Python commands are in the [quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md).
-
-| Command | Purpose | Prerequisite |
-| --- | --- | --- |
-| `make help` | Show available tasks | Make installed |
-| `make serve` | Preview `final.html` on port 8765 | Prepared files only |
-| `make test` | Run the 31 regression checks | Python 3.10+ |
-| `make restore` | Verify and restore public archives | Fresh clone; refuses different local originals |
-| `make rebuild` | Regenerate final tables and validate them | Restored or existing complete raw caches |
-| `make validate` | Validate full tables and browser counts | Restored feedback / completed rebuild |
-| `make reproducibility` | Check byte-identical repeated outputs | Run `make rebuild` once first |
-| `make site` | Build the allowlisted `dist/` website bundle | Prepared browser data |
-
-Override the interpreter or port when needed: `make test PYTHON=python` or `make serve PORT=8766`. Do not run `make restore` over different original research files; see the [restore instructions](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/archives/README.md).
-
-## Repository map
-
-```text
-final.html / final.js / final.css    Final five-view explorer
-Makefile                            Optional task shortcuts
-config/                             Curated model and feedback-source manifests
-data/final/                         Prepared tables, gzip downloads and browser payload
-data/archives/                      Complete raw-cache archive and restore instructions
-docs/                               Quick start, dictionary, methodology and view contract
-reports/                            Delivery reports, counts, provenance and checks
-scripts/                            Collectors, offline processors and validation tools
-tests/                              Repository, view and publication regression fixtures
-index.html / app.js / styles.css     Preserved interim prototype
+```bash
+make test                          # Python regression suite
+make syntax                        # JS syntax
+node --test tests/explorer.test.mjs # Evidence-operation and payload checks
+python3 scripts/build_explorer_data.py # Rebuild concern payload from published gzip
+make site                          # Build allowlisted dist/
 ```
 
-Start with the [documentation index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/README.md), [script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md), or [report index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/README.md). The **Chinese delivery report is the only Chinese project document**. Feedback originals, multilingual matching terms and language-test fixtures retain their source language.
+For original table reconstruction in a **fresh clone**, use `make restore`, then `make rebuild`; see [detailed instructions](docs/quickstart.md). Rebuild the explorer payload afterward. Do not restore over different original research caches. The older handoff documents describe the original data delivery; this README and the website audit describe the final integrated site.
 
-## Website publishing and project history
+## Review, design and release
 
-The [published final explorer](https://owen-1234.github.io/mllm-evidence-explorer/) is deployed from the [dedicated visualization repository](https://github.com/Owen-1234/mllm-evidence-explorer). This shared branch owns the data and processing source. Pushing `shilin` runs the checks; updating the published website also requires syncing its prepared `site/` files and pushing that repository's `main` branch. See [contribution and release steps](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/CONTRIBUTING.md).
+Sean completed one qualitative review of the **old** handoff site. [His recorded feedback](docs/user-review.md) drove the redesign. This is not an independent user study, revised-site participant test, or validation of feedback labels. No fabricated participants, timings, agreement or completion rates are reported.
 
-The [original group site](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/) and `index.html` describe the earlier interim prototype. Its [proposal](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/proposal.md), [requirements audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/requirements-audit.md), and [change log](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/CHANGELOG.md) are historical context. Final-project counts and methods are documented in the current reports above.
+Design references: [The Pudding — Is the Love Song Dying?](https://pudding.cool/2024/11/love-songs/) for persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) for common-baseline category comparison. Class connections and What–Why–How are on the website. Our SVG layout and interactions are custom; D3 is [BSD-licensed](vendor/D3-LICENSE).
 
-Group 7: Sean Wan, Yuxuan Huang, and Shilin Ou.
+Pushes to `main` run validation and deploy the public-only bundle using GitHub Actions. Preserve both fallback pages: [interim](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/interim.html) and [handoff](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/handoff.html). The tag `pre-final-redesign-2026-10-18` preserves the complete pre-redesign repository state.
+
+The final report, poster and presentation are separate submission deliverables; this website release does not assert that those are complete.
