@@ -2,7 +2,7 @@
 
 STATS 401 · Group 7 · **Sean Wan, Yuxuan Huang, Shilin Ou**
 
-**[Open the final website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)** · [Website audit](docs/final-website-audit.md) · [Review and revisions](docs/user-review.md) · [Rollback](docs/redesign-and-rollback.md)
+**[Open the final website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)** · [Final report](REPORT.md) · [Plain-text report](REPORT.txt) · [Website audit](docs/final-website-audit.md) · [Review and revisions](docs/user-review.md) · [Rollback](docs/redesign-and-rollback.md)
 
 ## User task
 
@@ -85,4 +85,4 @@ Design references: [The Pudding — Is the Love Song Dying?](https://pudding.coo
 
 Pushes to `main` run validation and deploy the public-only bundle using GitHub Actions. The [saved scrolling website](pre-slides.html) uses its own six frozen page/script/style assets. Tag `pre-slides-layout-2026-10-18` preserves the full tree at `07b158262cc0259f6d992cd29b249c4cffe62949`. Earlier [pre-modal](pre-modal.html), [interim](interim.html) and [handoff](handoff.html) pages and recovery tags remain available. See the [page-layout checklist](docs/slide-layout-checklist.md) and recovery log.
 
-The final report, poster and presentation are separate submission deliverables; this website release does not assert that those are complete.
+The [final report](REPORT.md) includes screenshots of all five final visualizations; [REPORT.txt](REPORT.txt) provides copy-ready text. The poster, presentation and Canvas submission remain separate deliverables.
