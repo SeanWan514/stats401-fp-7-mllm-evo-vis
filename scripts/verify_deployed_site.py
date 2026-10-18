@@ -23,7 +23,9 @@ FILES = ['index.html', 'explorer.js', 'explorer-core.mjs', 'explorer.css',
 SOURCES = source_map()
 
 def check(name):
-    result = subprocess.run(['curl', '--max-time', '45', '--retry', '2', '--compressed', '-fsS', BASE + name],
+    # A full PDF can take longer over a slow connection. Avoid curl --retry on
+    # captured stdout: partial retries must never concatenate into the hash input.
+    result = subprocess.run(['curl', '--connect-timeout', '15', '--max-time', '120', '--compressed', '-fsS', BASE + name],
                             capture_output=True, check=True)
     remote = hashlib.sha256(result.stdout).hexdigest()
     local = hashlib.sha256(SOURCES[name].read_bytes()).hexdigest()

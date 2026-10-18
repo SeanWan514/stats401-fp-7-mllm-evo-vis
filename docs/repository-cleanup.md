@@ -36,3 +36,12 @@ Local acceptance completed on 19 October 2026:
 - Both PDF routes and all four historical website pages load in the built preview. No page exceptions or failed same-origin requests were recorded.
 
 Deployment confirmation is recorded separately in [production_release_check.json](../reports/production_release_check.json), with its checked source commit. Local checks alone do not establish publication.
+
+Public-release acceptance for `0fefb2d8bb00fb4fed6cc2519bccc0ade65c1c97`:
+
+- GitHub [validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39147426455) and [Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39147426527) succeeded.
+- All 35 checked public files match local SHA-256 hashes, including both complete PDFs, the README, live modules/styles, prepared data and compatibility assets.
+- The same desktop/mobile browser checks passed on the public site, including task selection, dialog dismissal, radar selection, family stages and all four archived pages. No page exceptions or failed same-origin requests were recorded.
+- A slow PDF transfer exceeded the initial short download timeout. The verifier now allows 120 seconds and avoids concatenated partial-output retries; the subsequent complete download matched the poster's original checksum.
+
+These checks establish release integrity and tested behavior, not a guaranteed grade or an independent usability evaluation.
