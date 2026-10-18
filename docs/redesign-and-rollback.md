@@ -60,7 +60,7 @@ To revert a deployed redesign, inspect the release commit(s), coordinate with te
 - Growth now displays repository history from January 2023 while retaining the 15 earlier records in the cumulative baseline. Hover/tap/keyboard month inspection replaces zoom brushing; the full repository total remains 18,255.
 - Explanations, exact counts and source evidence move into modal dialogs. The cloud retains the 21,674-record feedback corpus; the family view retains 57 curated models. Standalone A/B selectors remain in the radar chapter instead of sharing candidate-selection controls across the page.
 - Task selection now uses source-consistent size-tier rankings. Five supported tasks are selectable; all eight task categories remain in the dataset. Other candidates, unmeasured scores and unknown sizes remain accessible in the complete list.
-- This entry records implementation and preservation only. Final tests, browser acceptance, push/deployment and published-file verification are pending for this revision. Prior human checks are not represented as checks of this revised interface. See [the refinement checklist](modal-refinement-checklist.md) and [website audit](final-website-audit.md).
+- Implementation commit `ae6903d` and the backup tag are published. All 57 tests, local desktop/mobile checks, GitHub validation, Pages deployment and fifteen-file HTTPS identity checks passed. Prior human checks are not represented as checks of this revised interface; the live in-app browser timed out. See [the refinement checklist](modal-refinement-checklist.md) and [website audit](final-website-audit.md).
 
 For immediate comparison, open `pre-modal.html`; no Git change is needed. To preview the complete historical tree without altering the current branch:
 

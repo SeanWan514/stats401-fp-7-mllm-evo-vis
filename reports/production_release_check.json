@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-18T09:11:34.120951+00:00",
+  "checked_at": "2026-10-18T11:18:01.719641+00:00",
   "url": "https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/",
-  "source_commit": "bc2fe8263faafd576ebc21cba256f51eb914f852",
+  "source_commit": "ae6903d12fbe59001859d8d674768e413c8a4a77",
   "checks": [
     {
       "file": "index.html",
-      "bytes": 21473,
-      "sha256": "9719c99a3c6446975a735859488015252e62fa3221305e2dff03633aa6cd81a1",
+      "bytes": 29467,
+      "sha256": "a0a103e7c2f3cc50a843239bd17a041c927bdaba031af10d03fed860d6f57635",
       "matches_local": true
     },
     {
       "file": "explorer.js",
-      "bytes": 52673,
-      "sha256": "f5182aa816331dc45d7e7d4900b4ba5c2209d90ab0c78fb6f38f254c4b1772d1",
+      "bytes": 50309,
+      "sha256": "9bd076973a7f0e0a4e3f566deb2c3315af23da66706532f38397186b0bf26616",
       "matches_local": true
     },
     {
@@ -55,6 +55,42 @@
       "file": "final.html",
       "bytes": 608,
       "sha256": "550225711e35d5fcf0114aee4571b904dbf99b3e74b1aeb3cc741e5c73904401",
+      "matches_local": true
+    },
+    {
+      "file": "dialogs.css",
+      "bytes": 4915,
+      "sha256": "b4ed39cfbcd8f19548879772e1e612aa8d1c3897ec505dda1397bf52b6496229",
+      "matches_local": true
+    },
+    {
+      "file": "task-selection.css",
+      "bytes": 2684,
+      "sha256": "75fe475183a9b79f012590b163783ebe28c2dcd3670fb58ac027657171c38418",
+      "matches_local": true
+    },
+    {
+      "file": "pre-modal.html",
+      "bytes": 21475,
+      "sha256": "64c43c3e552abc28793688dbfaef70aa5823c945360685d4563eab7e1f983f5c",
+      "matches_local": true
+    },
+    {
+      "file": "pre-modal.js",
+      "bytes": 52674,
+      "sha256": "2596b493bfd1b9f1687f1eb537412a7757237dec117aa918078c5ee16fb4e22a",
+      "matches_local": true
+    },
+    {
+      "file": "pre-modal.css",
+      "bytes": 20856,
+      "sha256": "9dfbe5f4b5ab9419c6947557628452cd3b5c56cb2d15adda00b1665b07c0aef1",
+      "matches_local": true
+    },
+    {
+      "file": "pre-modal-core.mjs",
+      "bytes": 5376,
+      "sha256": "8a2cebe9820e79e68584b1fd98b47721ae70050a4eefade18bd53d8f1f61de47",
       "matches_local": true
     }
   ],

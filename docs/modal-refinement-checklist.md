@@ -1,6 +1,6 @@
 # Modal and task-selection refinement · 18 October 2026
 
-Status: implementation, regression and local-browser checks completed; deployment and published-file verification pending. This checklist is not a prediction of the course grade. Detailed verification results are in the website audit.
+Status: implemented and deployed; 57 regression tests, local-browser checks, GitHub validation and fifteen-file published-byte verification passed. This checklist is not a prediction of the course grade. The website audit distinguishes local interaction tests from publication checks and records the live in-app browser timeout.
 
 ## Six requested areas
 
@@ -38,7 +38,7 @@ See [the recovery log](redesign-and-rollback.md) for the safe rollback approach.
 - [x] Complete desktop and narrow-screen interaction checks, including dialog focus restoration.
 - [x] Verify the six implementation areas with actual project data; see the audit for tested behaviors and scope.
 - [x] Build the static bundle and confirm the saved fallback and all required assets are included.
-- [ ] Commit and push the assembled revision; confirm validation and Pages deployment succeed.
-- [ ] Verify published files and the relevant live workflows, recording the evidence and its limits.
+- [x] Commit and push the assembled revision and backup tag; validation and Pages deployment succeeded.
+- [x] Verify fifteen published files against the tested bundle, recording evidence and limits. The live browser timed out; workflows were tested locally, not claimed as a new successful live interaction test.
 
 The [website audit](final-website-audit.md) is the release-status record. Earlier user checks and deployment results apply to their recorded versions; they are not silently transferred to this revision. Report, poster and presentation work remain separate from website verification.

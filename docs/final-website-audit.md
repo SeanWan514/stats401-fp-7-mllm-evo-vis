@@ -4,7 +4,7 @@
 
 ## Release status
 
-**Local technical checks passed; publication verification pending.** This audit covers the modal-focused revision. The [previous audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/bfe6314ea937c1bd37c42ce6eb77b31cb7a954de/docs/final-website-audit.md) preserves historical release decisions and tests.
+**Technical website release: GO.** This modal-focused revision passed local checks, GitHub validation, Pages deployment and published-file verification. The [previous audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/bfe6314ea937c1bd37c42ce6eb77b31cb7a954de/docs/final-website-audit.md) preserves historical release decisions and tests. This is not a new human usability approval or a certification of the separate final-submission package.
 
 ## Requested changes
 
@@ -45,4 +45,10 @@ Sean's prior formative reviews and old-release workflow confirmation are in [use
 
 The [saved pre-revision page](../pre-modal.html) uses frozen `pre-modal.js`, `pre-modal.css` and `pre-modal-core.mjs`. Tag `pre-modal-redesign-2026-10-18` points to `bfe6314ea937c1bd37c42ce6eb77b31cb7a954de`, preserving the historical tree. Original interim/handoff pages remain. See [recovery instructions](redesign-and-rollback.md).
 
-Publication evidence will be added after GitHub validation, Pages deployment and fifteen-file HTTPS byte-identity verification succeed. Local interaction tests are not mislabeled as live-site interactive tests.
+Implementation commit: [ae6903d](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/commit/ae6903d12fbe59001859d8d674768e413c8a4a77).
+
+- [GitHub validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39122604664): succeeded.
+- [GitHub Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39122604681): succeeded.
+- At 11:18 UTC, all fifteen public implementation/data/fallback files returned over HTTPS and matched the locally tested files byte for byte. [Machine-readable result](../reports/production_release_check.json).
+- The backup tag is pushed and the fallback page is published.
+- The live page again timed out in the in-app browser. Interaction tests used the actual local deployment bundle; HTTPS/hash checks establish publication. No successful new live-browser interaction or human check is claimed.
