@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+from build_static_site import source_map
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/'
@@ -14,13 +15,18 @@ FILES = ['index.html', 'explorer.js', 'explorer-core.mjs', 'explorer.css',
          'interim.html', 'handoff.html', 'final.html', 'dialogs.css', 'task-selection.css',
          'pre-modal.html', 'pre-modal.js', 'pre-modal.css', 'pre-modal-core.mjs',
          'slides.js', 'slides.css', 'pre-slides.html', 'pre-slides.js', 'pre-slides.css',
-         'pre-slides-core.mjs', 'pre-slides-dialogs.css', 'pre-slides-task-selection.css']
+         'pre-slides-core.mjs', 'pre-slides-dialogs.css', 'pre-slides-task-selection.css',
+         'assets/js/explorer.js', 'assets/js/explorer-core.mjs', 'assets/js/slides.js',
+         'assets/css/explorer.css', 'assets/css/dialogs.css', 'assets/css/task-selection.css', 'assets/css/slides.css',
+         'deliverables/Group_7_MLLMs_Final_Report.pdf', 'deliverables/STATS401_Poster_Group_7_Wan_Huang_Ou.pdf',
+         'deliverables/checksums.sha256', 'README.md', 'REPORT.md']
+SOURCES = source_map()
 
 def check(name):
-    result = subprocess.run(['curl', '--max-time', '60', '--compressed', '-fsS', BASE + name],
+    result = subprocess.run(['curl', '--max-time', '45', '--retry', '2', '--compressed', '-fsS', BASE + name],
                             capture_output=True, check=True)
     remote = hashlib.sha256(result.stdout).hexdigest()
-    local = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+    local = hashlib.sha256(SOURCES[name].read_bytes()).hexdigest()
     return {'file': name, 'bytes': len(result.stdout), 'sha256': remote,
             'matches_local': remote == local}
 

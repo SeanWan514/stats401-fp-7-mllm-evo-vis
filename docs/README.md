@@ -1,20 +1,29 @@
-# Documentation index
+# Documentation guide
 
-[Repository home](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/README.md) · [Published explorer](https://owen-1234.github.io/mllm-evidence-explorer/)
+[Grader's View](../README.md) · [Final report and poster](../deliverables/) · [Live website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)
 
-| Document | Read it when you need to… |
+## Current methods and reproduction
+
+| Read this | For |
 | --- | --- |
-| [Quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md) | Preview, read tables, restore archives or run the offline workflow |
-| [Data dictionary](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-dictionary.md) | Understand record units, keys, nulls and supported joins |
-| [Contribution guide](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/CONTRIBUTING.md) | Edit, check and release changes |
-| [Implementation plan](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/implementation-plan.md) | Understand the task, scope, processing stages and acceptance boundaries |
-| [Pipeline guide](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-pipeline.md) | Recollect official sources and inspect processing/publication details |
-| [Model methodology](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/model-methodology.md) | Verify dates, weight metadata, benchmark extraction and comparison rules |
-| [Feedback methodology](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/feedback-methodology.md) | Inspect collection units, filtering, attribution and rule labels |
-| [View contract](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/final-view-contract.md) | Integrate filters, counts, scores and source excerpts in the frontend |
-| [Script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md) | Find the correct command for a processing stage |
-| [Report index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/README.md) | Find frozen counts, provenance and verification results |
-| [English delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery.md) | Read the completed handoff and downstream uses |
-| [Chinese delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery-zh.md) | Read the sole Chinese project document |
+| [Quick start](quickstart.md) | Local preview, table inspection, offline reconstruction and checks |
+| [Data dictionary](data-dictionary.md) | Fields, record units, keys, missing values and joins |
+| [Data pipeline](data-pipeline.md) | Acquisition, cleaning, source archives and publication |
+| [Model methodology](model-methodology.md) | Canonical models, dates, parameters and benchmark comparison |
+| [Feedback methodology](feedback-methodology.md) | Filtering, task/aspect labels, attribution and limitations |
+| [Script index](../scripts/README.md) | Commands and processing order |
+| [Quality-report index](../reports/README.md) | Counts, provenance and validation evidence |
+| [Contribution guide](../CONTRIBUTING.md) | What to edit and how to check changes |
 
-The [interim requirements audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/requirements-audit.md) documents the older prototype; it is not the current final-data status. Source quotations and multilingual matching examples retain their original language as evidence.
+## Design, evaluation and history
+
+| Document | Scope |
+| --- | --- |
+| [User review](user-review.md) | Recorded project-member feedback and revisions; not an independent study |
+| [Final website audit](final-website-audit.md) | Technical verification and rubric mapping for the slideshow release |
+| [Repository cleanup](repository-cleanup.md) | Current organization, preserved URLs and recovery tag |
+| [Slide-layout checklist](slide-layout-checklist.md) | Fourteen-page structure and acceptance evidence |
+| [Redesign/rollback log](redesign-and-rollback.md) | Earlier changes and recovery points |
+| [Screenshots](screenshots/) | Final views and dated prior-stage images |
+
+`requirements-audit.md`, `implementation-plan.md`, `final-view-contract.md` and the modal checklist describe earlier project stages. They remain evidence of development, not substitutes for current run instructions. [Archived website files](../archive/) and earlier report drafts are preserved separately.

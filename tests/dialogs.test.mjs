@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const root=new URL('../',import.meta.url);
-const read=name=>readFileSync(new URL(name,root),'utf8');
+const read=name=>readFileSync(new URL(name.startsWith('pre-modal')?'archive/website/'+name:name==='explorer.js'?'assets/js/'+name:name==='dialogs.css'?'assets/css/'+name:name,root),'utf8');
 const html=read('index.html'),js=read('explorer.js');
 
 test('each help link opens a named native dialog with close and focus support',()=>{

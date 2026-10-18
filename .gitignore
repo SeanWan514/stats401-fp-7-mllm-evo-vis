@@ -13,3 +13,7 @@ reports/feedback_review*.json*
 .venv/
 data/final/benchmark_results.csv
 docs/执行方案.md
+
+# Local document drafts, rendered checks and generated packages
+tmp/
+output/

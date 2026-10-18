@@ -1,88 +1,93 @@
 # MLLMs: Which Model for Your Task?
 
-STATS 401 · Group 7 · **Sean Wan, Yuxuan Huang, Shilin Ou**
+**STATS 401 · Group 7 · Sean Wan, Yuxuan Huang, Shilin Ou**
 
-**[Open the final website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)** · [Final report](REPORT.md) · [Plain-text report](REPORT.txt) · [Website audit](docs/final-website-audit.md) · [Review and revisions](docs/user-review.md) · [Rollback](docs/redesign-and-rollback.md)
+An interactive evidence atlas for choosing open-weight image-and-text models.
 
-## User task
+**[🌐 Explore the website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/)** · **[📄 Final report](deliverables/Group_7_MLLMs_Final_Report.pdf)** · **[🖼️ A1 poster](deliverables/STATS401_Poster_Group_7_Wan_Huang_Ou.pdf)**
 
-Help researchers and developers understand the open-weight MLLM ecosystem, identify user concerns, compare two models' measured capabilities, and find task-specific candidates within a parameter-size range before testing locally.
+## 🎓 Grader's View — start here
 
-The website presents **14 pages**, navigated with the top progress bar, edge arrows or keyboard. The sequence is cover → framing → mission → context → goals → data → five visualization pages → conclusions → methods → closing. Existing chart deep links such as `#growth` and `#matrix` open their corresponding pages. On narrow screens, long content scrolls within the current page without mixing it with another page.
+**Suggested reading order:** website → final report → data and code below. No installation is required to view the published project. The PDFs in `deliverables/` are the supplied final documents; previous report drafts are archived separately.
 
-Five interactive views support the narrative:
+| # | Required deliverable | Where to find it |
+| :--: | --- | --- |
+| 1 | **Source dataset(s)** | [OpenVLM baseline](data/OpenVLM.json) · [Preserved source-cache archive](data/archives/raw-cache-2026-10-17.tar.gz) · [Provenance and checksums](reports/public_data_manifest.json) |
+| 2 | **Cleaned/processed dataset(s)** | [Data index](data/README.md) · [Repository records](data/final/repositories.jsonl) · [Community records](data/final/feedback.jsonl.gz) · [Benchmark results](data/final/benchmark_results.csv.gz) |
+| 3 | **Data collection/crawler code** | [HF repositories](scripts/collect_repositories.py) · [Community discussions](scripts/collect_feedback.py) · [Official model evidence](scripts/build_final_models.py) · [Source configuration](config/) |
+| 4 | **Data cleaning and analysis code** | [Feedback processing](scripts/process_feedback.py) · [Model/benchmark processing](scripts/build_final_models.py) · [View preparation](scripts/build_final_views.py) · [Concern aggregation](scripts/build_explorer_data.py) |
+| 5 | **Complete visualization source code** | [HTML entry point](index.html) · [D3/SVG and interaction code](assets/js/) · [Styles](assets/css/) · [Bundled D3](vendor/) · [Tests](tests/) |
+| 6 | **Published visualization website** | [Open the live, fourteen-page atlas](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/) |
+| 7 | **Final report** | [Group_7_MLLMs_Final_Report.pdf](deliverables/Group_7_MLLMs_Final_Report.pdf) |
+| 8 | **Final project poster** | [STATS401_Poster_Group_7_Wan_Huang_Ou.pdf](deliverables/STATS401_Poster_Group_7_Wan_Huang_Ou.pdf) — A1; also provided for the separate poster assignment |
+| 9 | **Reproduction documentation** | [Quick start and rebuild](docs/quickstart.md) · [Data dictionary](docs/data-dictionary.md) · [Acquisition/processing methods](docs/data-pipeline.md) · [Script index](scripts/README.md) · [Quality evidence](reports/README.md) |
 
-1. **Ecosystem growth:** bright, smooth cumulative areas show repository growth from January 2023, retaining earlier records in the cumulative baseline. Category baseline reordering and month inspection support comparison; repository creations and verified canonical releases remain distinct.
-2. **Community concerns:** a full-width phrase cloud emphasizes mention-frequency differences. Select a concern to open source excerpts and task links; exact counts and the feedback collection method open in a separate dialog.
-3. **Model-family story:** the same 57 model dots move between release dates, hierarchical family groups and within-source performance distributions. Search highlights models in every stage; selecting a dot opens metadata and sources. Benchmark/source controls appear only in Performance. This view has no A/B controls.
-4. **Standalone two-model radar:** six measured user concerns map to benchmark proxies, with an optional eight-benchmark detail profile. Comparison pairs must share at least four valid measured dimensions; 47 models have a qualifying partner. A/B selection belongs only to this view. Speed and memory remain unmeasured; raw scores and source settings open in dialogs.
-5. **Task-to-model rankings:** five supported tasks lead to benchmark rankings within four parameter-size tiers. Each model occupies its own row; up to three leading measured candidates per tier share a common score scale. Select a model for source evidence, or inspect all eligible candidates and evidence gaps. This view does not assign A/B models or export a brief.
+## 🧭 The question behind the project
 
-There is no opaque overall model ranking. Task ranks describe one selected benchmark/source group, not universal model quality. Parameter tiers are size categories, not measured hardware requirements. A missing value is not zero; mention frequency is not satisfaction or performance. All 57 models remain in the family story, and the dataset retains all eight task categories even though only five support scored, known-size task comparisons.
+**Which open-weight MLLMs should a researcher or developer test for a particular image-and-text task, and what evidence supports that choice?**
 
-Reading guides and detailed evidence for all five views use centered native dialogs with a backdrop, close button, Escape and outside-click dismissal. Controls stay with the view they affect. Page changes preserve chart selections; View 5 initially opens on **Visual question answering**. The five chart interiors and original evidence dialogs are unchanged by the page-layout revision. Publication and verification status are recorded in the [website audit](docs/final-website-audit.md); earlier release checks remain version-specific.
+We connect ecosystem growth, community concerns, canonical model families and published benchmarks. Users compare two models and identify task-specific candidates within parameter-size and licensing constraints. The result is a shortlist for application testing—not an opaque universal ranking.
 
-## Run locally
+| View | What it helps the user do | Try it |
+| --- | --- | --- |
+| **1 · Ecosystem growth** | Distinguish repository expansion, derivatives and verified releases | [Reorder filled layers; inspect a month](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#growth) |
+| **2 · Community concerns** | Explore task and practical-problem mentions with source evidence | [Select a phrase; inspect matching records](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#tasks) |
+| **3 · Three perspectives** | Follow the same model dots through time, families and performance | [Switch stages; search; inspect a model](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#evolution) |
+| **4 · Capability comparison** | Compare two source-grouped benchmark profiles | [Choose a pair; inspect scores and gaps](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#radar) |
+| **5 · Task-based candidates** | Find measured candidates within parameter-size tiers | [Choose a task; filter; inspect candidates](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#matrix) |
+
+## 📊 Data at a glance
+
+**Collection snapshot: 17 October 2026.** Counts describe different units and must not be added together.
+
+| Collection | Size | Interpretation |
+| --- | ---: | --- |
+| Hugging Face ecosystem | **18,255 repositories** | Original distributions, fine-tunes, adapters and quantizations—not independent original models |
+| Community evidence | **21,674 records** | Distinct retained GitHub/HF discussion objects—not unique users or independent reviews |
+| Curated comparison set | **57 models · 10 families** | 49 have verified release dates; coverage is incomplete |
+| Benchmark table | **143,086 measurements** | 142,843 baseline values + 243 official-source values, including subcategories |
+
+**Interpretation matters.** Labels are rule-generated and not human-validated; support forums are not representative surveys. Only 1,965 records receive task labels and 1,507 map to canonical models. Missing scores remain missing. Parameter size is not measured GPU-memory usage; mention frequency is not satisfaction. Same-source grouping does not resolve undisclosed evaluation settings. See [methods and limitations](docs/README.md).
+
+## 💻 Run and reproduce
+
+For the prepared website, use **Python 3.10+** and `make`; no API key or recollection is needed. D3 and browser data are bundled locally.
 
 ```bash
 git clone https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis.git
 cd stats401-fp-7-mllm-evo-vis
-python3 -m http.server 8765 --bind 127.0.0.1
+make serve
 ```
 
-Open **http://127.0.0.1:8765/**. Prepared browser data and D3 7.9.0 are included; the redesigned charts do not need a CDN. External evidence links require internet access. `final.html` redirects to the main explorer, retaining its fragment.
-
-## Data snapshot and counting rules
-
-Collection snapshot: **17 October 2026**. The concern-led website revision is dated 18 October. These units must not be added together.
-
-| Layer | Count | Meaning |
-| --- | ---: | --- |
-| HF repository records | 18,255 | Distinct retained repositories; original distributions, fine-tunes, adapters and quantizations remain distinct categories |
-| Canonical comparison models | 57 in 10 families | Smaller source-checked set, including 49 verified release dates |
-| Benchmark measurements | 143,086 | 142,843 baseline numeric values plus 243 official-source values; these are not distinct models |
-| Community records | 21,674 | Unique retained issue bodies/comments from GitHub and Hugging Face, not unique people or independent product reviews |
-| Task-labeled feedback | 1,965 | Rule-supported subset across eight task categories |
-| Exact-model-associated feedback | 1,507 | Repository association does not prove that a specific variant was tested |
-| Concern-labeled feedback | 15,798 | At least one of 15 overlapping concern categories |
-
-Labels are rule-generated, not human-validated. The corpus overrepresents support forums. Family evidence is never silently assigned to every variant. Metadata classification and benchmark comparability remain imperfect.
-
-## Files and reproducibility
-
-| File | Purpose |
-| --- | --- |
-| [Repository JSONL](data/final/repositories.jsonl) | Full retained repository metadata |
-| [Canonical model registry](data/final/models.json) | Models, metadata and benchmark definitions |
-| [Benchmark table](data/final/benchmark_results.csv.gz) | All measurements with provenance |
-| [Feedback JSONL gzip](data/final/feedback.jsonl.gz) | Full cleaned public feedback corpus |
-| [Task definitions](data/final/tasks.json) | Task labels and benchmark mappings |
-| [Model relationships](data/final/model_relationships.csv) | Sourced typed relationships |
-| [Explorer payload](data/final/explorer_data.json) | Compact aggregates and capped, shortened public excerpts |
-| [Raw-cache archive](data/archives/raw-cache-2026-10-17.tar.gz) | Preserved source cache for offline reconstruction |
-| [Publication manifest](reports/public_data_manifest.json) | Checksums and credential-redaction details |
-| [Data dictionary](docs/data-dictionary.md) | Field definitions and joins |
-| [Acquisition/processing methods](docs/data-pipeline.md) | Collection, cleaning and exclusions |
-| [Concern aggregation audit](reports/explorer_data_audit.json) | Counts, source hash and interpretation limits |
-
-Source terms still apply; public availability does not create blanket redistribution permission. Published excerpts remove code/quoted material and contact/credential patterns, retain source links, and are capped. The Pages bundle excludes raw caches and full feedback text. Some first-collection full API responses were not preserved; normalized records, provenance ledgers and successful backfills are documented in the inherited reports.
+Open **http://127.0.0.1:8765/**. `make serve` builds and serves `dist/`, including saved-version URLs. To use another port: `make serve PORT=8766`.
 
 ```bash
-make test                          # Python regression suite
-make syntax                        # JS syntax
-node --test tests/explorer.test.mjs # Evidence-operation and payload checks
-python3 scripts/build_explorer_data.py # Rebuild concern payload from published gzip
-make site                          # Build allowlisted dist/
+make check   # Python tests, JS syntax and Node regression tests; Node 20+ recommended
+make site    # Build the explicitly allowlisted public website
 ```
 
-For original table reconstruction in a **fresh clone**, use `make restore`, then `make rebuild`; see [detailed instructions](docs/quickstart.md). Rebuild the explorer payload afterward. Do not restore over different original research caches. The older handoff documents describe the original data delivery; this README and the website audit describe the final integrated site.
+Reconstruct data only in a **fresh clone or spare copy**: `make restore`, `make rebuild`, then `make reproducibility`. Processing overwrites generated tables/reports. Public-cache redaction can change initial hashes; see the [reproduction guide](docs/quickstart.md). Pages excludes raw archives and full feedback text; those remain available in the repository. Third-party source terms still apply.
 
-## Review, design and release
+## 🗂️ Repository map
 
-Sean completed a qualitative review of the **old** handoff site, then confirmed two workflows on the **first published redesign**. Subsequent reviews identified clutter, unclear controls and weak comparison views. His latest requested changes remove the global exploration bar, move reading guides/evidence into centered dialogs, confine A/B selection to the radar, and replace overlapping task-map marks with separate ranked model rows. [The reviews, production check and revision responses](docs/user-review.md) are recorded separately. The earlier workflow confirmation is not a human test of this modal-focused revision; current technical checks are recorded in the website audit. All feedback is from the same project-member reviewer, not an independent user study or validation of feedback labels. No new human-test results, participants, timings, agreement or completion rates are claimed.
+```text
+index.html       Current website entry point
+assets/          Current JavaScript modules and styles
+deliverables/    Final report and poster PDFs
+data/            Source archive, baseline and processed tables
+config/          Model registry and acquisition source configuration
+scripts/         Acquisition, cleaning, analysis, build and verification
+tests/           Automated data and interface regression checks
+docs/            Methods, quick start, screenshots and review records
+reports/         Counts, provenance and validation evidence
+vendor/          Bundled D3 and its license
+archive/         Frozen website versions and earlier report drafts
+```
 
-Design references: [The Pudding — Is the Love Song Dying?](https://pudding.cool/2024/11/love-songs/) for persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) for common-baseline category comparison. Class connections and What–Why–How are on the website. Our SVG layout and interactions are custom; D3 is [BSD-licensed](vendor/D3-LICENSE).
+The original [proposal](proposal.md) is retained. [Archive notes](archive/README.md) explain saved versions and rollback; these are not the current submission.
 
-Pushes to `main` run validation and deploy the public-only bundle using GitHub Actions. The [saved scrolling website](pre-slides.html) uses its own six frozen page/script/style assets. Tag `pre-slides-layout-2026-10-18` preserves the full tree at `07b158262cc0259f6d992cd29b249c4cffe62949`. Earlier [pre-modal](pre-modal.html), [interim](interim.html) and [handoff](handoff.html) pages and recovery tags remain available. See the [page-layout checklist](docs/slide-layout-checklist.md) and recovery log.
+## Design, evaluation and release
 
-The [final report](REPORT.md) includes screenshots of all five final visualizations; [REPORT.txt](REPORT.txt) provides copy-ready text. The poster, presentation and Canvas submission remain separate deliverables.
+D3.js and custom SVG implement the five views. The Pudding's [*Is the Love Song Dying?*](https://pudding.cool/2024/11/love-songs/) informed persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) informed baseline comparison. [D3's license](vendor/D3-LICENSE) is included.
+
+[Project-member review](docs/user-review.md) guided revisions; it is not an independent user study or human-label accuracy estimate. [Website checks](docs/final-website-audit.md), [cleanup/recovery notes](docs/repository-cleanup.md) and [Actions](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions) document technical verification. Pushes to `main` validate and deploy the public bundle. See [CONTRIBUTING.md](CONTRIBUTING.md) before changing code or data.

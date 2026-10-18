@@ -1,5 +1,15 @@
 # Changelog
 
+## Submission-oriented repository cleanup — 2026-10-19
+
+- Added the nine-deliverable Grader's View and direct final-report/poster links.
+- Published the group's exact supplied PDFs under `deliverables/` with checksums.
+- Organized seven live assets under `assets/` and sixteen frozen files under `archive/website/`; all moved website bytes are unchanged.
+- Archived earlier report drafts and kept `REPORT.md` as a stable pointer to the final PDF.
+- Preserved old public URLs through the build; updated local preview and reproduction instructions.
+- Added five structural tests and gated deployment with the complete test suite.
+- Created recovery tag `pre-repo-cleanup-2026-10-19`; preserved untracked local work.
+
 ## Final evidence-atlas redesign — 2026-10-18
 
 - Preserved the old main and handoff as `interim.html` and `handoff.html` and tagged the full pre-revision source.

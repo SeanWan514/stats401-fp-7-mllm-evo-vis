@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
-import {available,eligible,protocolGroups} from '../explorer-core.mjs';
+import {available,eligible,protocolGroups} from '../assets/js/explorer-core.mjs';
 
 // Exercise the production ranking helpers without a DOM or copied implementation.
-const source=readFileSync(new URL('../explorer.js',import.meta.url),'utf8');
+const source=readFileSync(new URL('../assets/js/explorer.js',import.meta.url),'utf8');
 const start=source.indexOf('// 05 —');
 const end=Math.min(...['function exportBrief','function findings'].map(marker=>source.indexOf(marker,start)).filter(index=>index>=0));
 const section=source.slice(start,end);

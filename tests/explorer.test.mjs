@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {gunzipSync} from 'node:zlib';
-import {normalized,available,pairScores,protocolGroups,eligible,concernCount,sharedCoverage,comparisonChoices,bestComparisonPartner,paretoFrontier} from '../explorer-core.mjs';
+import {normalized,available,pairScores,protocolGroups,eligible,concernCount,sharedCoverage,comparisonChoices,bestComparisonPartner,paretoFrontier} from '../assets/js/explorer-core.mjs';
 const data=JSON.parse(readFileSync(new URL('../data/final/explorer_data.json',import.meta.url)));
 const m={range_min:0,range_max:100};
 test('missing and ambiguous scores never become zero',()=>{
@@ -125,7 +125,7 @@ test('January 2023 display retains earlier repository records in cumulative tota
   assert.equal(data.growth.verified_release.map(r=>r.month).sort()[0],'2023-10');
 });
 test('growth interaction is month inspection rather than date-window zoom',()=>{
-  const source=readFileSync(new URL('../explorer.js',import.meta.url),'utf8');
+  const source=readFileSync(new URL('../assets/js/explorer.js',import.meta.url),'utf8');
   const growth=source.slice(source.indexOf('function renderGrowth(){'),source.indexOf('// 02 —'));
   for(const obsolete of ['brushX','date-from','date-to','growth-insight'])assert.ok(!growth.includes(obsolete),obsolete);
   for(const required of ['curveMonotoneX','data-earlier-count','data-inspected-total',".on('pointerdown',inspectPointer)","event.key==='ArrowLeft'", "event.key==='Home'"])assert.ok(growth.includes(required),required);

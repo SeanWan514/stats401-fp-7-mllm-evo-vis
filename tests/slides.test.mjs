@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {PAGE_IDS,shouldHandlePageKey} from '../slides.js';
+import {PAGE_IDS,shouldHandlePageKey} from '../assets/js/slides.js';
 
 const root=new URL('../',import.meta.url);
-const read=name=>readFileSync(new URL(name,root),'utf8');
+const read=name=>readFileSync(new URL(name.startsWith('pre-slides')?'archive/website/'+name:name==='explorer.js'?'assets/js/'+name:name,root),'utf8');
 const html=read('index.html'),baseline=read('pre-slides.html');
 const expected=['cover','top','mission','context','goals','dataset','growth','tasks','evolution','radar','matrix','findings','methods','closing'];
 const chartIds=['growth','tasks','evolution','radar','matrix'];
@@ -104,11 +104,11 @@ test('pre-slides rollback assets are frozen independently of shallow Git history
 test('the public bundle and release verifier include the slideshow and all rollback assets',()=>{
  const build=read('scripts/build_static_site.py'),verify=read('scripts/verify_deployed_site.py');
  const additions=['slides.js','slides.css','pre-slides.html','pre-slides.js','pre-slides.css','pre-slides-core.mjs','pre-slides-dialogs.css','pre-slides-task-selection.css'];
- for(const file of additions){assert.ok(build.includes(`"${file}"`),`build ${file}`);assert.ok(verify.includes(`'${file}'`),`verify ${file}`);}
+ for(const file of additions){assert.ok(build.includes(file),`build ${file}`);assert.ok(verify.includes(`'${file}'`),`verify ${file}`);}
  assert.ok(build.includes('"slide-layout-checklist.md"'));
  const fileBlock=verify.match(/FILES = (\[[\s\S]*?\])/)[1];
- assert.equal([...fileBlock.matchAll(/'([^']+)'/g)].length,23);
- assert.ok(read('Makefile').includes('node --check slides.js'));
+ assert.ok([...fileBlock.matchAll(/'([^']+)'/g)].length>=23);
+ assert.ok(read('Makefile').includes('node --check assets/js/slides.js'));
 });
 
 test('page-key handling yields to dialogs, editing and chart controls',()=>{

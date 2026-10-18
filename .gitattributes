@@ -1,2 +1,5 @@
 # Python's CSV writer uses RFC 4180 CRLF record endings.
 *.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve supplied PDF bytes on every checkout (including Windows).
+*.pdf binary
