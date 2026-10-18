@@ -1,4 +1,4 @@
-# MLLMs: Which Model for Your Task?
+# 💻 MLLMs: Which Model for Your Task?
 
 **STATS 401 · Group 7 · Sean Wan, Yuxuan Huang, Shilin Ou**
 
