@@ -22,13 +22,13 @@
 ## Clarity refinement · 18 October 2026
 
 - The immediately preceding checked release is `b8d64aaf7afb77871d444287119614303901d9dd`.
-- Local backup tag `pre-clarity-refinement-2026-10-18` preserves that release before the refinement; the tag is intended to be pushed with the release. The original `interim.html`/`handoff.html` fallbacks and earlier pre-redesign tag remain unchanged.
+- Published backup tag `pre-clarity-refinement-2026-10-18` preserves that release before the refinement. The original `interim.html`/`handoff.html` fallbacks and earlier pre-redesign tag remain unchanged.
 - The area view now prioritizes smooth cumulative counts from the first dated record, with brighter colors and fewer controls. Curves connect exact monthly values; they do not imply daily observations.
 - The phrase cloud now occupies the main visual space; exact count lists and methodology are available on demand. Performance-only family controls, shorter explanations and compact model details reduce clutter.
 - Comparison actions require at least four shared benchmark dimensions and explicitly announce any partner adjustment. The main radar uses six measured concern proxies, with speed/memory limitations stated separately; eight-benchmark detail mode remains available.
 - The task view now compares benchmark score against parameter count and highlights its empirical size–score frontier. Unmeasured/unknown-size candidates are retained separately, not assigned zero scores or silently deleted.
 - Sean's prior production check applies to the preceding release. His subsequent clarity feedback prompted this refinement; no new human test, annotation accuracy or independent participant result has been fabricated.
-- Status at this log entry: **implementation under verification**. Consult the final website audit for the eventual test/deployment result; the previous GO decision is not automatically transferred to the refinement.
+- Released implementation: `bc2fe8263faafd576ebc21cba256f51eb914f852`. All 46 regression tests, local desktop/mobile checks, GitHub validation and Pages deployment passed. Nine public files matched the tested version over HTTPS. The current public page still timed out in the in-app browser, so this is not recorded as a successful live interactive test. See the [website audit](final-website-audit.md) for evidence and limits.
 
 ## Safe rollback
 

@@ -4,7 +4,7 @@ Scope: website, prepared data and code. The approximately 1,500-word report, pos
 
 ## Current revision status
 
-**Clarity refinement: local verification passed; publication verification pending.** The previous checked release, recorded at `b8d64aaf7afb77871d444287119614303901d9dd`, remains available through `pre-clarity-refinement-2026-10-18`. Its website GO decision and Sean's completed workflow check do not automatically certify this revision. The new technical checks are recorded separately below. No new participant study or feedback-label validation is claimed.
+**Clarity refinement: deployed; technical release checks passed.** The previous checked release, recorded at `b8d64aaf7afb77871d444287119614303901d9dd`, remains available through the published tag `pre-clarity-refinement-2026-10-18`. Its website GO decision and Sean's completed workflow check do not automatically certify this revision. The new technical checks are recorded separately below. No new participant study or feedback-label validation is claimed.
 
 ## Website requirements
 
@@ -64,23 +64,35 @@ The checks in this section apply to the earlier release recorded at `b8d64aa`. T
 - Mobile check at 390 × 844: document width equals viewport width; wide data plots scroll within their containers, not the page.
 - Source-code and evidence limitations are exposed rather than hidden by attractive styling.
 
+## Published release verification — clarity refinement
+
+Implementation commit: [`bc2fe8263faafd576ebc21cba256f51eb914f852`](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/commit/bc2fe8263faafd576ebc21cba256f51eb914f852).
+
+- [GitHub validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39114311266): passed.
+- [GitHub Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39114311260): passed.
+- Nine public core/data/fallback files returned over HTTPS and matched the locally tested version byte-for-byte. See the [machine-readable production check](../reports/production_release_check.json), recorded at 2026-10-18 09:11 UTC.
+- Both original fallback pages are unchanged. The pre-refinement backup tag is published alongside `main`.
+- The current public page again timed out in the in-app browser. Interactive checks used the actual local deployment bundle; HTTPS/hash checks establish publication. No new successful live-browser interaction or human confirmation is claimed for this revision.
+
+**Technical website release: GO**, with the above verification scope and methodological limitations. The current visual refinement is deployed and recoverable; a new independent usability study and semantic feedback-label validation remain outside what these checks establish.
+
 ## Published release verification — preceding release
 
 Implementation commit: `66dbf30e077a3858615226d65d5bea9115560b63`.
 
 - [GitHub validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39106927160): passed.
 - [GitHub Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39106927049): passed.
-- Nine public core/data/fallback files returned successfully over HTTPS and matched the local tested release byte-for-byte. See [machine-readable verification](../reports/production_release_check.json); repeat with `python3 scripts/verify_deployed_site.py`.
+- Nine public core/data/fallback files returned successfully over HTTPS and matched the local tested release byte-for-byte. See the [historical machine-readable verification](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/b8d64aaf7afb77871d444287119614303901d9dd/reports/production_release_check.json); repeat for the current release with `python3 scripts/verify_deployed_site.py`.
 - The module is served as JavaScript and the JSON payload supports gzip (approximately 323 KB transferred versus 2.86 MB uncompressed).
 - The local deployment bundle passed the old `final.html#radar` redirect, real brush-handle drag, and downloaded shortlist-content checks. Desktop and phone interaction checks used this local bundle.
 - **Production-browser limitation:** the in-app browser repeatedly timed out when inspecting the live HTTPS page. This did not occur in local interaction testing. HTTP/hash checks verify publication, but are not mislabeled as a successful live interactive test.
 
 **Production workflow check completed:** after deployment of `dc140e3938cc45361c58fa09dc1a55daae836043`, Sean confirmed the requested task-selection/A–B/radar workflow and three-stage Families workflow: “Yes, both workflows work”. This user-reported check closes the outstanding live-browser smoke check; it does not retroactively turn the in-app browser timeout into a successful automated test.
 
-**Preceding website release decision: GO**, recorded in `b8d64aa`, with the methodological limitations below disclosed. **Clarity-refinement decision: pending verification.** Neither decision is an unconditional certification of every grading criterion or the complete final-submission package.
+**Preceding website release decision: GO**, recorded in `b8d64aa`, with the methodological limitations below disclosed. The separate clarity-refinement decision is recorded above. Neither decision is an unconditional certification of every grading criterion or the complete final-submission package.
 
 ## Honest readiness limits
 
-This website addresses the explicit website requirements; that is not a promise of full marks or top-three rank. The strongest remaining methodological improvement is human validation of task/concern labels and model attribution. No agreement/accuracy metric has been invented. The redesigned site's production workflows were checked by one project member; an independent target-user study has not been conducted. Some benchmark protocols remain incomplete, and many task/model cells lack controlled evidence. These limitations are disclosed on the site and should appear in the report.
+This website addresses the explicit website requirements; that is not a promise of full marks or top-three rank. The strongest remaining methodological improvement is human validation of task/concern labels and model attribution. No agreement/accuracy metric has been invented. The preceding release's production workflows were checked by one project member; an independent target-user study has not been conducted. Some benchmark protocols remain incomplete, and many task/model cells lack controlled evidence. These limitations are disclosed on the site and should appear in the report.
 
 Final submission still requires the report, poster, complete package and presentation preparation. The website URL is not itself proof that those deliverables are complete.
