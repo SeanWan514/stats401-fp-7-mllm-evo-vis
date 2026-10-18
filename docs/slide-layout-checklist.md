@@ -59,6 +59,6 @@ The fallback comprises six saved files: `pre-slides.html`, `pre-slides.js`, `pre
 - [x] Final visual confirmation of the family-sidebar layout, four-column wide task layout and directional transitions, including narrow-screen recheck.
 - [x] Final combined regression/syntax/static-build checks: all **65 tests pass**, comprising 31 Python and 34 JavaScript checks.
 - [x] Final navigation/dialog and fallback check: all 12 static and 3 dynamic dialogs passed closing, Escape/outside-click and focus checks; the saved scrolling fallback loads without errors.
-- [ ] Commit/push, confirm CI and Pages deployment, verify published files and document any live-browser limitation.
+- [x] Implementation and rollback tag pushed; GitHub validation and Pages deployment succeeded. All 23 checked public assets match the tested version. Production in-app browser navigation timed out; the audit distinguishes local interaction checks from HTTPS publication verification.
 
 Record final release evidence in [the website audit](final-website-audit.md). This website checklist does not certify the separate report, poster, presentation or a particular grade.

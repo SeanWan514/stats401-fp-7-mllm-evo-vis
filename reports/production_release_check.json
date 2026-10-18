@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-18T11:18:01.719641+00:00",
+  "checked_at": "2026-10-18T15:03:21.852331+00:00",
   "url": "https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/",
-  "source_commit": "ae6903d12fbe59001859d8d674768e413c8a4a77",
+  "source_commit": "e222d23c44001758a0da8ee449ff44d437cac0d2",
   "checks": [
     {
       "file": "index.html",
-      "bytes": 29467,
-      "sha256": "a0a103e7c2f3cc50a843239bd17a041c927bdaba031af10d03fed860d6f57635",
+      "bytes": 34784,
+      "sha256": "3cb3b90b9f3e3dec31b0c00dc177b09ada403a14070f130e08033ca1b930a88c",
       "matches_local": true
     },
     {
       "file": "explorer.js",
-      "bytes": 50309,
-      "sha256": "9bd076973a7f0e0a4e3f566deb2c3315af23da66706532f38397186b0bf26616",
+      "bytes": 50252,
+      "sha256": "63877d170a00585f0a883953eb81df20c80b2ee462d788c7f31005f25e0495fb",
       "matches_local": true
     },
     {
@@ -91,6 +91,54 @@
       "file": "pre-modal-core.mjs",
       "bytes": 5376,
       "sha256": "8a2cebe9820e79e68584b1fd98b47721ae70050a4eefade18bd53d8f1f61de47",
+      "matches_local": true
+    },
+    {
+      "file": "slides.js",
+      "bytes": 9377,
+      "sha256": "98fc48bf72b3c17d4f1fffb651eeb59012645ccca84cb50c588a0e629dbe8631",
+      "matches_local": true
+    },
+    {
+      "file": "slides.css",
+      "bytes": 17580,
+      "sha256": "da946d8241be530023c53556c50bea6ec699152b7beeaad945c2369be8977db9",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides.html",
+      "bytes": 29493,
+      "sha256": "be599c7f7be11a7d3592d1cb41011a0b3c6ab755f6cc9653d870dce17f110e87",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides.js",
+      "bytes": 50311,
+      "sha256": "25349f9d6115718d0ea96626eb19ffb3bc37fc22dcbf47a2eeed13e477d33126",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides.css",
+      "bytes": 20856,
+      "sha256": "9dfbe5f4b5ab9419c6947557628452cd3b5c56cb2d15adda00b1665b07c0aef1",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides-core.mjs",
+      "bytes": 5376,
+      "sha256": "8a2cebe9820e79e68584b1fd98b47721ae70050a4eefade18bd53d8f1f61de47",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides-dialogs.css",
+      "bytes": 4915,
+      "sha256": "b4ed39cfbcd8f19548879772e1e612aa8d1c3897ec505dda1397bf52b6496229",
+      "matches_local": true
+    },
+    {
+      "file": "pre-slides-task-selection.css",
+      "bytes": 2684,
+      "sha256": "75fe475183a9b79f012590b163783ebe28c2dcd3670fb58ac027657171c38418",
       "matches_local": true
     }
   ],

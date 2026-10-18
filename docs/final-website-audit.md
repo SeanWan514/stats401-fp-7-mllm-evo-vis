@@ -4,7 +4,7 @@
 
 ## Release status
 
-**Local release checks passed; publication verification pending.** The assembled release passes the complete regression, syntax, data-validation and build checks. CI, Pages deployment and published-file verification are the remaining release gates.
+**Technical website release: GO.** The assembled release passes all 65 tests, syntax, data-validation and build checks. GitHub validation and Pages deployment succeeded; all 23 checked published implementation/data/fallback files match the tested version byte for byte.
 
 The [previous release audit](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/07b158262cc0259f6d992cd29b249c4cffe62949/docs/final-website-audit.md) preserves the modal revision's tests and release decision. Its GO does not automatically apply to this fourteen-page revision.
 
@@ -54,7 +54,7 @@ These are agent-operated local browser checks and regression evidence, not a new
 | Acquisition, cleaning, analysis | Two documented collections exceed the reported separate 10,000-record targets. Sources, processing ledgers, categorical/temporal/numerical attributes, prepared data and reproduction code remain linked. |
 | Five interactive idioms | Stacked area, phrase cloud, staged timeline/hierarchical packing/distribution, radar and size-tier ranked bars remain distinct. Hierarchy, text and multidimensional comparison provide complex representations. |
 | Meaningful interactions and story | Category reordering, filtering, selection, search highlighting, stage/variable switching, A/B comparison, sorting and evidence drill-down support the sequence from context to a task-specific choice. |
-| One coherent website | Fourteen pages remain in one HTML website with consistent navigation, explanations and dialogs. Public release verification is still pending. |
+| One coherent website | Fourteen pages remain in one HTML website with consistent navigation, explanations and dialogs. GitHub Pages deployment and HTTPS file verification passed. |
 
 The data remains **18,255 unique retained HF repositories** and **21,674 distinct feedback posts/comments**. Repositories include derivatives; feedback records are not independent people or verified product reviews. No records were deleted to simplify this layout.
 
@@ -64,12 +64,14 @@ Feedback labels/model attribution have no measured human accuracy validation. Be
 
 Sean's prior feedback and workflow confirmation remain version-scoped in [user-review.md](user-review.md). No new participants, completion rates, annotation agreement or full-score/class-rank guarantee are claimed.
 
-## Recovery and release gate
+## Recovery and publication
 
 The [saved scrolling version](../pre-slides.html) uses five frozen dependencies: `pre-slides.js`, `pre-slides.css`, `pre-slides-core.mjs`, `pre-slides-dialogs.css` and `pre-slides-task-selection.css`. Tag `pre-slides-layout-2026-10-18` points to `07b158262cc0259f6d992cd29b249c4cffe62949`, preserving the complete historical tree. D3/data remain shared in the immediate fallback; the tag provides their historical copies. Earlier pre-modal, interim and handoff views remain intact. See [recovery instructions](redesign-and-rollback.md).
 
-Before declaring this revision ready:
+Implementation commit: [e222d23](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/commit/e222d23c44001758a0da8ee449ff44d437cac0d2).
 
-- Commit/push, confirm CI and Pages deployment, then verify published assets and record any live-browser limitations.
-
-The release verdict remains pending until that evidence is added here.
+- [GitHub validation](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39138568064): succeeded.
+- [GitHub Pages deployment](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/actions/runs/39138568027): succeeded.
+- At 15:03 UTC on 18 October 2026, all 23 public files returned over HTTPS and matched the tested files. [Machine-readable report](../reports/production_release_check.json).
+- The rollback tag is pushed and its saved scrolling page is published.
+- The in-app browser timed out opening production. Interaction checks used the actual local deployment bundle; HTTPS/hash checks establish publication. No successful new live-browser interaction or human check is claimed.
