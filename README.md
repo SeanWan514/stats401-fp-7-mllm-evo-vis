@@ -75,7 +75,7 @@ For original table reconstruction in a **fresh clone**, use `make restore`, then
 
 ## Review, design and release
 
-Sean completed one qualitative review of the **old** handoff site. [His recorded feedback](docs/user-review.md) drove the redesign. This is not an independent user study, revised-site participant test, or validation of feedback labels. No fabricated participants, timings, agreement or completion rates are reported.
+Sean completed a qualitative review of the **old** handoff site, then confirmed that task selection → A/B assignment → radar updates and all three Families stages worked on the **published redesigned** site. [The review and production check](docs/user-review.md) are documented separately. Both involve the same project-member reviewer, not an independent user study or validation of feedback labels. No fabricated participants, timings, agreement or completion rates are reported.
 
 Design references: [The Pudding — Is the Love Song Dying?](https://pudding.cool/2024/11/love-songs/) for persistent marks and staged regrouping; [Dancing Histograms](https://www.meandeviation.com/dancing-histograms/) for common-baseline category comparison. Class connections and What–Why–How are on the website. Our SVG layout and interactions are custom; D3 is [BSD-licensed](vendor/D3-LICENSE).
 

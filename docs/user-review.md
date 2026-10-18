@@ -17,6 +17,14 @@
 | View 5 did not support task-based choice clearly | Task selection → constraints → task-linked scores → evidence panel → two-model shortlist | Check complete selection and export journey |
 | Overall navigation and story unclear | User mission at opening, five numbered chapters, shared selection, concise findings and methods | Check navigation and consistent state |
 
+## Completed production workflow check after redesign
+
+- Reviewer: Sean Wan, the same project-member reviewer as above; this is not an additional independent participant.
+- Confirmed: 18 October 2026, on the [published website](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/), following deployment of commit `dc140e3938cc45361c58fa09dc1a55daae836043`.
+- Requested checks: choose a task, assign models A/B and observe the radar update; switch the Families view between its three stages.
+- Reviewer response: “Yes, both workflows work”.
+- Result: both requested production workflows confirmed working by the reviewer. This closes the outstanding live-browser smoke check. No task timings, error rates or broader usability outcomes were collected.
+
 ## Interpretation limits
 
-This is completed formative reviewer feedback, not a representative usability study. It identifies design problems and motivates revisions. It does not establish that the revised site is easy to use: that requires subsequent inspection. It is also separate from human validation of scraped feedback/task labels, which remains pending. Automated or AI-assisted checks must not be described as human participant results.
+The earlier formative review identified design problems and motivated revisions; the subsequent production check confirms that two requested workflows worked for the same reviewer. Neither establishes ease of use for new users or constitutes a representative usability study. Both are separate from human validation of scraped feedback/task labels, which remains pending. Automated or AI-assisted checks must not be described as human participant results.

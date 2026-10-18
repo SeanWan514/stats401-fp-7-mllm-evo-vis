@@ -29,7 +29,7 @@ Scope: website, prepared data and code. The approximately 1,500-word report, pos
 6. **View 4:** eight selected user-derived concerns. Six have benchmark proxies; speed and memory remain unmeasured. A separate eight-benchmark mode shows available detail. The axes are not asserted to be the top eight concerns or independent abilities.
 7. **View 5:** choose a supported task, constrain parameters/license/family, inspect a within-source score and exact-model feedback, then pin a comparison pair. No unjustified universal recommendation score.
 8. **Class connections:** What–Why–How table; temporal/text views, hierarchy, channel effectiveness, coordinated interactions and staged motion. Common-baseline reordering credits Dancing Histograms.
-9. **Review:** Sean's one-person qualitative review of the old site is complete and recorded in [user-review.md](user-review.md). It is not feedback-label validation or evidence that new users succeeded on the revised site.
+9. **Review:** Sean's qualitative review of the old site and his subsequent production workflow check are complete and recorded in [user-review.md](user-review.md). The same project-member reviewer confirmed task selection → A/B assignment → radar update and switching between all three family stages. These are not feedback-label validation or an independent user study.
 10. **Recovery:** both previous pages are preserved, with original scripts and payload unchanged. The annotated pre-redesign tag preserves the full old repository. See [recovery instructions](redesign-and-rollback.md).
 
 ## Verification record
@@ -56,10 +56,12 @@ Implementation commit: `66dbf30e077a3858615226d65d5bea9115560b63`.
 - The local deployment bundle passed the old `final.html#radar` redirect, real brush-handle drag, and downloaded shortlist-content checks. Desktop and phone interaction checks used this local bundle.
 - **Production-browser limitation:** the in-app browser repeatedly timed out when inspecting the live HTTPS page. This did not occur in local interaction testing. HTTP/hash checks verify publication, but are not mislabeled as a successful live interactive test.
 
-Minimum remaining release check: in an ordinary browser, open the published website, select a task, choose model A and B, and confirm that the radar updates and the family-stage controls work. This is a new-site smoke check, separate from Sean's completed review of the old site. It should take approximately two minutes. Do not claim that all ten requested checks are unconditionally closed before this succeeds.
+**Production workflow check completed:** after deployment of `dc140e3938cc45361c58fa09dc1a55daae836043`, Sean confirmed the requested task-selection/A–B/radar workflow and three-stage Families workflow: “Yes, both workflows work”. This user-reported check closes the outstanding live-browser smoke check; it does not retroactively turn the in-app browser timeout into a successful automated test.
+
+**Website release decision: GO**, with the methodological limitations below disclosed. This decision covers the implemented and checked website, not an unconditional certification of every grading criterion or the complete final-submission package.
 
 ## Honest readiness limits
 
-This website addresses the explicit website requirements; that is not a promise of full marks or top-three rank. The strongest remaining methodological improvement is human validation of task/concern labels and model attribution. No agreement/accuracy metric has been invented. A new target-user test of the redesigned site has not been conducted. Some benchmark protocols remain incomplete, and many task/model cells lack controlled evidence. These limitations are disclosed on the site and should appear in the report.
+This website addresses the explicit website requirements; that is not a promise of full marks or top-three rank. The strongest remaining methodological improvement is human validation of task/concern labels and model attribution. No agreement/accuracy metric has been invented. The redesigned site's production workflows were checked by one project member; an independent target-user study has not been conducted. Some benchmark protocols remain incomplete, and many task/model cells lack controlled evidence. These limitations are disclosed on the site and should appear in the report.
 
 Final submission still requires the report, poster, complete package and presentation preparation. The website URL is not itself proof that those deliverables are complete.
