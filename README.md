@@ -36,6 +36,50 @@ We connect ecosystem growth, community concerns, canonical model families and pu
 | **4 · Capability comparison** | Compare two source-grouped benchmark profiles | [Choose a pair; inspect scores and gaps](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#radar) |
 | **5 · Task-based candidates** | Find measured candidates within parameter-size tiers | [Choose a task; filter; inspect candidates](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#matrix) |
 
+## 🖼️ Five visualizations, one model-selection journey
+
+Move from the growing ecosystem to community concerns, then explore model families, compare two candidates and build a task-specific shortlist. These screenshots preview the five views; the links open their interactive versions.
+
+### 1 · Ecosystem growth — understand the landscape
+
+![Cumulative stacked area chart showing Hugging Face repository growth, colored by model family.](docs/screenshots/report/01-ecosystem.jpg)
+
+Filled layers reveal how the collected repository ecosystem expands and which families contribute to it. Select a layer to compare its growth, inspect a month or switch to verified releases. Repository creation is not the same as an original model release.
+
+[Explore ecosystem growth →](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#growth)
+
+### 2 · Community concerns — discover what people discuss
+
+![Interactive phrase cloud separating tasks and capabilities in blue from practical concerns in pink, with larger phrases indicating more mentions.](docs/screenshots/report/02-user-concerns.jpg)
+
+The phrase cloud surfaces tasks and practical concerns in the collected discussions, from reading documents to deployment and reliability. Select a phrase to inspect counts and supporting records. Larger text means more mentions in this sample—not higher satisfaction or population-wide importance.
+
+[Explore community concerns →](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#tasks)
+
+### 3 · Three perspectives — follow the same models
+
+![Family stage of the model story, showing 57 model dots grouped into ten labeled, color-coded families.](docs/screenshots/report/03-model-families.jpg)
+
+Persistent model dots move between release dates, family groups and benchmark performance, connecting three perspectives without losing model identity. Switch stages, search for a model or select it for source details. The family grouping shown here describes membership, not proven ancestry.
+
+[Explore the model-family story →](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#evolution)
+
+### 4 · Capability comparison — examine the tradeoffs
+
+![Radar comparing Qwen2.5-VL-7B-Instruct and Qwen2-VL-7B-Instruct across six concern-aligned benchmark dimensions, alongside a summary of their differences.](docs/screenshots/report/04-capability-radar.jpg)
+
+Choose two models to compare published benchmark profiles aligned with user concerns, including reading text, understanding documents and visual reasoning. Fixed scales, raw scores and source details support interpretation; missing measurements remain unavailable. These are benchmark proxies, not user ratings or measured speed and memory requirements.
+
+[Compare two models →](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#radar)
+
+### 5 · Task-based candidates — build a shortlist
+
+![Visual question answering candidates ranked within four parameter-size tiers, with task, size and license filters above the ranked bars.](docs/screenshots/report/05-task-selection.jpg)
+
+Select a task, apply size and license filters, and compare leading measured candidates within four parameter-size tiers. Inspect each model's evidence before shortlisting it for application testing. Rankings apply to the selected benchmark and source; parameter count is not a GPU-memory estimate.
+
+[Find candidates for your task →](https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/#matrix)
+
 ## 📊 Data at a glance
 
 **Collection snapshot: 17 October 2026.** Counts describe different units and must not be added together.
