@@ -51,3 +51,23 @@ python3 -m http.server 8766 --bind 127.0.0.1
 ```
 
 To revert a deployed redesign, inspect the release commit(s), coordinate with teammates, and use `git revert <release-commit>` followed by a normal push. This preserves intervening history. Do not force-push or reset shared `main`. Recheck Pages deployment afterward.
+
+## Modal and size-tier refinement · 18 October 2026
+
+- Pre-revision commit: `bfe6314ea937c1bd37c42ce6eb77b31cb7a954de`, preserved by annotated tag `pre-modal-redesign-2026-10-18`.
+- Immediate visual fallback: `pre-modal.html`, with `pre-modal.js`, `pre-modal.css` and `pre-modal-core.mjs` (four saved files in total). The saved page and JavaScript reference these saved implementation assets. Bundled D3 and data remain shared; the tag preserves the complete historical tree for full recovery.
+- Existing `interim.html`, `handoff.html` and the earlier recovery tags remain unchanged.
+- Growth now displays repository history from January 2023 while retaining the 15 earlier records in the cumulative baseline. Hover/tap/keyboard month inspection replaces zoom brushing; the full repository total remains 18,255.
+- Explanations, exact counts and source evidence move into modal dialogs. The cloud retains the 21,674-record feedback corpus; the family view retains 57 curated models. Standalone A/B selectors remain in the radar chapter instead of sharing candidate-selection controls across the page.
+- Task selection now uses source-consistent size-tier rankings. Five supported tasks are selectable; all eight task categories remain in the dataset. Other candidates, unmeasured scores and unknown sizes remain accessible in the complete list.
+- This entry records implementation and preservation only. Final tests, browser acceptance, push/deployment and published-file verification are pending for this revision. Prior human checks are not represented as checks of this revised interface. See [the refinement checklist](modal-refinement-checklist.md) and [website audit](final-website-audit.md).
+
+For immediate comparison, open `pre-modal.html`; no Git change is needed. To preview the complete historical tree without altering the current branch:
+
+```bash
+git worktree add --detach ../mllm-before-modal pre-modal-redesign-2026-10-18
+cd ../mllm-before-modal
+python3 -m http.server 8768 --bind 127.0.0.1
+```
+
+If a deployed modal revision must be rolled back, first identify its release commit(s), preserve teammates' subsequent changes, and use normal `git revert` commits followed by validation and deployment. Do not reset or force-push shared history.

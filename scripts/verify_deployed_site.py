@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://seanwan514.github.io/stats401-fp-7-mllm-evo-vis/'
 FILES = ['index.html', 'explorer.js', 'explorer-core.mjs', 'explorer.css',
          'vendor/d3.v7.min.js', 'data/final/explorer_data.json',
-         'interim.html', 'handoff.html', 'final.html']
+         'interim.html', 'handoff.html', 'final.html', 'dialogs.css', 'task-selection.css',
+         'pre-modal.html', 'pre-modal.js', 'pre-modal.css', 'pre-modal-core.mjs']
 
 def check(name):
     result = subprocess.run(['curl', '--max-time', '60', '--compressed', '-fsS', BASE + name],

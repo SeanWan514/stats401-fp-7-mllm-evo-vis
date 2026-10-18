@@ -116,3 +116,19 @@ test('page has five unique view anchors and no duplicate DOM ids',()=>{
   for(const id of ['growth','tasks','evolution','radar','matrix'])assert.ok(ids.includes(id));
   assert.ok(html.includes('Completed formative review'));assert.ok(html.includes('vendor/d3.v7.min.js'));
 });
+test('January 2023 display retains earlier repository records in cumulative totals',()=>{
+  const rows=data.growth.repository_creation;
+  const earlier=rows.filter(r=>r.month<'2023-01').reduce((n,r)=>n+r.count,0);
+  const january=rows.filter(r=>r.month==='2023-01').reduce((n,r)=>n+r.count,0);
+  assert.equal(earlier,15);assert.equal(earlier+january,18);
+  assert.equal(earlier+rows.filter(r=>r.month>='2023-01').reduce((n,r)=>n+r.count,0),18255);
+  assert.equal(data.growth.verified_release.map(r=>r.month).sort()[0],'2023-10');
+});
+test('growth interaction is month inspection rather than date-window zoom',()=>{
+  const source=readFileSync(new URL('../explorer.js',import.meta.url),'utf8');
+  const growth=source.slice(source.indexOf('function renderGrowth(){'),source.indexOf('// 02 —'));
+  for(const obsolete of ['brushX','date-from','date-to','growth-insight'])assert.ok(!growth.includes(obsolete),obsolete);
+  for(const required of ['curveMonotoneX','data-earlier-count','data-inspected-total',".on('pointerdown',inspectPointer)","event.key==='ArrowLeft'", "event.key==='Home'"])assert.ok(growth.includes(required),required);
+  assert.ok(growth.includes("first<'2023-01'?'2023-01':first"));
+  assert.ok(growth.includes('r.month<from&&key(r)===k'));
+});

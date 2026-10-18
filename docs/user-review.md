@@ -25,7 +25,7 @@
 - Reviewer response: “Yes, both workflows work”.
 - Result: both requested production workflows confirmed working by the reviewer. This closes the outstanding live-browser smoke check. No task timings, error rates or broader usability outcomes were collected.
 
-## Subsequent clarity review and revision
+## Earlier clarity review and revision
 
 - Reviewer: Sean Wan, the same project-member reviewer; no new participant is counted.
 - Feedback received: 18 October 2026, after the production workflow check above, with eight screenshots and written comments on the published redesign.
@@ -41,7 +41,25 @@
 | View 5 was visually naive and did not support an insightful decision | Task-specific score–size map with a correctly defined Pareto frontier, concise candidate evidence, constraint filters, and a direct path to compare and export two models |
 | Views did not form a clear user-task loop | Concern selection links to a task; task constraints lead to candidate inspection and A/B comparison. Pinned models outside current filters are explicitly flagged, including in the evidence brief |
 
-These responses document implementation changes, not verified gains in usability. The earlier “both workflows work” confirmation applies to the preceding deployed version. **A human workflow test of this latest clarity revision has not yet been reported.** Technical regression and browser checks are documented separately in the website audit; they must not be presented as independent participant feedback.
+These responses document that clarity iteration, not verified gains in usability. The earlier “both workflows work” confirmation applies to the first published redesign. Technical regression and browser checks are documented separately in the website audit; they must not be presented as independent participant feedback.
+
+## Modal-focused review and implementation · 18 October 2026
+
+- Reviewer: Sean Wan, the same project-member reviewer; no new participant is counted.
+- Version preserved before editing: `bfe6314ea937c1bd37c42ce6eb77b31cb7a954de`, with `pre-modal.html` and tag `pre-modal-redesign-2026-10-18` as recovery points.
+- Method: further qualitative design feedback and requested interaction changes, not a timed usability experiment or annotation-validation exercise.
+- Overall direction: reduce persistent interface clutter, keep charts dominant, make help/evidence easy to open and dismiss, separate model-pair comparison from exploration, and prevent overlapping task-map marks.
+
+| Requested change | Current implementation response |
+| --- | --- |
+| Remove the global exploration bar and irrelevant cross-view controls | Controls stay within the view they affect; the narrative remains context → concerns → families → radar → task choices |
+| Open explanations and evidence in clear centered overlays | Native dialogs for all five views provide a backdrop, close button, Escape and outside-click dismissal; content no longer fills large inline evidence panels |
+| Keep the family view focused on model development and evaluation | Search highlights without filtering in every stage; dot selection opens model details; A/B actions and pair marks are removed |
+| Keep A/B comparison in the radar | The radar alone owns its pair selectors; qualifying models retain at least four shared measured dimensions, with sources/raw scores in dialogs |
+| Redesign task mapping to avoid overlap and repeated A/B controls | Separate ranked rows compare measured models within explicit parameter-size tiers; model selection opens evidence, with no A/B assignment or brief export |
+| Show task choices that support usable measured comparisons | Five task options have scored, known-size candidates; all eight task categories remain in the underlying feedback dataset, and unsupported interests are not recast as recommendations |
+
+**Status: implemented; technical verification is recorded in the [website audit](final-website-audit.md).** No human check of this modal-focused revision has been reported. The earlier production confirmation does not certify the new layout, dialogs or task rankings. Data counts are unchanged; feedback-label accuracy remains unvalidated. Automated and agent-operated browser checks are not participant feedback.
 
 ## Interpretation limits
 

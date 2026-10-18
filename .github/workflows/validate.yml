@@ -26,6 +26,6 @@ jobs:
       - name: Check JavaScript syntax
         run: make syntax
       - name: Test explorer evidence operations
-        run: node --test tests/explorer.test.mjs
+        run: node --test tests/*.test.mjs
       - name: Build public website bundle
         run: make site
