@@ -1,6 +1,6 @@
 # Data dictionary and join guide
 
-[Repository home](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/README.md) · [Quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md) · [Methodology](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/data-pipeline.md)
+[Repository home](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/README.md) · [Quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/quickstart.md) · [Methodology](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/data-pipeline.md)
 
 ## File contract
 
@@ -8,13 +8,13 @@ Paths in this table are relative to the repository root. Every file link targets
 
 | Table | Format / record unit | Primary key | Main use |
 | --- | --- | --- | --- |
-| [repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/repositories.jsonl) | JSONL; one retained HF repository | `id`; exact `repo_id` alias | Ecosystem growth and derivatives |
-| [models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/models.json) | JSON object; canonical rows in `models` | `models[].id` | Selected exact variants, metadata and crosswalks |
-| [benchmark_results.csv.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/benchmark_results.csv.gz) | Gzip CSV; one reported measurement | `result_id` | Scores with protocol and provenance |
-| [feedback.jsonl.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/feedback.jsonl.gz) | Gzip JSONL; one retained source body/comment | `id` | Community tasks and practical observations |
-| [tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/tasks.json) | JSON object; definitions in `tasks` | `tasks[].id` | Task labels and benchmark mappings |
-| [model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/model_relationships.csv) | CSV; one typed, sourced edge | Source/target/type/evidence combination | Chronology and documented relationships |
-| [view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/view_data.json) | Prepared JSON object | Shared model/task/family IDs | Lightweight frontend input |
+| [repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/repositories.jsonl) | JSONL; one retained HF repository | `id`; exact `repo_id` alias | Ecosystem growth and derivatives |
+| [models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/models.json) | JSON object; canonical rows in `models` | `models[].id` | Selected exact variants, metadata and crosswalks |
+| [benchmark_results.csv.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/benchmark_results.csv.gz) | Gzip CSV; one reported measurement | `result_id` | Scores with protocol and provenance |
+| [feedback.jsonl.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/feedback.jsonl.gz) | Gzip JSONL; one retained source body/comment | `id` | Community tasks and practical observations |
+| [tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/tasks.json) | JSON object; definitions in `tasks` | `tasks[].id` | Task labels and benchmark mappings |
+| [model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/model_relationships.csv) | CSV; one typed, sourced edge | Source/target/type/evidence combination | Chronology and documented relationships |
+| [view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/view_data.json) | Prepared JSON object | Shared model/task/family IDs | Lightweight frontend input |
 
 `models.json` also contains `baseline_models`, `metrics`, and provenance. Its top level is **not** a model array. The original 285 OpenVLM entries remain registered separately from the 57 selected models.
 
@@ -87,10 +87,10 @@ For the selected-model comparison layer, filter to canonical, primary and visual
 
 The explorer uses fixed axis bounds: OCRBench v1 uses 0–1,000 points; the selected percentage-style dimensions use 0–100. Missing, conflicting, unmatched or out-of-range results remain gaps. Do not choose the maximum reported score just to fill an axis.
 
-The browser payload is a convenience layer. Counts cover the full retained corpus, while excerpts are capped and are not a representative sample. The [view contract](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/final-view-contract.md) documents filters, B/E/C evidence cells, limits and interactions.
+The browser payload is a convenience layer. Counts cover the full retained corpus, while excerpts are capped and are not a representative sample. The [view contract](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/docs/final-view-contract.md) documents filters, B/E/C evidence cells, limits and interactions.
 
 ## Evidence and publication
 
-The [publication manifest](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/public_data_manifest.json) records archive/member SHA-256 values and credential redactions. Original acquisition hashes and published-copy hashes differ where strings were masked. The [raw archive notes](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/feedback_raw_provenance.json) distinguish initial normalized feedback caches from representative later API-response snapshots.
+The [publication manifest](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/public_data_manifest.json) records archive/member SHA-256 values and credential redactions. Original acquisition hashes and published-copy hashes differ where strings were masked. The [raw archive notes](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/feedback_raw_provenance.json) distinguish initial normalized feedback caches from representative later API-response snapshots.
 
-Feedback originals and multilingual matching terms retain their source language. Project documentation is English except for the designated [Chinese delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/delivery-zh.md). Labels are rule-generated and their empirical accuracy has not been measured. Platform feedback and engagement statistics are selected evidence, not population satisfaction estimates.
+Feedback originals and multilingual matching terms retain their source language. Project documentation is English except for the designated [Chinese delivery report](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/delivery-zh.md). Labels are rule-generated and their empirical accuracy has not been measured. Platform feedback and engagement statistics are selected evidence, not population satisfaction estimates.

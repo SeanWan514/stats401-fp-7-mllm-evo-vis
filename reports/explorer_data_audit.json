@@ -1,0 +1,26 @@
+{
+  "feedback_records": 21674,
+  "repository_records": 18255,
+  "concern_labeled_records": 15798,
+  "concern_counts": {
+    "ocr": 222,
+    "documents": 346,
+    "charts": 68,
+    "reasoning": 109,
+    "visual-qa": 141,
+    "grounding": 70,
+    "latency": 492,
+    "memory": 1926,
+    "setup": 11062,
+    "reliability": 6086,
+    "instruction-following": 3831,
+    "licensing": 152,
+    "captioning": 269,
+    "conversation": 501,
+    "video": 521
+  },
+  "input_sha256": "cb6704567fc297b5ebdbdc7f290fc3c1f369e23d78fec6d2574e8652c121f995",
+  "definition": "A record counts once per concern; categories overlap. Counts are not population preferences or satisfaction scores.",
+  "validation": "Rule-generated exploratory labels; no human accuracy estimate. AI spot inspection is not human validation.",
+  "radar": "Six concern-aligned benchmark proxies plus two explicitly unmeasured practical concerns. No missing-to-zero conversion."
+}

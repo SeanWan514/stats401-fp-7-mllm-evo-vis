@@ -1,19 +1,19 @@
 # Data acquisition and handoff
 
-This branch implements Shilin Ou's data work and a five-view integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/final.html). The original interim page remains at [index.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/index.html). The revised user task is to shortlist open-weight image-and-text models, compare benchmark and reported-experience evidence, and expose tradeoffs and evidence gaps.
+This branch implements Shilin Ou's data work and a five-view integration preview at [final.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/final.html). The original interim page remains at [index.html](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/index.html). The revised user task is to shortlist open-weight image-and-text models, compare benchmark and reported-experience evidence, and expose tradeoffs and evidence gaps.
 
 ## Files and units
 
 | File | Unit / join key | Interpretation |
 | --- | --- | --- |
-| [data/final/repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/repositories.jsonl) | One HF repository; `id`, `repo_id` | Metadata-supported ecosystem sample, including derivatives. Not a count of independent original models. |
-| [data/final/models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/models.json) | `models[].id` | Curated canonical models; `baseline_models` separately registers all original OpenVLM records and crosswalks. |
+| [data/final/repositories.jsonl](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/repositories.jsonl) | One HF repository; `id`, `repo_id` | Metadata-supported ecosystem sample, including derivatives. Not a count of independent original models. |
+| [data/final/models.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/models.json) | `models[].id` | Curated canonical models; `baseline_models` separately registers all original OpenVLM records and crosswalks. |
 | `data/final/benchmark_results.csv` | Unique `result_id` | One reported model–benchmark–version–split–setting–metric–source measurement. |
-| [data/final/benchmark_results.csv.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/benchmark_results.csv.gz) | Same rows, lossless gzip | Version-controlled compressed copy; the CSV remains available locally. |
-| [data/final/model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/model_relationships.csv) | Source and target canonical IDs | Typed, sourced edges. `release_sequence` is chronology, never an ancestry claim. |
+| [data/final/benchmark_results.csv.gz](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/benchmark_results.csv.gz) | Same rows, lossless gzip | Version-controlled compressed copy; the CSV remains available locally. |
+| [data/final/model_relationships.csv](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/model_relationships.csv) | Source and target canonical IDs | Typed, sourced edges. `release_sequence` is chronology, never an ancestry claim. |
 | `data/final/feedback.jsonl` | Platform + object type + source object ID | One eligible source text, regardless of how many models/tasks/aspects it mentions. Kept locally. |
-| [data/final/tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/tasks.json) | `tasks[].id` | Definitions and explicit benchmark mappings. Unsupported tasks do not gain invented benchmark evidence. |
-| [data/final/view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/data/final/view_data.json) | Shared family/model/task IDs | Small aggregates and capped, redacted excerpts for the browser. |
+| [data/final/tasks.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/tasks.json) | `tasks[].id` | Definitions and explicit benchmark mappings. Unsupported tasks do not gain invented benchmark evidence. |
+| [data/final/view_data.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/data/final/view_data.json) | Shared family/model/task IDs | Small aggregates and capped, redacted excerpts for the browser. |
 
 Null numeric values mean unknown/unavailable. Unknown release dates, license terms, model ancestry, evaluation settings and task labels are preserved. The repository table distinguishes `created_at`, `last_modified` and an unverified `release_date`; only canonical records with explicit official evidence enter the verified-release timeline. `parameters_stored` is a count of stored tensors, potentially only adapter tensors, and is not a verified total/active parameter count.
 
@@ -74,11 +74,11 @@ The labels are transparent rule baselines. Their empirical accuracy has not been
 
 Task-relevant, exact-model-attributable, family-only, actual-experience and unclassified totals are reported separately. Aspect polarity retains mixed observations; neither positive-word totals nor downloads/likes are satisfaction ratings. Platform populations and issue-reporting behavior are strongly selected samples, so model rankings or population satisfaction claims require additional validation.
 
-For benchmarks, raw values, versions, splits, units, source types and comparison groups are preserved. Fixed scale ranges avoid filter-dependent min–max normalization. Source-table comparisons retain disclosed limitations: a common table is not a reproduced controlled evaluation. Missing values remain gaps. Consult [model_radar_coverage.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/reports/model_radar_coverage.json) and the source links before comparing models.
+For benchmarks, raw values, versions, splits, units, source types and comparison groups are preserved. Fixed scale ranges avoid filter-dependent min–max normalization. Source-table comparisons retain disclosed limitations: a common table is not a reproduced controlled evaluation. Missing values remain gaps. Consult [model_radar_coverage.json](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/reports/model_radar_coverage.json) and the source links before comparing models.
 
 ## Publication boundary
 
-Full raw material and complete feedback text stay in the local research handoff. [.gitignore](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/.gitignore) excludes raw caches, the full feedback table, private worksheets and credentials. The static builder uses an explicit allowlist, and the Pages workflow uploads only `dist/`. It does not publish `data/raw/`, complete feedback, private worksheets, or unrelated files.
+Full raw material and complete feedback text stay in the local research handoff. [.gitignore](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/main/.gitignore) excludes raw caches, the full feedback table, private worksheets and credentials. The static builder uses an explicit allowlist, and the Pages workflow uploads only `dist/`. It does not publish `data/raw/`, complete feedback, private worksheets, or unrelated files.
 
 The preview contains limited, redacted source excerpts to support traceability; counts use the complete accepted corpus, while the excerpt set is not representative. Public reuse remains subject to source terms. A repository's software license does not automatically license every community comment. Document retrieval instructions and publish the least text needed for the evidence view.
 

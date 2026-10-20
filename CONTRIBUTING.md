@@ -1,50 +1,34 @@
-# Working with the handoff
+# Working on the project
 
-[Repository home](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/README.md) · [Quick start](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/docs/quickstart.md) · [Script index](https://github.com/SeanWan514/stats401-fp-7-mllm-evo-vis/blob/shilin/scripts/README.md)
+[README](README.md) · [Quick start](docs/quickstart.md) · [Methods](docs/README.md)
 
-## Pick the source to edit
+## Edit the source, not generated outputs
 
-| Change | Edit | Then run |
-| --- | --- | --- |
-| Layout or interactions | `final.html`, `final.css`, `final.js` | Preview locally; `make test`; `node --check final.js`; `make site` |
-| Canonical models or official evidence | `config/canonical_models.json` and the model methodology | Acquire/cache explicit sources, then `make rebuild` |
-| Feedback sources | `config/feedback_sources.json` | Follow the online collection guide, then rebuild |
-| Task or aspect rules | `scripts/process_feedback.py` | Update meaningful regression cases, then rebuild |
-| Browser aggregation | `scripts/build_final_views.py` and the view contract | `make test`, rebuild view data, validate and preview |
-| Documentation | README or the relevant guide | Check commands, counts and GitHub links; `make site` |
+| Change | Source |
+| --- | --- |
+| Website content / navigation | `index.html`, `assets/js/slides.js`, `assets/css/slides.css` |
+| Charts, evidence dialogs and interaction | `assets/js/explorer.js`, `assets/js/explorer-core.mjs`, `assets/css/` |
+| Canonical metadata / acquisition scope | `config/`, `scripts/collect_repositories.py`, `scripts/build_final_models.py` |
+| Feedback collection / rule labels | `scripts/collect_feedback.py`, `scripts/process_feedback.py` |
+| Browser aggregation | `scripts/build_final_views.py`, `scripts/build_explorer_data.py` |
+| Final documents | User-approved PDFs in `deliverables/`; update their checksums together |
+| Build/deploy | `scripts/build_static_site.py`, `.github/workflows/` |
 
-Use Python 3.10+ for data processing. Browser data comes from `data/final/view_data.json`; do not add a browser dependency on full raw caches. Preserve source text and multilingual matching fixtures in their original language. All authored documentation is English except `reports/delivery-zh.md`.
+The current browser loads `data/final/explorer_data.json`. Never substitute a missing score with zero or infer variant-level evidence from family-only comments. Keep raw acquisition evidence and multilingual matching fixtures intact.
 
-## Check a change
-
-```bash
-make test
-node --check final.js
-```
-
-After data or rule changes, use complete caches:
+## Verify a change
 
 ```bash
-make rebuild
-make reproducibility
-make site
+make check
+make serve
 ```
 
-Before a release, exercise task selection, model selection, sources, missing scores and an empty candidate filter. Check a narrow viewport. Counts and provenance must remain consistent with the full tables. Generated outputs should be explained by source/configuration changes; do not hand-edit a score to complete a radar dimension.
+Check all five views, chart/model selection, source dialogs, empty/missing states, keyboard controls and a narrow viewport. After data/rule changes, use a spare copy with complete caches to run `make rebuild` and `make reproducibility`.
 
-## Preserve data provenance
+Keep data records, source provenance and third-party terms intact. Never commit API credentials, local caches, temporary renders or generated `dist/`. The build uses an explicit allowlist to prevent full feedback/raw archives from entering Pages. Don't edit archived frozen files to satisfy current-feature tests.
 
-Keep dated original caches and configuration before recollection. Successful immutable caches are resumptions, not a new time snapshot. Public packaging masks credential-like strings and retains original/public hashes; do not commit unredacted credentials or silently replace a source snapshot. Packaging should retain every intended source object and cache file. Original third-party terms still apply.
+## Release and recovery
 
-## Shared branch and published website
+The canonical repository is `SeanWan514/stats401-fp-7-mllm-evo-vis`, branch `main`. A push runs validation and publishes `dist/` to the project's GitHub Pages site; no second website repository is required. Confirm CI and compare live assets with `python3 scripts/verify_deployed_site.py` after deployment.
 
-This shared repository's `shilin` branch contains the processing source, full public archives and handoff documentation. Its validation workflow runs lightweight regression, syntax and static-build checks. The original Pages workflow still targets `main`; pushing `shilin` does not replace the group's interim homepage.
-
-The final explorer is published from [Owen-1234/mllm-evidence-explorer](https://github.com/Owen-1234/mllm-evidence-explorer). To update that website:
-
-1. Build and inspect `dist/` from the shared source branch.
-2. Sync prepared static files into the website repository's `site/` directory. Keep the final explorer as `site/index.html` and retain the old interim page as `site/interim.html`.
-3. Check relative asset paths and the homepage's interim link before committing.
-4. Push the website repository's `main` branch and confirm its Pages deployment succeeds.
-
-These are separate releases. Data archives remain in the shared group branch and are linked from the website; they do not need to be duplicated into the website bundle.
+Git history and recovery tags preserve previous versions. [Archive notes](archive/README.md) and the [cleanup log](docs/repository-cleanup.md) explain non-destructive recovery. Make explicit, scoped commits; leave unrelated or untracked teammate work untouched.

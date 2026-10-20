@@ -1,5 +1,25 @@
 # Changelog
 
+## Submission-oriented repository cleanup — 2026-10-19
+
+- Added the nine-deliverable Grader's View and direct final-report/poster links.
+- Published the group's exact supplied PDFs under `deliverables/` with checksums.
+- Organized seven live assets under `assets/` and sixteen frozen files under `archive/website/`; all moved website bytes are unchanged.
+- Archived earlier report drafts and kept `REPORT.md` as a stable pointer to the final PDF.
+- Preserved old public URLs through the build; updated local preview and reproduction instructions.
+- Added five structural tests and gated deployment with the complete test suite.
+- Created recovery tag `pre-repo-cleanup-2026-10-19`; preserved untracked local work.
+
+## Final evidence-atlas redesign — 2026-10-18
+
+- Preserved the old main and handoff as `interim.html` and `handoff.html` and tagged the full pre-revision source.
+- Rebuilt the main entry around a user task, two documented corpora, five coordinated D3/SVG views, evidence-backed observations and limits.
+- Added a phrase cloud and source-linked user concerns, persistent animated model/family marks, concern-led radar with explicit unmeasured axes, and a task-first shortlist.
+- Kept original scripts/data unchanged for fallbacks; added a separate reproducible browser payload and locally bundled D3.
+- Recorded Sean's completed old-site qualitative review without claiming human label validation or new-site participant results.
+- Added ten evidence-operation regression checks, browser/responsive testing and a website requirements audit.
+- Forwarded the former final URL to the new main site and updated the public-only deployment allowlist.
+
 ## Teammate handoff organization — 2026-10-17
 
 - Rewrote the `shilin` branch README around preview, analysis and offline-rebuild workflows.
